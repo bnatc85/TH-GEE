@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+plotly
+websockets
+sqlalchemy
+psycopg[binary]
+python-dateutil
