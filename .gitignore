@@ -5,3 +5,8 @@ __pycache__/
 data/*.db
 data/*.sqlite
 data/*.sqlite3
+
+# RedNote-Vibe corpus (CC BY-NC 4.0) — download separately, do not commit
+analysis/rednote_data/
+rednote_data/
+*.jsonl

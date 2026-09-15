@@ -2,7 +2,9 @@ streamlit
 pandas
 numpy
 plotly
-websockets
 sqlalchemy
 psycopg[binary]
 python-dateutil
+google-api-python-client
+matplotlib  # analysis/make_figure.py (paper figure)
+websockets  # only needed by the legacy collector_bluesky.py

@@ -1,0 +1,66 @@
+# Prespecified event configuration (paper Table 1).
+# Frozen before outcome models are estimated. Hash of this file is recorded in
+# the run manifest.
+
+analysis:
+  # Media / Wikipedia observation window (paper Sec. 4.2).
+  # `pre_event_days` is the *length* of the Wikipedia baseline. Where the
+  # baseline ends is set per event by `baseline_gap_days` below: the baseline
+  # is the `pre_event_days` calendar days ending `baseline_gap_days + 1` days
+  # before t0, i.e. [-(pre_event_days + gap), -(gap + 1)].
+  pre_event_days: 56
+  post_event_days: 28
+  # Cumulative-attention summary windows, in days relative to t0.
+  effect_windows: [[0, 3], [0, 7], [0, 14]]
+  # Robustness baselines (paper Sec. 6.2 item 2).
+  alt_baselines: [28, 56, 84]
+  # Market model.
+  market_estimation_window: [-250, -30]
+  market_event_windows: [[-1, 1], [-3, 3], [0, 5]]
+
+events:
+  - id: statement2023
+    label: "Statement on AI Risk (30 May 2023)"
+    role: replication
+    t0: 2023-05-30
+    # Sensitivity: shift t0 by one day (paper Table 1 note).
+    t0_alternatives: [2023-05-29, 2023-05-31]
+    episode: [2023-05-30, 2023-05-30]
+    market_t0: 2023-05-30
+    # The statement was released on t0 itself; nothing precedes it, so the
+    # baseline runs to the day before t0: [-56, -1].
+    baseline_gap_days: 0
+
+  - id: warning2026
+    label: "September 2026 AI extinction warning episode"
+    role: primary
+    # Researcher announcement 8 Sep; first major coverage and broad public
+    # availability 9 Sep -> attention t0 = 9 Sep (paper Table 1).
+    t0: 2026-09-09
+    t0_alternatives: [2026-09-08]
+    episode: [2026-09-08, 2026-09-14]
+    # First US session after the executive slowdown calls dominated financial
+    # coverage.
+    market_t0: 2026-09-14
+    # The warning began on 8 Sep (t0 - 1). A baseline ending at -1 would be
+    # contaminated by the announcement day, and because the counterfactual has
+    # AR(1) errors, the forecast for t0 onward would condition on that day's
+    # residual. The baseline therefore ends at -2: [-57, -2]. 8 Sep is scored
+    # out of sample like every later day.
+    baseline_gap_days: 1
+
+# Pre-existing kill-switch interventions modelled explicitly (paper Sec. 6.2
+# item 12). Both precede the focal 2026 warning.
+kill_switch_interventions:
+  - date: 2026-07-23
+    note: "AI Kill Switch Act proposed in Congress"
+  - date: 2026-09-02
+    note: "OpenAI discussion of automated shutdown capability"
+
+# Placebo dates drawn from the pre-event interval with a 7-day exclusion zone
+# around other major AI announcements (paper Sec. 4.2). Deterministic: the
+# sampler seeds from `placebo_seed` and excludes the dates listed above.
+placebo:
+  n: 12
+  seed: 20260909
+  exclusion_days: 7

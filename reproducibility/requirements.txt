@@ -1,0 +1,7 @@
+# Reproduce the paper numbers and figure from the cached snapshot:
+numpy
+matplotlib
+
+# Only needed to RE-COLLECT from the YouTube Data API (optional; needs a key):
+# google-api-python-client
+# sqlalchemy

@@ -1,0 +1,17 @@
+ticker,portfolio,name,listing_market,rationale,included
+NVDA,ai_infrastructure,NVIDIA,NASDAQ,Dominant accelerator supplier; revenue tied to frontier-model capex,1
+AMD,ai_infrastructure,Advanced Micro Devices,NASDAQ,Second-source AI accelerator supplier,1
+AVGO,ai_infrastructure,Broadcom,NASDAQ,Custom AI ASIC and datacentre networking,1
+ORCL,ai_infrastructure,Oracle,NYSE,AI training/inference cloud capacity contracts,1
+MSFT,ai_platform,Microsoft,NASDAQ,Largest OpenAI commercial partner; Copilot deployment,1
+GOOGL,ai_platform,Alphabet,NASDAQ,Google DeepMind frontier lab; named in coverage,1
+AMZN,ai_platform,Amazon,NASDAQ,Anthropic investor; AWS Bedrock deployment,1
+META,ai_platform,Meta Platforms,NASDAQ,Frontier open-weight model developer,1
+PLTR,ai_platform,Palantir,NASDAQ,AI deployment to government/critical-infrastructure customers,1
+PANW,cyber_resilience,Palo Alto Networks,NASDAQ,Network security incumbent; resilience demand exposure,1
+CRWD,cyber_resilience,CrowdStrike,NASDAQ,Endpoint detection and response,1
+FTNT,cyber_resilience,Fortinet,NASDAQ,Network and OT/critical-infrastructure security,1
+ZS,cyber_resilience,Zscaler,NASDAQ,Zero-trust access; resilience-oriented spend,1
+QQQ,benchmark,Invesco QQQ Trust,NASDAQ,Large-cap tech benchmark for platform firms,1
+SPY,benchmark,SPDR S&P 500 ETF,NYSEARCA,Broad-market benchmark,1
+SOXX,benchmark,iShares Semiconductor ETF,NASDAQ,Sector benchmark for semiconductor firms,1

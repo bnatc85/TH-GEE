@@ -1,0 +1,1710 @@
+{
+  "source_by_ticker": {
+    "NVDA": "fmp_adjclose",
+    "AMD": "fmp_adjclose",
+    "AVGO": "fmp_adjclose",
+    "ORCL": "fmp_adjclose",
+    "MSFT": "fmp_adjclose",
+    "GOOGL": "fmp_adjclose",
+    "AMZN": "fmp_adjclose",
+    "META": "fmp_adjclose",
+    "PLTR": "fmp_adjclose",
+    "PANW": "fmp_adjclose",
+    "CRWD": "fmp_adjclose",
+    "FTNT": "fmp_adjclose",
+    "ZS": "fmp_adjclose",
+    "QQQ": "fmp_adjclose",
+    "SPY": "fmp_adjclose",
+    "SOXX": "fmp_adjclose"
+  },
+  "split_handling": {
+    "ZS": {
+      "large_but_kept_adjusted_source": [
+        "2026-05-27"
+      ]
+    }
+  },
+  "last_available_session": "2026-09-14",
+  "events": {
+    "statement2023": {
+      "event_id": "statement2023",
+      "market_t0": "2023-05-30",
+      "t0_is_trading_session_with_data": true,
+      "last_session_available": "2026-09-14",
+      "n_estimation_sessions": 220,
+      "specifications": {
+        "broad_spy": {
+          "benchmarks": {
+            "NVDA": "SPY",
+            "AMD": "SPY",
+            "AVGO": "SPY",
+            "ORCL": "SPY",
+            "MSFT": "SPY",
+            "GOOGL": "SPY",
+            "AMZN": "SPY",
+            "META": "SPY",
+            "PLTR": "SPY",
+            "PANW": "SPY",
+            "CRWD": "SPY",
+            "FTNT": "SPY",
+            "ZS": "SPY"
+          },
+          "market_models": {
+            "NVDA": {
+              "alpha": 0.0015179860920801682,
+              "beta": 2.0258186726129233,
+              "sigma": 0.02269953498727346,
+              "n_est": 220
+            },
+            "AMD": {
+              "alpha": -0.0005790037362407332,
+              "beta": 1.8830609872936326,
+              "sigma": 0.022406472819036766,
+              "n_est": 220
+            },
+            "AVGO": {
+              "alpha": 0.00036399305774773727,
+              "beta": 1.2144102344506302,
+              "sigma": 0.010972843727271234,
+              "n_est": 220
+            },
+            "ORCL": {
+              "alpha": 0.0012863314487086253,
+              "beta": 0.8237249084718302,
+              "sigma": 0.01354581727327852,
+              "n_est": 220
+            },
+            "MSFT": {
+              "alpha": 0.00018492919233469346,
+              "beta": 1.2816548890260362,
+              "sigma": 0.011644113586484383,
+              "n_est": 220
+            },
+            "GOOGL": {
+              "alpha": -0.00020530114595620696,
+              "beta": 1.3964323185851018,
+              "sigma": 0.015210191764091247,
+              "n_est": 220
+            },
+            "AMZN": {
+              "alpha": -0.0006009045071058704,
+              "beta": 1.5840349068296868,
+              "sigma": 0.01787902303330342,
+              "n_est": 220
+            },
+            "META": {
+              "alpha": 0.0005008300194626994,
+              "beta": 1.6486024737640657,
+              "sigma": 0.030741381159288084,
+              "n_est": 220
+            },
+            "PLTR": {
+              "alpha": -0.00010294643714756954,
+              "beta": 1.8023336563759007,
+              "sigma": 0.03288907137795558,
+              "n_est": 220
+            },
+            "PANW": {
+              "alpha": 0.0007069929847535528,
+              "beta": 1.0376745319747203,
+              "sigma": 0.020652182761298172,
+              "n_est": 220
+            },
+            "CRWD": {
+              "alpha": -0.0010039255552205858,
+              "beta": 1.463992082353883,
+              "sigma": 0.028394863840882932,
+              "n_est": 220
+            },
+            "FTNT": {
+              "alpha": 0.000541868972363016,
+              "beta": 1.409911534792193,
+              "sigma": 0.022566387680679402,
+              "n_est": 220
+            },
+            "ZS": {
+              "alpha": -0.0019801477391119915,
+              "beta": 1.8597710709069344,
+              "sigma": 0.03299759624204151,
+              "n_est": 220
+            }
+          },
+          "windows": {
+            "[-1,1]": {
+              "sessions": [
+                "2023-05-26",
+                "2023-05-30",
+                "2023-05-31"
+              ],
+              "available": true,
+              "by_security": {
+                "NVDA": {
+                  "car": -0.02408973385486069,
+                  "abnormal_log_volume": 0.551077293552968
+                },
+                "AMD": {
+                  "car": -0.030673471955602324,
+                  "abnormal_log_volume": 0.2708688749452115
+                },
+                "AVGO": {
+                  "car": 0.09276099834814647,
+                  "abnormal_log_volume": 1.510542361580793
+                },
+                "ORCL": {
+                  "car": 0.00544009536648021,
+                  "abnormal_log_volume": 0.5418198464641293
+                },
+                "MSFT": {
+                  "car": -0.0028474891584802106,
+                  "abnormal_log_volume": 0.28549709449780636
+                },
+                "GOOGL": {
+                  "car": -0.015031209164296679,
+                  "abnormal_log_volume": 0.11672536669572153
+                },
+                "AMZN": {
+                  "car": 0.03701264555787262,
+                  "abnormal_log_volume": 0.15292901239968515
+                },
+                "META": {
+                  "car": 0.03235728853519933,
+                  "abnormal_log_volume": -0.19523306247440075
+                },
+                "PLTR": {
+                  "car": 0.12242234385949474,
+                  "abnormal_log_volume": 1.3926951379313515
+                },
+                "PANW": {
+                  "car": 0.015632177880353697,
+                  "abnormal_log_volume": 0.43599474735398047
+                },
+                "CRWD": {
+                  "car": 0.05972125500902571,
+                  "abnormal_log_volume": 0.6414730431192481
+                },
+                "FTNT": {
+                  "car": 0.004663135280954288,
+                  "abnormal_log_volume": 0.09665846385025922
+                },
+                "ZS": {
+                  "car": 0.058731245403939,
+                  "abnormal_log_volume": 0.3250163911820856
+                }
+              },
+              "likely_firm_specific_announcement": [
+                "AVGO"
+              ],
+              "by_portfolio": {
+                "ai_infrastructure": {
+                  "n": 4,
+                  "car_equal_weighted": 0.010859471976040917,
+                  "t_stat": 0.38227818806470065,
+                  "ci95_conventional": [
+                    -0.044818737604249814,
+                    0.06653768155633165
+                  ],
+                  "randomisation_p": 0.5832,
+                  "abnormal_log_volume": 0.7185770941357754,
+                  "excluding_confounded": {
+                    "excluded": [
+                      "AVGO"
+                    ],
+                    "n": 3,
+                    "car_equal_weighted": -0.01644103681466093
+                  }
+                },
+                "ai_platform": {
+                  "n": 5,
+                  "car_equal_weighted": 0.03478271592595796,
+                  "t_stat": 1.444957746702269,
+                  "ci95_conventional": [
+                    -0.012397987710855554,
+                    0.08196341956277148
+                  ],
+                  "randomisation_p": 0.135,
+                  "abnormal_log_volume": 0.35052270981003275,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 5,
+                    "car_equal_weighted": 0.03478271592595796
+                  }
+                },
+                "cyber_resilience": {
+                  "n": 4,
+                  "car_equal_weighted": 0.03468695339356817,
+                  "t_stat": 2.4180468972006817,
+                  "ci95_conventional": [
+                    0.0065706961240751885,
+                    0.06280321066306116
+                  ],
+                  "randomisation_p": 0.2658,
+                  "abnormal_log_volume": 0.37478566137639335,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 4,
+                    "car_equal_weighted": 0.03468695339356817
+                  }
+                }
+              },
+              "h4_ai_minus_cyber": {
+                "estimate": -0.010536790334240008,
+                "ai_mean": 0.024150163059328163,
+                "cyber_mean": 0.03468695339356817
+              }
+            },
+            "[-3,3]": {
+              "sessions": [
+                "2023-05-24",
+                "2023-05-25",
+                "2023-05-26",
+                "2023-05-30",
+                "2023-05-31",
+                "2023-06-01",
+                "2023-06-02"
+              ],
+              "available": true,
+              "by_security": {
+                "NVDA": {
+                  "car": 0.17105362240529257,
+                  "abnormal_log_volume": 0.4765020743360431
+                },
+                "AMD": {
+                  "car": 0.028421424843393377,
+                  "abnormal_log_volume": 0.11273464016278112
+                },
+                "AVGO": {
+                  "car": 0.12541130680246748,
+                  "abnormal_log_volume": 1.1296337285930598
+                },
+                "ORCL": {
+                  "car": 0.03587376655871395,
+                  "abnormal_log_volume": 0.3753244095999406
+                },
+                "MSFT": {
+                  "car": 0.018520090528355786,
+                  "abnormal_log_volume": 0.14887981332758216
+                },
+                "GOOGL": {
+                  "car": -0.027389146872469662,
+                  "abnormal_log_volume": 0.06880164599514416
+                },
+                "AMZN": {
+                  "car": 0.029597050209698394,
+                  "abnormal_log_volume": 0.023361230523470056
+                },
+                "META": {
+                  "car": 0.0419986091262651,
+                  "abnormal_log_volume": -0.2930063496795441
+                },
+                "PLTR": {
+                  "car": 0.08014701416259515,
+                  "abnormal_log_volume": 1.202105463332046
+                },
+                "PANW": {
+                  "car": 0.0962955862428071,
+                  "abnormal_log_volume": 0.525905075681802
+                },
+                "CRWD": {
+                  "car": 0.009330124691182252,
+                  "abnormal_log_volume": 0.6036315525318656
+                },
+                "FTNT": {
+                  "car": -0.04954295937110098,
+                  "abnormal_log_volume": 0.18094904648289756
+                },
+                "ZS": {
+                  "car": 0.08724415366974221,
+                  "abnormal_log_volume": 0.42477104340003713
+                }
+              },
+              "likely_firm_specific_announcement": [
+                "NVDA",
+                "AVGO",
+                "PANW"
+              ],
+              "by_portfolio": {
+                "ai_infrastructure": {
+                  "n": 4,
+                  "car_equal_weighted": 0.09019003015246684,
+                  "t_stat": 2.590545103567224,
+                  "ci95_conventional": [
+                    0.02195247703848463,
+                    0.15842758326644904
+                  ],
+                  "randomisation_p": 0.0,
+                  "abnormal_log_volume": 0.5235487131729561,
+                  "excluding_confounded": {
+                    "excluded": [
+                      "NVDA",
+                      "AVGO"
+                    ],
+                    "n": 2,
+                    "car_equal_weighted": 0.03214759570105366
+                  }
+                },
+                "ai_platform": {
+                  "n": 5,
+                  "car_equal_weighted": 0.028574723430888953,
+                  "t_stat": 1.6396823836790906,
+                  "ci95_conventional": [
+                    -0.005582170905486142,
+                    0.06273161776726405
+                  ],
+                  "randomisation_p": 0.3828,
+                  "abnormal_log_volume": 0.23002836069973967,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 5,
+                    "car_equal_weighted": 0.028574723430888953
+                  }
+                },
+                "cyber_resilience": {
+                  "n": 4,
+                  "car_equal_weighted": 0.035831726308157646,
+                  "t_stat": 1.0383358913394036,
+                  "ci95_conventional": [
+                    -0.03180552301527219,
+                    0.10346897563158748
+                  ],
+                  "randomisation_p": 0.517,
+                  "abnormal_log_volume": 0.4338141795241506,
+                  "excluding_confounded": {
+                    "excluded": [
+                      "PANW"
+                    ],
+                    "n": 3,
+                    "car_equal_weighted": 0.01567710632994116
+                  }
+                }
+              },
+              "h4_ai_minus_cyber": {
+                "estimate": 0.020127577887877043,
+                "ai_mean": 0.05595930419603469,
+                "cyber_mean": 0.035831726308157646
+              }
+            },
+            "[0,5]": {
+              "sessions": [
+                "2023-05-30",
+                "2023-05-31",
+                "2023-06-01",
+                "2023-06-02",
+                "2023-06-05",
+                "2023-06-06"
+              ],
+              "available": true,
+              "by_security": {
+                "NVDA": {
+                  "car": -0.05514109496743026,
+                  "abnormal_log_volume": 0.16736391045291654
+                },
+                "AMD": {
+                  "car": -0.05439440307851705,
+                  "abnormal_log_volume": -0.012046317487580893
+                },
+                "AVGO": {
+                  "car": -0.053355694440974155,
+                  "abnormal_log_volume": 1.0680071199684953
+                },
+                "ORCL": {
+                  "car": 0.005374378242477776,
+                  "abnormal_log_volume": 0.21139097646571514
+                },
+                "MSFT": {
+                  "car": -0.022956472759903986,
+                  "abnormal_log_volume": -0.014300140356908742
+                },
+                "GOOGL": {
+                  "car": -0.0037539994633941937,
+                  "abnormal_log_volume": -0.024043519295808835
+                },
+                "AMZN": {
+                  "car": 0.026379102092477295,
+                  "abnormal_log_volume": -0.14606142364164043
+                },
+                "META": {
+                  "car": -9.413421930562407e-05,
+                  "abnormal_log_volume": -0.3116956693707067
+                },
+                "PLTR": {
+                  "car": 0.09107968446039388,
+                  "abnormal_log_volume": 1.1725250943645875
+                },
+                "PANW": {
+                  "car": 0.035836519672115014,
+                  "abnormal_log_volume": 0.46876424264501537
+                },
+                "CRWD": {
+                  "car": -0.02867030158897535,
+                  "abnormal_log_volume": 0.5992239595892279
+                },
+                "FTNT": {
+                  "car": -0.00410853211642228,
+                  "abnormal_log_volume": 0.10960104358615119
+                },
+                "ZS": {
+                  "car": 0.13482132454478452,
+                  "abnormal_log_volume": 0.6237154519795975
+                }
+              },
+              "likely_firm_specific_announcement": [
+                "AVGO"
+              ],
+              "by_portfolio": {
+                "ai_infrastructure": {
+                  "n": 4,
+                  "car_equal_weighted": -0.03937920356111092,
+                  "t_stat": -2.6389409267358004,
+                  "ci95_conventional": [
+                    -0.06862701210347497,
+                    -0.010131395018746887
+                  ],
+                  "randomisation_p": 0.2052,
+                  "abnormal_log_volume": 0.3586789223498865,
+                  "excluding_confounded": {
+                    "excluded": [
+                      "AVGO"
+                    ],
+                    "n": 3,
+                    "car_equal_weighted": -0.03472037326782318
+                  }
+                },
+                "ai_platform": {
+                  "n": 5,
+                  "car_equal_weighted": 0.018130836022053474,
+                  "t_stat": 0.9129069318928278,
+                  "ci95_conventional": [
+                    -0.020795846821227496,
+                    0.057057518865334445
+                  ],
+                  "randomisation_p": 0.5598,
+                  "abnormal_log_volume": 0.13528486833990455,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 5,
+                    "car_equal_weighted": 0.018130836022053474
+                  }
+                },
+                "cyber_resilience": {
+                  "n": 4,
+                  "car_equal_weighted": 0.03446975262787547,
+                  "t_stat": 0.9576391827850713,
+                  "ci95_conventional": [
+                    -0.0360794859216075,
+                    0.10501899117735844
+                  ],
+                  "randomisation_p": 0.4792,
+                  "abnormal_log_volume": 0.450326174449998,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 4,
+                    "car_equal_weighted": 0.03446975262787547
+                  }
+                }
+              },
+              "h4_ai_minus_cyber": {
+                "estimate": -0.04189893419833951,
+                "ai_mean": -0.0074291815704640345,
+                "cyber_mean": 0.03446975262787547
+              }
+            },
+            "episode[2023-05-30..2023-05-30]": {
+              "sessions": [
+                "2023-05-30"
+              ],
+              "available": true,
+              "by_security": {
+                "NVDA": {
+                  "car": 0.027114476457575115,
+                  "abnormal_log_volume": 0.6091960989550529
+                },
+                "AMD": {
+                  "car": -0.014120039752123961,
+                  "abnormal_log_volume": 0.33228959732696595
+                },
+                "AVGO": {
+                  "car": -0.01245589161519846,
+                  "abnormal_log_volume": 1.7139599775105125
+                },
+                "ORCL": {
+                  "car": 0.00862395760108326,
+                  "abnormal_log_volume": 0.3440299467571677
+                },
+                "MSFT": {
+                  "car": -0.005728153872383788,
+                  "abnormal_log_volume": 0.06567674113845356
+                },
+                "GOOGL": {
+                  "car": -0.007911332450367632,
+                  "abnormal_log_volume": 0.09073697182884288
+                },
+                "AMZN": {
+                  "car": 0.012794660897997218,
+                  "abnormal_log_volume": -0.024599892118850164
+                },
+                "META": {
+                  "car": 0.0006911819066849562,
+                  "abnormal_log_volume": -0.24391587820506544
+                },
+                "PLTR": {
+                  "car": 0.07417581858824944,
+                  "abnormal_log_volume": 1.532127617091973
+                },
+                "PANW": {
+                  "car": 0.0025589603958702262,
+                  "abnormal_log_volume": 0.3898965850313587
+                },
+                "CRWD": {
+                  "car": 0.02907682337949693,
+                  "abnormal_log_volume": 0.5567766064109954
+                },
+                "FTNT": {
+                  "car": 0.010196595113781926,
+                  "abnormal_log_volume": -0.10056216025978948
+                },
+                "ZS": {
+                  "car": 0.032148422563177924,
+                  "abnormal_log_volume": 0.17560214318639566
+                }
+              },
+              "likely_firm_specific_announcement": [],
+              "by_portfolio": {
+                "ai_infrastructure": {
+                  "n": 4,
+                  "car_equal_weighted": 0.0022906256728339883,
+                  "t_stat": 0.23469390106899957,
+                  "ci95_conventional": [
+                    -0.016839084551014887,
+                    0.021420335896682862
+                  ],
+                  "randomisation_p": 0.8236,
+                  "abnormal_log_volume": 0.7498689051374248,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 4,
+                    "car_equal_weighted": 0.0022906256728339883
+                  }
+                },
+                "ai_platform": {
+                  "n": 5,
+                  "car_equal_weighted": 0.014804435014036037,
+                  "t_stat": 0.9692701077386061,
+                  "ci95_conventional": [
+                    -0.015132207409827805,
+                    0.04474107743789988
+                  ],
+                  "randomisation_p": 0.2096,
+                  "abnormal_log_volume": 0.2840051119470708,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 5,
+                    "car_equal_weighted": 0.014804435014036037
+                  }
+                },
+                "cyber_resilience": {
+                  "n": 4,
+                  "car_equal_weighted": 0.01849520036308175,
+                  "t_stat": 2.5705722197667895,
+                  "ci95_conventional": [
+                    0.004393051264571301,
+                    0.03259734946159219
+                  ],
+                  "randomisation_p": 0.2458,
+                  "abnormal_log_volume": 0.25542829359224006,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 4,
+                    "car_equal_weighted": 0.01849520036308175
+                  }
+                }
+              },
+              "h4_ai_minus_cyber": {
+                "estimate": -0.009252458389579955,
+                "ai_mean": 0.009242741973501794,
+                "cyber_mean": 0.01849520036308175
+              }
+            }
+          }
+        },
+        "sector_adjusted": {
+          "benchmarks": {
+            "NVDA": "SOXX",
+            "AMD": "SOXX",
+            "AVGO": "SOXX",
+            "ORCL": "QQQ",
+            "MSFT": "QQQ",
+            "GOOGL": "QQQ",
+            "AMZN": "QQQ",
+            "META": "QQQ",
+            "PLTR": "QQQ",
+            "PANW": "QQQ",
+            "CRWD": "QQQ",
+            "FTNT": "QQQ",
+            "ZS": "QQQ"
+          },
+          "market_models": {
+            "NVDA": {
+              "alpha": 0.0016105534090817234,
+              "beta": 1.3406345692136097,
+              "sigma": 0.015377062407915164,
+              "n_est": 220
+            },
+            "AMD": {
+              "alpha": -0.0004929595578053343,
+              "beta": 1.2575016112432347,
+              "sigma": 0.015632899304503716,
+              "n_est": 220
+            },
+            "AVGO": {
+              "alpha": 0.0004194840543813748,
+              "beta": 0.7333000027073651,
+              "sigma": 0.009167534751309672,
+              "n_est": 220
+            },
+            "ORCL": {
+              "alpha": 0.0012230028550210474,
+              "beta": 0.5875568133220438,
+              "sigma": 0.014285298042655202,
+              "n_est": 220
+            },
+            "MSFT": {
+              "alpha": 6.175824744817973e-05,
+              "beta": 1.0575600383864254,
+              "sigma": 0.009817653421619879,
+              "n_est": 220
+            },
+            "GOOGL": {
+              "alpha": -0.0003451973737988108,
+              "beta": 1.1854084802786868,
+              "sigma": 0.012665648073194563,
+              "n_est": 220
+            },
+            "AMZN": {
+              "alpha": -0.0007570150376944383,
+              "beta": 1.3296478828086855,
+              "sigma": 0.015525264004117596,
+              "n_est": 220
+            },
+            "META": {
+              "alpha": 0.0003235777131560186,
+              "beta": 1.4698460309333663,
+              "sigma": 0.027974615131992793,
+              "n_est": 220
+            },
+            "PLTR": {
+              "alpha": -0.0002883821650038104,
+              "beta": 1.5583451516250746,
+              "sigma": 0.030593068655849476,
+              "n_est": 220
+            },
+            "PANW": {
+              "alpha": 0.0006116551337929457,
+              "beta": 0.8307168632088366,
+              "sigma": 0.02035623318919775,
+              "n_est": 220
+            },
+            "CRWD": {
+              "alpha": -0.0011460862045640445,
+              "beta": 1.2165501233257128,
+              "sigma": 0.027360666793095054,
+              "n_est": 220
+            },
+            "FTNT": {
+              "alpha": 0.00041695075273929177,
+              "beta": 1.1018318027222676,
+              "sigma": 0.022488208911699472,
+              "n_est": 220
+            },
+            "ZS": {
+              "alpha": -0.002168049263622583,
+              "beta": 1.5879670771679115,
+              "sigma": 0.030883946346501715,
+              "n_est": 220
+            }
+          },
+          "windows": {
+            "[-1,1]": {
+              "sessions": [
+                "2023-05-26",
+                "2023-05-30",
+                "2023-05-31"
+              ],
+              "available": true,
+              "by_security": {
+                "NVDA": {
+                  "car": -0.05769129928405925,
+                  "abnormal_log_volume": 0.551077293552968
+                },
+                "AMD": {
+                  "car": -0.06232072196195805,
+                  "abnormal_log_volume": 0.2708688749452115
+                },
+                "AVGO": {
+                  "car": 0.07518404950164163,
+                  "abnormal_log_volume": 1.510542361580793
+                },
+                "ORCL": {
+                  "car": -0.0021778820492559074,
+                  "abnormal_log_volume": 0.5418198464641293
+                },
+                "MSFT": {
+                  "car": -0.018076117247958386,
+                  "abnormal_log_volume": 0.28549709449780636
+                },
+                "GOOGL": {
+                  "car": -0.032403915462173145,
+                  "abnormal_log_volume": 0.11672536669572153
+                },
+                "AMZN": {
+                  "car": 0.0176595153850464,
+                  "abnormal_log_volume": 0.15292901239968515
+                },
+                "META": {
+                  "car": 0.010190380268485868,
+                  "abnormal_log_volume": -0.19523306247440075
+                },
+                "PLTR": {
+                  "car": 0.09933183304033347,
+                  "abnormal_log_volume": 1.3926951379313515
+                },
+                "PANW": {
+                  "car": 0.0039034633815109273,
+                  "abnormal_log_volume": 0.43599474735398047
+                },
+                "CRWD": {
+                  "car": 0.04212515299389892,
+                  "abnormal_log_volume": 0.6414730431192481
+                },
+                "FTNT": {
+                  "car": -0.010639984189334983,
+                  "abnormal_log_volume": 0.09665846385025922
+                },
+                "ZS": {
+                  "car": 0.03537673123285891,
+                  "abnormal_log_volume": 0.3250163911820856
+                }
+              },
+              "likely_firm_specific_announcement": [
+                "AVGO"
+              ],
+              "by_portfolio": {
+                "ai_infrastructure": {
+                  "n": 4,
+                  "car_equal_weighted": -0.011751463448407894,
+                  "t_stat": -0.36679834594451594,
+                  "ci95_conventional": [
+                    -0.07454582610991117,
+                    0.05104289921309538
+                  ],
+                  "randomisation_p": 0.3206,
+                  "abnormal_log_volume": 0.7185770941357754,
+                  "excluding_confounded": {
+                    "excluded": [
+                      "AVGO"
+                    ],
+                    "n": 3,
+                    "car_equal_weighted": -0.04072996776509107
+                  }
+                },
+                "ai_platform": {
+                  "n": 5,
+                  "car_equal_weighted": 0.01534033919674684,
+                  "t_stat": 0.6700612743628205,
+                  "ci95_conventional": [
+                    -0.029531773214488084,
+                    0.06021245160798177
+                  ],
+                  "randomisation_p": 0.3408,
+                  "abnormal_log_volume": 0.35052270981003275,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 5,
+                    "car_equal_weighted": 0.01534033919674684
+                  }
+                },
+                "cyber_resilience": {
+                  "n": 4,
+                  "car_equal_weighted": 0.017691340854733444,
+                  "t_stat": 1.4050212905113602,
+                  "ci95_conventional": [
+                    -0.00698802045420267,
+                    0.04237070216366956
+                  ],
+                  "randomisation_p": 0.5254,
+                  "abnormal_log_volume": 0.37478566137639335,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 4,
+                    "car_equal_weighted": 0.017691340854733444
+                  }
+                }
+              },
+              "h4_ai_minus_cyber": {
+                "estimate": -0.014391802833610929,
+                "ai_mean": 0.003299538021122514,
+                "cyber_mean": 0.017691340854733444
+              }
+            },
+            "[-3,3]": {
+              "sessions": [
+                "2023-05-24",
+                "2023-05-25",
+                "2023-05-26",
+                "2023-05-30",
+                "2023-05-31",
+                "2023-06-01",
+                "2023-06-02"
+              ],
+              "available": true,
+              "by_security": {
+                "NVDA": {
+                  "car": 0.10620705330701906,
+                  "abnormal_log_volume": 0.4765020743360431
+                },
+                "AMD": {
+                  "car": -0.032961708644432736,
+                  "abnormal_log_volume": 0.11273464016278112
+                },
+                "AVGO": {
+                  "car": 0.09340204869871506,
+                  "abnormal_log_volume": 1.1296337285930598
+                },
+                "ORCL": {
+                  "car": 0.02700749814556889,
+                  "abnormal_log_volume": 0.3753244095999406
+                },
+                "MSFT": {
+                  "car": -0.00397988794046481,
+                  "abnormal_log_volume": 0.14887981332758216
+                },
+                "GOOGL": {
+                  "car": -0.05391623273951446,
+                  "abnormal_log_volume": 0.06880164599514416
+                },
+                "AMZN": {
+                  "car": 0.00041777188480178647,
+                  "abnormal_log_volume": 0.023361230523470056
+                },
+                "META": {
+                  "car": 0.006408282666397629,
+                  "abnormal_log_volume": -0.2930063496795441
+                },
+                "PLTR": {
+                  "car": 0.044186524909310354,
+                  "abnormal_log_volume": 1.202105463332046
+                },
+                "PANW": {
+                  "car": 0.07962842423351515,
+                  "abnormal_log_volume": 0.525905075681802
+                },
+                "CRWD": {
+                  "car": -0.01688902981843831,
+                  "abnormal_log_volume": 0.6036315525318656
+                },
+                "FTNT": {
+                  "car": -0.07055682287355651,
+                  "abnormal_log_volume": 0.18094904648289756
+                },
+                "ZS": {
+                  "car": 0.05135443232820662,
+                  "abnormal_log_volume": 0.42477104340003713
+                }
+              },
+              "likely_firm_specific_announcement": [
+                "NVDA",
+                "AVGO",
+                "PANW"
+              ],
+              "by_portfolio": {
+                "ai_infrastructure": {
+                  "n": 4,
+                  "car_equal_weighted": 0.048413722876717566,
+                  "t_stat": 1.5034033384402574,
+                  "ci95_conventional": [
+                    -0.014703668452753144,
+                    0.11153111420618828
+                  ],
+                  "randomisation_p": 0.0,
+                  "abnormal_log_volume": 0.5235487131729561,
+                  "excluding_confounded": {
+                    "excluded": [
+                      "NVDA",
+                      "AVGO"
+                    ],
+                    "n": 2,
+                    "car_equal_weighted": -0.002977105249431922
+                  }
+                },
+                "ai_platform": {
+                  "n": 5,
+                  "car_equal_weighted": -0.001376708243893901,
+                  "t_stat": -0.08789179268957334,
+                  "ci95_conventional": [
+                    -0.03207750607108571,
+                    0.029324089583297908
+                  ],
+                  "randomisation_p": 0.9668,
+                  "abnormal_log_volume": 0.23002836069973967,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 5,
+                    "car_equal_weighted": -0.001376708243893901
+                  }
+                },
+                "cyber_resilience": {
+                  "n": 4,
+                  "car_equal_weighted": 0.010884250967431737,
+                  "t_stat": 0.3213364868894138,
+                  "ci95_conventional": [
+                    -0.05550451210978421,
+                    0.07727301404464768
+                  ],
+                  "randomisation_p": 0.8422,
+                  "abnormal_log_volume": 0.4338141795241506,
+                  "excluding_confounded": {
+                    "excluded": [
+                      "PANW"
+                    ],
+                    "n": 3,
+                    "car_equal_weighted": -0.012030473454596064
+                  }
+                }
+              },
+              "h4_ai_minus_cyber": {
+                "estimate": 0.009868121286723906,
+                "ai_mean": 0.020752372254155643,
+                "cyber_mean": 0.010884250967431737
+              }
+            },
+            "[0,5]": {
+              "sessions": [
+                "2023-05-30",
+                "2023-05-31",
+                "2023-06-01",
+                "2023-06-02",
+                "2023-06-05",
+                "2023-06-06"
+              ],
+              "available": true,
+              "by_security": {
+                "NVDA": {
+                  "car": 0.0037241204621382314,
+                  "abnormal_log_volume": 0.16736391045291654
+                },
+                "AMD": {
+                  "car": 0.0005014834258838738,
+                  "abnormal_log_volume": -0.012046317487580893
+                },
+                "AVGO": {
+                  "car": -0.01917772247000311,
+                  "abnormal_log_volume": 1.0680071199684953
+                },
+                "ORCL": {
+                  "car": 0.010558137826817264,
+                  "abnormal_log_volume": 0.21139097646571514
+                },
+                "MSFT": {
+                  "car": -0.01736862952647336,
+                  "abnormal_log_volume": -0.014300140356908742
+                },
+                "GOOGL": {
+                  "car": 0.0017615239799534214,
+                  "abnormal_log_volume": -0.024043519295808835
+                },
+                "AMZN": {
+                  "car": 0.03289507177450499,
+                  "abnormal_log_volume": -0.14606142364164043
+                },
+                "META": {
+                  "car": 0.005201148886293918,
+                  "abnormal_log_volume": -0.3116956693707067
+                },
+                "PLTR": {
+                  "car": 0.09770803958698096,
+                  "abnormal_log_volume": 1.1725250943645875
+                },
+                "PANW": {
+                  "car": 0.04080172938499943,
+                  "abnormal_log_volume": 0.46876424264501537
+                },
+                "CRWD": {
+                  "car": -0.02243498447383476,
+                  "abnormal_log_volume": 0.5992239595892279
+                },
+                "FTNT": {
+                  "car": 0.003102391350078313,
+                  "abnormal_log_volume": 0.10960104358615119
+                },
+                "ZS": {
+                  "car": 0.1420072544226102,
+                  "abnormal_log_volume": 0.6237154519795975
+                }
+              },
+              "likely_firm_specific_announcement": [
+                "AVGO"
+              ],
+              "by_portfolio": {
+                "ai_infrastructure": {
+                  "n": 4,
+                  "car_equal_weighted": -0.0010984951887909353,
+                  "t_stat": -0.1721602533053371,
+                  "ci95_conventional": [
+                    -0.013604579076874334,
+                    0.011407588699292462
+                  ],
+                  "randomisation_p": 0.944,
+                  "abnormal_log_volume": 0.3586789223498865,
+                  "excluding_confounded": {
+                    "excluded": [
+                      "AVGO"
+                    ],
+                    "n": 3,
+                    "car_equal_weighted": 0.004927913904946456
+                  }
+                },
+                "ai_platform": {
+                  "n": 5,
+                  "car_equal_weighted": 0.024039430940251988,
+                  "t_stat": 1.196650819001252,
+                  "ci95_conventional": [
+                    -0.015334865968029826,
+                    0.0634137278485338
+                  ],
+                  "randomisation_p": 0.2596,
+                  "abnormal_log_volume": 0.13528486833990455,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 5,
+                    "car_equal_weighted": 0.024039430940251988
+                  }
+                },
+                "cyber_resilience": {
+                  "n": 4,
+                  "car_equal_weighted": 0.04086909767096329,
+                  "t_stat": 1.1312351244207544,
+                  "ci95_conventional": [
+                    -0.029941496612965773,
+                    0.11167969195489236
+                  ],
+                  "randomisation_p": 0.3612,
+                  "abnormal_log_volume": 0.450326174449998,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 4,
+                    "car_equal_weighted": 0.04086909767096329
+                  }
+                }
+              },
+              "h4_ai_minus_cyber": {
+                "estimate": -0.02800207834361927,
+                "ai_mean": 0.01286701932734402,
+                "cyber_mean": 0.04086909767096329
+              }
+            },
+            "episode[2023-05-30..2023-05-30]": {
+              "sessions": [
+                "2023-05-30"
+              ],
+              "available": true,
+              "by_security": {
+                "NVDA": {
+                  "car": 0.028917003396943683,
+                  "abnormal_log_volume": 0.6091960989550529
+                },
+                "AMD": {
+                  "car": -0.012435304229783999,
+                  "abnormal_log_volume": 0.33228959732696595
+                },
+                "AVGO": {
+                  "car": -0.011432614753918305,
+                  "abnormal_log_volume": 1.7139599775105125
+                },
+                "ORCL": {
+                  "car": 0.006356853625354535,
+                  "abnormal_log_volume": 0.3440299467571677
+                },
+                "MSFT": {
+                  "car": -0.009879344395319054,
+                  "abnormal_log_volume": 0.06567674113845356
+                },
+                "GOOGL": {
+                  "car": -0.012578460941632735,
+                  "abnormal_log_volume": 0.09073697182884288
+                },
+                "AMZN": {
+                  "car": 0.007565849966134375,
+                  "abnormal_log_volume": -0.024599892118850164
+                },
+                "META": {
+                  "car": -0.005124925658494411,
+                  "abnormal_log_volume": -0.24391587820506544
+                },
+                "PLTR": {
+                  "car": 0.06802864811381334,
+                  "abnormal_log_volume": 1.532127617091973
+                },
+                "PANW": {
+                  "car": -0.0006909538788947905,
+                  "abnormal_log_volume": 0.3898965850313587
+                },
+                "CRWD": {
+                  "car": 0.02429792538048729,
+                  "abnormal_log_volume": 0.5567766064109954
+                },
+                "FTNT": {
+                  "car": 0.0058978195336735085,
+                  "abnormal_log_volume": -0.10056216025978948
+                },
+                "ZS": {
+                  "car": 0.02589254059954683,
+                  "abnormal_log_volume": 0.17560214318639566
+                }
+              },
+              "likely_firm_specific_announcement": [],
+              "by_portfolio": {
+                "ai_infrastructure": {
+                  "n": 4,
+                  "car_equal_weighted": 0.0028514845096489785,
+                  "t_stat": 0.2939231863483899,
+                  "ci95_conventional": [
+                    -0.01616338025262742,
+                    0.021866349271925375
+                  ],
+                  "randomisation_p": 0.659,
+                  "abnormal_log_volume": 0.7498689051374248,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 4,
+                    "car_equal_weighted": 0.0028514845096489785
+                  }
+                },
+                "ai_platform": {
+                  "n": 5,
+                  "car_equal_weighted": 0.009602353416900303,
+                  "t_stat": 0.6397165597496272,
+                  "ci95_conventional": [
+                    -0.019817883421255997,
+                    0.039022590255056604
+                  ],
+                  "randomisation_p": 0.2022,
+                  "abnormal_log_volume": 0.2840051119470708,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 5,
+                    "car_equal_weighted": 0.009602353416900303
+                  }
+                },
+                "cyber_resilience": {
+                  "n": 4,
+                  "car_equal_weighted": 0.013849332908703209,
+                  "t_stat": 2.0861702976798866,
+                  "ci95_conventional": [
+                    0.0008375991440882184,
+                    0.0268610666733182
+                  ],
+                  "randomisation_p": 0.3198,
+                  "abnormal_log_volume": 0.25542829359224006,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 4,
+                    "car_equal_weighted": 0.013849332908703209
+                  }
+                }
+              },
+              "h4_ai_minus_cyber": {
+                "estimate": -0.007247365672803494,
+                "ai_mean": 0.006601967235899715,
+                "cyber_mean": 0.013849332908703209
+              }
+            }
+          }
+        }
+      }
+    },
+    "warning2026": {
+      "event_id": "warning2026",
+      "market_t0": "2026-09-14",
+      "t0_is_trading_session_with_data": true,
+      "last_session_available": "2026-09-14",
+      "n_estimation_sessions": 220,
+      "specifications": {
+        "broad_spy": {
+          "benchmarks": {
+            "NVDA": "SPY",
+            "AMD": "SPY",
+            "AVGO": "SPY",
+            "ORCL": "SPY",
+            "MSFT": "SPY",
+            "GOOGL": "SPY",
+            "AMZN": "SPY",
+            "META": "SPY",
+            "PLTR": "SPY",
+            "PANW": "SPY",
+            "CRWD": "SPY",
+            "FTNT": "SPY",
+            "ZS": "SPY"
+          },
+          "market_models": {
+            "NVDA": {
+              "alpha": -0.0007101172889610769,
+              "beta": 1.8983775707086685,
+              "sigma": 0.017667941420716742,
+              "n_est": 220
+            },
+            "AMD": {
+              "alpha": 0.003133688229154822,
+              "beta": 3.261609400916901,
+              "sigma": 0.03709584729270974,
+              "n_est": 220
+            },
+            "AVGO": {
+              "alpha": -0.000940953856847253,
+              "beta": 2.19671641813441,
+              "sigma": 0.023823591635527375,
+              "n_est": 220
+            },
+            "ORCL": {
+              "alpha": -0.004872544721377505,
+              "beta": 1.933893179282658,
+              "sigma": 0.0323197024610496,
+              "n_est": 220
+            },
+            "MSFT": {
+              "alpha": -0.001068757718721446,
+              "beta": 0.9034517273681469,
+              "sigma": 0.01930496953728378,
+              "n_est": 220
+            },
+            "GOOGL": {
+              "alpha": 0.0006981765396415673,
+              "beta": 1.3256668134639624,
+              "sigma": 0.016299584475471116,
+              "n_est": 220
+            },
+            "AMZN": {
+              "alpha": -0.0007012481808625047,
+              "beta": 1.412852382948646,
+              "sigma": 0.01568464183920118,
+              "n_est": 220
+            },
+            "META": {
+              "alpha": -0.00235401461474901,
+              "beta": 1.3933621316385723,
+              "sigma": 0.0223021544365051,
+              "n_est": 220
+            },
+            "PLTR": {
+              "alpha": -0.002500995301240944,
+              "beta": 1.6119747299291167,
+              "sigma": 0.03083349526604907,
+              "n_est": 220
+            },
+            "PANW": {
+              "alpha": 0.0015700478206898433,
+              "beta": 1.22239852626221,
+              "sigma": 0.024839929416062084,
+              "n_est": 220
+            },
+            "CRWD": {
+              "alpha": 0.0015454683870128234,
+              "beta": 1.4427528938404517,
+              "sigma": 0.028649051952302787,
+              "n_est": 220
+            },
+            "FTNT": {
+              "alpha": 0.002444153338481195,
+              "beta": 0.9331971127094478,
+              "sigma": 0.023657861048291328,
+              "n_est": 220
+            },
+            "ZS": {
+              "alpha": -0.00345012310619572,
+              "beta": 0.8565513564306375,
+              "sigma": 0.04244001677623373,
+              "n_est": 220
+            }
+          },
+          "windows": {
+            "[-1,1]": {
+              "sessions": [],
+              "available": false,
+              "reason": "event window extends past the last session with published data"
+            },
+            "[-3,3]": {
+              "sessions": [],
+              "available": false,
+              "reason": "event window extends past the last session with published data"
+            },
+            "[0,5]": {
+              "sessions": [],
+              "available": false,
+              "reason": "event window extends past the last session with published data"
+            },
+            "episode[2026-09-08..2026-09-14]": {
+              "sessions": [
+                "2026-09-08",
+                "2026-09-09",
+                "2026-09-10",
+                "2026-09-11",
+                "2026-09-14"
+              ],
+              "available": true,
+              "by_security": {
+                "NVDA": {
+                  "car": -0.06020759883888627,
+                  "abnormal_log_volume": -0.46215687837077013
+                },
+                "AMD": {
+                  "car": 0.05662760620812263,
+                  "abnormal_log_volume": -0.5553197160017689
+                },
+                "AVGO": {
+                  "car": -0.006100813862093962,
+                  "abnormal_log_volume": 0.07178347832098453
+                },
+                "ORCL": {
+                  "car": -0.044836835993926835,
+                  "abnormal_log_volume": 0.5663801220781224
+                },
+                "MSFT": {
+                  "car": 0.027693251300007632,
+                  "abnormal_log_volume": -0.5586899996302748
+                },
+                "GOOGL": {
+                  "car": 0.044414179438258636,
+                  "abnormal_log_volume": -0.13204494762200625
+                },
+                "AMZN": {
+                  "car": 0.0012759810463565894,
+                  "abnormal_log_volume": -0.4236601384494314
+                },
+                "META": {
+                  "car": 0.10490826395761367,
+                  "abnormal_log_volume": 0.34378566889346374
+                },
+                "PLTR": {
+                  "car": 0.02624097901301464,
+                  "abnormal_log_volume": -0.7042222761313823
+                },
+                "PANW": {
+                  "car": 0.12218844835874718,
+                  "abnormal_log_volume": -0.16414330251030051
+                },
+                "CRWD": {
+                  "car": 0.10925850240088592,
+                  "abnormal_log_volume": -0.22426027717299846
+                },
+                "FTNT": {
+                  "car": 0.08427182873328445,
+                  "abnormal_log_volume": -0.48954408944421424
+                },
+                "ZS": {
+                  "car": 0.14913449138548718,
+                  "abnormal_log_volume": 0.4650349287139761
+                }
+              },
+              "likely_firm_specific_announcement": [
+                "ZS"
+              ],
+              "by_portfolio": {
+                "ai_infrastructure": {
+                  "n": 4,
+                  "car_equal_weighted": -0.01362941062169611,
+                  "t_stat": -0.5234292405143537,
+                  "ci95_conventional": [
+                    -0.06466523886903267,
+                    0.037406417625640453
+                  ],
+                  "randomisation_p": 0.7218,
+                  "abnormal_log_volume": -0.09482824849335802,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 4,
+                    "car_equal_weighted": -0.01362941062169611
+                  }
+                },
+                "ai_platform": {
+                  "n": 5,
+                  "car_equal_weighted": 0.040906530951050235,
+                  "t_stat": 2.348319193258568,
+                  "ci95_conventional": [
+                    0.006764323667548984,
+                    0.0750487382345515
+                  ],
+                  "randomisation_p": 0.1316,
+                  "abnormal_log_volume": -0.2949663385879262,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 5,
+                    "car_equal_weighted": 0.040906530951050235
+                  }
+                },
+                "cyber_resilience": {
+                  "n": 4,
+                  "car_equal_weighted": 0.11621331771960118,
+                  "t_stat": 8.606162895148548,
+                  "ci95_conventional": [
+                    0.08974645838803763,
+                    0.14268017705116473
+                  ],
+                  "randomisation_p": 0.0536,
+                  "abnormal_log_volume": -0.10322818510338427,
+                  "excluding_confounded": {
+                    "excluded": [
+                      "ZS"
+                    ],
+                    "n": 3,
+                    "car_equal_weighted": 0.10523959316430585
+                  }
+                }
+              },
+              "h4_ai_minus_cyber": {
+                "estimate": -0.09954498302310488,
+                "ai_mean": 0.0166683346964963,
+                "cyber_mean": 0.11621331771960118
+              }
+            }
+          }
+        },
+        "sector_adjusted": {
+          "benchmarks": {
+            "NVDA": "SOXX",
+            "AMD": "SOXX",
+            "AVGO": "SOXX",
+            "ORCL": "QQQ",
+            "MSFT": "QQQ",
+            "GOOGL": "QQQ",
+            "AMZN": "QQQ",
+            "META": "QQQ",
+            "PLTR": "QQQ",
+            "PANW": "QQQ",
+            "CRWD": "QQQ",
+            "FTNT": "QQQ",
+            "ZS": "QQQ"
+          },
+          "market_models": {
+            "NVDA": {
+              "alpha": -0.0010547154381506953,
+              "beta": 0.4758151380491645,
+              "sigma": 0.019070105307158434,
+              "n_est": 220
+            },
+            "AMD": {
+              "alpha": 0.0013271550470616762,
+              "beta": 1.2078228278423915,
+              "sigma": 0.02888032103212917,
+              "n_est": 220
+            },
+            "AVGO": {
+              "alpha": -0.001724828226629423,
+              "beta": 0.67436639870029,
+              "sigma": 0.022436968852754716,
+              "n_est": 220
+            },
+            "ORCL": {
+              "alpha": -0.00469625402379025,
+              "beta": 1.368716509709603,
+              "sigma": 0.03164325768586296,
+              "n_est": 220
+            },
+            "MSFT": {
+              "alpha": -0.0009135631119113612,
+              "beta": 0.5377790685088832,
+              "sigma": 0.019559960822959466,
+              "n_est": 220
+            },
+            "GOOGL": {
+              "alpha": 0.0009347092777081533,
+              "beta": 0.7768082042119658,
+              "sigma": 0.017033136591514186,
+              "n_est": 220
+            },
+            "AMZN": {
+              "alpha": -0.0004781613924694554,
+              "beta": 0.8683676349217938,
+              "sigma": 0.01620732778061572,
+              "n_est": 220
+            },
+            "META": {
+              "alpha": -0.0020970720277781454,
+              "beta": 0.804850149559039,
+              "sigma": 0.02296621777647744,
+              "n_est": 220
+            },
+            "PLTR": {
+              "alpha": -0.0022796944730309222,
+              "beta": 1.0371187503803312,
+              "sigma": 0.030938575587592235,
+              "n_est": 220
+            },
+            "PANW": {
+              "alpha": 0.0016988538818897914,
+              "beta": 0.840910209428579,
+              "sigma": 0.024625704326801362,
+              "n_est": 220
+            },
+            "CRWD": {
+              "alpha": 0.0016534547726460215,
+              "beta": 1.0539497009590397,
+              "sigma": 0.028029718840433,
+              "n_est": 220
+            },
+            "FTNT": {
+              "alpha": 0.0025157995681876757,
+              "beta": 0.6792024679746294,
+              "sigma": 0.023357242737259462,
+              "n_est": 220
+            },
+            "ZS": {
+              "alpha": -0.0033292332981397508,
+              "beta": 0.5464896920740754,
+              "sigma": 0.04247122229516374,
+              "n_est": 220
+            }
+          },
+          "windows": {
+            "[-1,1]": {
+              "sessions": [],
+              "available": false,
+              "reason": "event window extends past the last session with published data"
+            },
+            "[-3,3]": {
+              "sessions": [],
+              "available": false,
+              "reason": "event window extends past the last session with published data"
+            },
+            "[0,5]": {
+              "sessions": [],
+              "available": false,
+              "reason": "event window extends past the last session with published data"
+            },
+            "episode[2026-09-08..2026-09-14]": {
+              "sessions": [
+                "2026-09-08",
+                "2026-09-09",
+                "2026-09-10",
+                "2026-09-11",
+                "2026-09-14"
+              ],
+              "available": true,
+              "by_security": {
+                "NVDA": {
+                  "car": -0.06055749595862567,
+                  "abnormal_log_volume": -0.46215687837077013
+                },
+                "AMD": {
+                  "car": 0.07933746127104405,
+                  "abnormal_log_volume": -0.5553197160017689
+                },
+                "AVGO": {
+                  "car": 0.0008864175607762557,
+                  "abnormal_log_volume": 0.07178347832098453
+                },
+                "ORCL": {
+                  "car": -0.050491064261496604,
+                  "abnormal_log_volume": 0.5663801220781224
+                },
+                "MSFT": {
+                  "car": 0.02329548880200477,
+                  "abnormal_log_volume": -0.5586899996302748
+                },
+                "GOOGL": {
+                  "car": 0.03774875073943379,
+                  "abnormal_log_volume": -0.13204494762200625
+                },
+                "AMZN": {
+                  "car": -0.005128502097363656,
+                  "abnormal_log_volume": -0.4236601384494314
+                },
+                "META": {
+                  "car": 0.09770157632935664,
+                  "abnormal_log_volume": 0.34378566889346374
+                },
+                "PLTR": {
+                  "car": 0.019735057817945004,
+                  "abnormal_log_volume": -0.7042222761313823
+                },
+                "PANW": {
+                  "car": 0.11819552204777918,
+                  "abnormal_log_volume": -0.16414330251030051
+                },
+                "CRWD": {
+                  "car": 0.10560768082398143,
+                  "abnormal_log_volume": -0.22426027717299846
+                },
+                "FTNT": {
+                  "car": 0.08186704167773531,
+                  "abnormal_log_volume": -0.48954408944421424
+                },
+                "ZS": {
+                  "car": 0.14559793922214181,
+                  "abnormal_log_volume": 0.4650349287139761
+                }
+              },
+              "likely_firm_specific_announcement": [
+                "ZS"
+              ],
+              "by_portfolio": {
+                "ai_infrastructure": {
+                  "n": 4,
+                  "car_equal_weighted": -0.0077061703470754925,
+                  "t_stat": -0.24095280748951303,
+                  "ci95_conventional": [
+                    -0.0703910339833929,
+                    0.05497869328924192
+                  ],
+                  "randomisation_p": 0.8054,
+                  "abnormal_log_volume": -0.09482824849335802,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 4,
+                    "car_equal_weighted": -0.0077061703470754925
+                  }
+                },
+                "ai_platform": {
+                  "n": 5,
+                  "car_equal_weighted": 0.034670474318275316,
+                  "t_stat": 2.0153827707304264,
+                  "ci95_conventional": [
+                    0.0009527455320997233,
+                    0.0683882031044509
+                  ],
+                  "randomisation_p": 0.1844,
+                  "abnormal_log_volume": -0.2949663385879262,
+                  "excluding_confounded": {
+                    "excluded": [],
+                    "n": 5,
+                    "car_equal_weighted": 0.034670474318275316
+                  }
+                },
+                "cyber_resilience": {
+                  "n": 4,
+                  "car_equal_weighted": 0.11281704594290944,
+                  "t_stat": 8.501102399450193,
+                  "ci95_conventional": [
+                    0.08680613586818743,
+                    0.13882795601763145
+                  ],
+                  "randomisation_p": 0.0556,
+                  "abnormal_log_volume": -0.10322818510338427,
+                  "excluding_confounded": {
+                    "excluded": [
+                      "ZS"
+                    ],
+                    "n": 3,
+                    "car_equal_weighted": 0.10189008151649864
+                  }
+                }
+              },
+              "h4_ai_minus_cyber": {
+                "estimate": -0.09698063592034559,
+                "ai_mean": 0.015836410022563845,
+                "cyber_mean": 0.11281704594290944
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

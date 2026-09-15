@@ -1,0 +1,205 @@
+{
+  "weights": {
+    "publication": 1.0,
+    "like": 0.3,
+    "comment": 0.7
+  },
+  "params": {
+    "window_days": 90,
+    "gamma": 0.1,
+    "dormancy": 2,
+    "max_videos": 500,
+    "qh_rule": "per-topic 25th percentile of nonzero window scores"
+  },
+  "synthetic": {
+    "rq1": {
+      "total_volume": 63.0,
+      "persistent_Ph": 10.459927473535231,
+      "acute_Ph": 1.0
+    },
+    "rq2": {
+      "n_unique_perms": 718,
+      "Ph_std": 3.444687843676371e-16,
+      "thgee_std": 2.0398180572350517,
+      "thgee_range": [
+        1.8921374563936015,
+        10.483210012929936
+      ],
+      "reduction_identity_max_abs_diff": 4.440892098500626e-15
+    },
+    "rq3": {
+      "continuous_R": 0.0,
+      "reemergent_R": 0.35302924373700345,
+      "formerly_active_R": 0.0,
+      "late_first_R": 0.0
+    },
+    "rq4_d": {
+      "1": 0.5247903053815051,
+      "2": 0.26548504701606634,
+      "3": 0.26548504701606634,
+      "4": 0.0
+    },
+    "rq4_gamma": {
+      "early": {
+        "0.0": 5.675000094851094,
+        "0.1": 4.816461256772407,
+        "0.5": 2.6187433409602123,
+        "1.0": 1.6145861522840068,
+        "2.0": 1.142241052939044
+      },
+      "late": {
+        "0.0": 5.675000094851094,
+        "0.1": 6.652425387336021,
+        "0.5": 11.064664943443786,
+        "1.0": 15.247016060010903,
+        "2.0": 18.523955206941153
+      }
+    }
+  },
+  "topics": {
+    "meditation music": {
+      "Ph": 8444.304081712218,
+      "thgee": 10501.866120816958,
+      "recency_ratio": 1.243662712663414,
+      "R": 0.06887272115693861,
+      "n_reactivations": 3,
+      "windows": 56,
+      "active_windows": 48,
+      "pattern": "persistent",
+      "n_videos": 500,
+      "span_years": 13.7,
+      "span": [
+        "2012-11-16",
+        "2026-07-30"
+      ]
+    },
+    "lofi hip hop": {
+      "Ph": 4334.12826437383,
+      "thgee": 3141.8297479841203,
+      "recency_ratio": 0.7249046535631392,
+      "R": 0.07197232491479937,
+      "n_reactivations": 2,
+      "windows": 41,
+      "active_windows": 35,
+      "pattern": "persistent",
+      "n_videos": 500,
+      "span_years": 9.9,
+      "span": [
+        "2016-09-07",
+        "2026-07-31"
+      ]
+    },
+    "yoga for beginners": {
+      "Ph": 1258.3581645146885,
+      "thgee": 11279.666750545357,
+      "recency_ratio": 8.963796690503925,
+      "R": 0.13741725712087174,
+      "n_reactivations": 6,
+      "windows": 64,
+      "active_windows": 46,
+      "pattern": "persistent",
+      "n_videos": 500,
+      "span_years": 15.6,
+      "span": [
+        "2010-12-06",
+        "2026-07-31"
+      ]
+    },
+    "minecraft tutorial": {
+      "Ph": 982.6843262444088,
+      "thgee": 27288.461687728275,
+      "recency_ratio": 27.769305929624863,
+      "R": 0.05305132440552636,
+      "n_reactivations": 2,
+      "windows": 60,
+      "active_windows": 38,
+      "pattern": "persistent",
+      "n_videos": 500,
+      "span_years": 14.6,
+      "span": [
+        "2011-12-06",
+        "2026-07-28"
+      ]
+    },
+    "how to tie a tie": {
+      "Ph": 1765.2384343433444,
+      "thgee": 5992.147923184182,
+      "recency_ratio": 3.394526091549336,
+      "R": 0.12234133652591908,
+      "n_reactivations": 7,
+      "windows": 76,
+      "active_windows": 62,
+      "pattern": "persistent",
+      "n_videos": 450,
+      "span_years": 18.5,
+      "span": [
+        "2008-01-26",
+        "2026-07-30"
+      ]
+    },
+    "harlem shake": {
+      "Ph": 105.9350019399398,
+      "thgee": 815.7704390516624,
+      "recency_ratio": 7.700669505950131,
+      "R": 0.17936649541467858,
+      "n_reactivations": 7,
+      "windows": 81,
+      "active_windows": 47,
+      "pattern": "acute",
+      "n_videos": 500,
+      "span_years": 19.7,
+      "span": [
+        "2006-10-31",
+        "2026-07-29"
+      ]
+    },
+    "gangnam style": {
+      "Ph": 6399.711226144086,
+      "thgee": 10136.195953161872,
+      "recency_ratio": 1.58385208253671,
+      "R": 0.1343995984157036,
+      "n_reactivations": 6,
+      "windows": 58,
+      "active_windows": 50,
+      "pattern": "acute",
+      "n_videos": 500,
+      "span_years": 14.0,
+      "span": [
+        "2012-07-12",
+        "2026-07-30"
+      ]
+    },
+    "ice bucket challenge": {
+      "Ph": 374.3876552870744,
+      "thgee": 2068.860019681439,
+      "recency_ratio": 5.525983537291236,
+      "R": 0.15448009029763524,
+      "n_reactivations": 5,
+      "windows": 50,
+      "active_windows": 36,
+      "pattern": "acute",
+      "n_videos": 500,
+      "span_years": 12.1,
+      "span": [
+        "2014-06-08",
+        "2026-07-31"
+      ]
+    },
+    "fidget spinner": {
+      "Ph": 5659.0088707057375,
+      "thgee": 15012.242564617989,
+      "recency_ratio": 2.6528042114105763,
+      "R": 0.06397728824877054,
+      "n_reactivations": 2,
+      "windows": 39,
+      "active_windows": 34,
+      "pattern": "acute",
+      "n_videos": 500,
+      "span_years": 9.5,
+      "span": [
+        "2017-02-09",
+        "2026-07-30"
+      ]
+    }
+  }
+}

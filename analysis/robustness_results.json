@@ -1,0 +1,2288 @@
+{
+  "variants": {
+    "v0_baseline": {
+      "50": {
+        "meditation music": {
+          "Ph": 594.58734488326,
+          "thgee": 460.9448104634449,
+          "recency_ratio": 0.7752348152548484,
+          "R": 0.14480175371323212,
+          "n_reactivations": 4,
+          "coverage": 0.5471698113207547,
+          "intensity": 117882.23619736075,
+          "windows": 53
+        },
+        "lofi hip hop": {
+          "Ph": 2346.5844452256506,
+          "thgee": 2046.1697997063047,
+          "recency_ratio": 0.8719779097954186,
+          "R": 0.11383094084525558,
+          "n_reactivations": 3,
+          "coverage": 0.7,
+          "intensity": 65338.104216580614,
+          "windows": 40
+        },
+        "yoga for beginners": {
+          "Ph": 235.93691370135735,
+          "thgee": 3005.3423648809035,
+          "recency_ratio": 12.737906577370023,
+          "R": 0.2645005694847539,
+          "n_reactivations": 8,
+          "coverage": 0.47619047619047616,
+          "intensity": 96989.39475641923,
+          "windows": 63
+        },
+        "minecraft tutorial": {
+          "Ph": 2063.427300479801,
+          "thgee": 4384.185596124398,
+          "recency_ratio": 2.1247104732524185,
+          "R": 0.16888942161865084,
+          "n_reactivations": 4,
+          "coverage": 0.631578947368421,
+          "intensity": 177186.34062828368,
+          "windows": 38
+        },
+        "how to tie a tie": {
+          "Ph": 162.52243461629533,
+          "thgee": 2811.876215063216,
+          "recency_ratio": 17.301465005135253,
+          "R": 0.15328795467892156,
+          "n_reactivations": 5,
+          "coverage": 0.4520547945205479,
+          "intensity": 78830.79190395623,
+          "windows": 73
+        },
+        "harlem shake": {
+          "Ph": 11.634935762624828,
+          "thgee": 14.645399270589566,
+          "recency_ratio": 1.2587434575818905,
+          "R": 0.31544654920364396,
+          "n_reactivations": 5,
+          "coverage": 0.2222222222222222,
+          "intensity": 90588.66886612089,
+          "windows": 72
+        },
+        "gangnam style": {
+          "Ph": 40.12954910989575,
+          "thgee": 59.92588651357332,
+          "recency_ratio": 1.4933107359234168,
+          "R": 0.4784936386133547,
+          "n_reactivations": 9,
+          "coverage": 0.29411764705882354,
+          "intensity": 307696.11545050045,
+          "windows": 68
+        },
+        "ice bucket challenge": {
+          "Ph": 17.071339638016042,
+          "thgee": 116.39772834599107,
+          "recency_ratio": 6.818312494163365,
+          "R": 0.4441543526414233,
+          "n_reactivations": 5,
+          "coverage": 0.24489795918367346,
+          "intensity": 135739.85757642204,
+          "windows": 49
+        },
+        "fidget spinner": {
+          "Ph": 590.6248374679521,
+          "thgee": 3109.6334850423,
+          "recency_ratio": 5.264989360036915,
+          "R": 0.1759751941011718,
+          "n_reactivations": 3,
+          "coverage": 0.5294117647058824,
+          "intensity": 172220.60845300904,
+          "windows": 34
+        },
+        "mannequin challenge": {
+          "Ph": 198.1381264349386,
+          "thgee": 1914.749739946581,
+          "recency_ratio": 9.663711746942937,
+          "R": 0.35829615353675237,
+          "n_reactivations": 6,
+          "coverage": 0.4594594594594595,
+          "intensity": 100934.04151723011,
+          "windows": 37
+        },
+        "solar eclipse": {
+          "Ph": 89.33476689309927,
+          "thgee": 767.8583942797986,
+          "recency_ratio": 8.595291855394233,
+          "R": 0.27917090612050705,
+          "n_reactivations": 7,
+          "coverage": 0.4,
+          "intensity": 77558.91429786452,
+          "windows": 65
+        },
+        "super bowl halftime": {
+          "Ph": 50.85189990211617,
+          "thgee": 120.97985645762229,
+          "recency_ratio": 2.3790626641382926,
+          "R": 0.522511862569227,
+          "n_reactivations": 8,
+          "coverage": 0.32653061224489793,
+          "intensity": 178428.5639067193,
+          "windows": 49
+        },
+        "world cup final": {
+          "Ph": 56.828834709092625,
+          "thgee": 3326.668429036314,
+          "recency_ratio": 58.53838893698178,
+          "R": 0.2036640039026724,
+          "n_reactivations": 4,
+          "coverage": 0.3508771929824561,
+          "intensity": 105222.23677616722,
+          "windows": 57
+        },
+        "summer olympics": {
+          "Ph": 114.57122343502107,
+          "thgee": 10803.24503976069,
+          "recency_ratio": 94.2928312700417,
+          "R": 0.2400221466592753,
+          "n_reactivations": 5,
+          "coverage": 0.3888888888888889,
+          "intensity": 201589.78905521112,
+          "windows": 54
+        },
+        "total lunar eclipse": {
+          "Ph": 14.750886982579598,
+          "thgee": 189.27830529077406,
+          "recency_ratio": 12.831655853258631,
+          "R": 0.35388438338704115,
+          "n_reactivations": 8,
+          "coverage": 0.3076923076923077,
+          "intensity": 7783.689586028639,
+          "windows": 78
+        },
+        "chatgpt": {
+          "Ph": 26976.261186189724,
+          "thgee": 42192.606263326365,
+          "recency_ratio": 1.5640642701415763,
+          "R": 0.08528923176917594,
+          "n_reactivations": 1,
+          "coverage": 0.8571428571428571,
+          "intensity": 147738.79751174312,
+          "windows": 14
+        },
+        "deepseek ai": {
+          "Ph": 11640.699283863747,
+          "thgee": 11013.563940362837,
+          "recency_ratio": 0.9461256297231009,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 1.0,
+          "intensity": 11640.699283863747,
+          "windows": 7
+        },
+        "threads app": {
+          "Ph": 319.83729557343565,
+          "thgee": 304.73185433994684,
+          "recency_ratio": 0.9527714827427918,
+          "R": 0.22384422608794863,
+          "n_reactivations": 2,
+          "coverage": 0.75,
+          "intensity": 2195.408568036387,
+          "windows": 12
+        },
+        "flat earth": {
+          "Ph": 2120.0493168007065,
+          "thgee": 32388.29220287552,
+          "recency_ratio": 15.277140935453133,
+          "R": 0.10018389110609652,
+          "n_reactivations": 3,
+          "coverage": 0.6666666666666666,
+          "intensity": 97683.6106212274,
+          "windows": 48
+        },
+        "moon landing hoax": {
+          "Ph": 46.23783289593714,
+          "thgee": 2055.9137679934342,
+          "recency_ratio": 44.46388680499957,
+          "R": 0.24694536781307933,
+          "n_reactivations": 6,
+          "coverage": 0.3611111111111111,
+          "intensity": 43299.73707774904,
+          "windows": 72
+        },
+        "5g coronavirus": {
+          "Ph": 61.58587049664995,
+          "thgee": 84.29065378547712,
+          "recency_ratio": 1.3686687077040216,
+          "R": 0.27735428546233265,
+          "n_reactivations": 3,
+          "coverage": 0.46153846153846156,
+          "intensity": 7803.863471680963,
+          "windows": 26
+        },
+        "chemtrails": {
+          "Ph": 45.737104069328524,
+          "thgee": 576.5883594582767,
+          "recency_ratio": 12.606577770736891,
+          "R": 0.23582304928550665,
+          "n_reactivations": 6,
+          "coverage": 0.421875,
+          "intensity": 9071.288597774063,
+          "windows": 64
+        },
+        "pizzagate": {
+          "Ph": 32.84466475072695,
+          "thgee": 103.04237018581682,
+          "recency_ratio": 3.137263569832485,
+          "R": 0.3227222466306019,
+          "n_reactivations": 5,
+          "coverage": 0.4358974358974359,
+          "intensity": 3226.2343004558343,
+          "windows": 39
+        },
+        "bigfoot sighting": {
+          "Ph": 14.770899905638728,
+          "thgee": 995.102377970709,
+          "recency_ratio": 67.3691098259242,
+          "R": 0.22435945846371785,
+          "n_reactivations": 5,
+          "coverage": 0.32432432432432434,
+          "intensity": 4935.177852108702,
+          "windows": 74
+        },
+        "loch ness monster": {
+          "Ph": 54.35167667619053,
+          "thgee": 1284.2412939813046,
+          "recency_ratio": 23.62836571965191,
+          "R": 0.15927945207294555,
+          "n_reactivations": 4,
+          "coverage": 0.4262295081967213,
+          "intensity": 12291.86141730724,
+          "windows": 61
+        },
+        "area 51 aliens": {
+          "Ph": 364.38820407674785,
+          "thgee": 2389.0694127747975,
+          "recency_ratio": 6.556385157494311,
+          "R": 0.2624724321840103,
+          "n_reactivations": 6,
+          "coverage": 0.5217391304347826,
+          "intensity": 81647.11613086257,
+          "windows": 46
+        },
+        "climate change hoax": {
+          "Ph": 27.05464753165502,
+          "thgee": 571.7947994494044,
+          "recency_ratio": 21.134808678633924,
+          "R": 0.3126842013347772,
+          "n_reactivations": 8,
+          "coverage": 0.39705882352941174,
+          "intensity": 4433.319136193427,
+          "windows": 68
+        },
+        "mandela effect": {
+          "Ph": 939.5479875276518,
+          "thgee": 3110.2879826348944,
+          "recency_ratio": 3.3104088603493023,
+          "R": 0.12882902691337758,
+          "n_reactivations": 3,
+          "coverage": 0.6,
+          "intensity": 90288.01826406927,
+          "windows": 40
+        },
+        "birds aren't real": {
+          "Ph": 543.8591013035084,
+          "thgee": 1360.062969245459,
+          "recency_ratio": 2.5007634624219635,
+          "R": 0.09251542870802815,
+          "n_reactivations": 2,
+          "coverage": 0.7428571428571429,
+          "intensity": 4823.580010401643,
+          "windows": 35
+        },
+        "hollow earth": {
+          "Ph": 51.085256016845946,
+          "thgee": 1885.7312606563469,
+          "recency_ratio": 36.91341509641266,
+          "R": 0.10817205812427905,
+          "n_reactivations": 3,
+          "coverage": 0.4027777777777778,
+          "intensity": 18287.937548836228,
+          "windows": 72
+        },
+        "phantom time hypothesis": {
+          "Ph": 15.352484650623737,
+          "thgee": 238.88301733463726,
+          "recency_ratio": 15.559892927489882,
+          "R": 0.25626404748865717,
+          "n_reactivations": 6,
+          "coverage": 0.4444444444444444,
+          "intensity": 536.7289740066244,
+          "windows": 54
+        },
+        "project blue beam": {
+          "Ph": 6.9349871734742505,
+          "thgee": 192.41276849543746,
+          "recency_ratio": 27.745223413159337,
+          "R": 0.22795652414906853,
+          "n_reactivations": 4,
+          "coverage": 0.2535211267605634,
+          "intensity": 3532.540926433444,
+          "windows": 71
+        },
+        "haarp weather control": {
+          "Ph": 15.226901944381208,
+          "thgee": 168.32513642231336,
+          "recency_ratio": 11.054457238717957,
+          "R": 0.28350099567637915,
+          "n_reactivations": 9,
+          "coverage": 0.46153846153846156,
+          "intensity": 417.96443572756203,
+          "windows": 78
+        },
+        "paul is dead conspiracy": {
+          "Ph": 27.96906949488918,
+          "thgee": 241.74544750012757,
+          "recency_ratio": 8.643313913046052,
+          "R": 0.20899379444333888,
+          "n_reactivations": 6,
+          "coverage": 0.41025641025641024,
+          "intensity": 3658.868277191243,
+          "windows": 78
+        },
+        "fluoride water poisoning": {
+          "Ph": 12.148694133301015,
+          "thgee": 171.44949629789883,
+          "recency_ratio": 14.112586457167884,
+          "R": 0.43703055271807273,
+          "n_reactivations": 13,
+          "coverage": 0.3875,
+          "intensity": 770.6831667143848,
+          "windows": 80
+        },
+        "mothman": {
+          "Ph": 362.43801657616234,
+          "thgee": 1039.401055611546,
+          "recency_ratio": 2.867803619031028,
+          "R": 0.28874579428748115,
+          "n_reactivations": 8,
+          "coverage": 0.6170212765957447,
+          "intensity": 14113.418391982099,
+          "windows": 47
+        },
+        "cern portals": {
+          "Ph": 12.426938418506545,
+          "thgee": 826.0743883745624,
+          "recency_ratio": 66.47448957696204,
+          "R": 0.19555675578240625,
+          "n_reactivations": 4,
+          "coverage": 0.3181818181818182,
+          "intensity": 3507.0886716737296,
+          "windows": 66
+        }
+      },
+      "100": {
+        "meditation music": {
+          "Ph": 5373.543016136,
+          "thgee": 12726.909540267916,
+          "recency_ratio": 2.368439128904483,
+          "R": 0.10460823454290416,
+          "n_reactivations": 4,
+          "coverage": 0.7592592592592593,
+          "intensity": 81870.50317835735,
+          "windows": 54
+        },
+        "lofi hip hop": {
+          "Ph": 4144.861347169889,
+          "thgee": 3223.8508287444743,
+          "recency_ratio": 0.7777946133097358,
+          "R": 0.13470954941955593,
+          "n_reactivations": 4,
+          "coverage": 0.775,
+          "intensity": 46545.82154151597,
+          "windows": 40
+        },
+        "yoga for beginners": {
+          "Ph": 777.8088260073063,
+          "thgee": 18439.22211105388,
+          "recency_ratio": 23.70662493727048,
+          "R": 0.18534156799058654,
+          "n_reactivations": 7,
+          "coverage": 0.6031746031746031,
+          "intensity": 62184.339883236076,
+          "windows": 63
+        },
+        "minecraft tutorial": {
+          "Ph": 645.3029403307982,
+          "thgee": 23629.09371931135,
+          "recency_ratio": 36.617055715255994,
+          "R": 0.12268857725240782,
+          "n_reactivations": 4,
+          "coverage": 0.55,
+          "intensity": 128789.51382716052,
+          "windows": 60
+        },
+        "how to tie a tie": {
+          "Ph": 1188.3150148785326,
+          "thgee": 10108.977452834733,
+          "recency_ratio": 8.506984533783791,
+          "R": 0.1459796328292254,
+          "n_reactivations": 7,
+          "coverage": 0.68,
+          "intensity": 33302.92683854234,
+          "windows": 75
+        },
+        "harlem shake": {
+          "Ph": 14.854475079059595,
+          "thgee": 31.146212059996714,
+          "recency_ratio": 2.0967561555846315,
+          "R": 0.26843354527747776,
+          "n_reactivations": 5,
+          "coverage": 0.25,
+          "intensity": 63183.051549133925,
+          "windows": 72
+        },
+        "gangnam style": {
+          "Ph": 2099.1145942811,
+          "thgee": 5514.288027182466,
+          "recency_ratio": 2.6269590246315193,
+          "R": 0.20094632171736493,
+          "n_reactivations": 7,
+          "coverage": 0.6607142857142857,
+          "intensity": 106722.40306500177,
+          "windows": 56
+        },
+        "ice bucket challenge": {
+          "Ph": 35.54504876682705,
+          "thgee": 370.73075391476874,
+          "recency_ratio": 10.429884520534369,
+          "R": 0.339632978840677,
+          "n_reactivations": 5,
+          "coverage": 0.32653061224489793,
+          "intensity": 61116.05532605454,
+          "windows": 49
+        },
+        "fidget spinner": {
+          "Ph": 1394.182523781848,
+          "thgee": 8687.397356983458,
+          "recency_ratio": 6.231176484279903,
+          "R": 0.09393710547606632,
+          "n_reactivations": 2,
+          "coverage": 0.6216216216216216,
+          "intensity": 114485.49556065048,
+          "windows": 37
+        },
+        "mannequin challenge": {
+          "Ph": 722.6766681040913,
+          "thgee": 2667.137897217013,
+          "recency_ratio": 3.690637895110306,
+          "R": 0.2545949421211538,
+          "n_reactivations": 6,
+          "coverage": 0.6,
+          "intensity": 58331.10086756072,
+          "windows": 40
+        },
+        "solar eclipse": {
+          "Ph": 340.13643544424207,
+          "thgee": 847.9851665924148,
+          "recency_ratio": 2.493073597025519,
+          "R": 0.1902106478466655,
+          "n_reactivations": 7,
+          "coverage": 0.5441176470588235,
+          "intensity": 45196.15682204149,
+          "windows": 68
+        },
+        "super bowl halftime": {
+          "Ph": 104.42201436777003,
+          "thgee": 1856.4857894843476,
+          "recency_ratio": 17.778682021454607,
+          "R": 0.32896275703141337,
+          "n_reactivations": 8,
+          "coverage": 0.4126984126984127,
+          "intensity": 79746.70156763414,
+          "windows": 63
+        },
+        "world cup final": {
+          "Ph": 16.506535952552444,
+          "thgee": 386.7836592505482,
+          "recency_ratio": 23.432151988905883,
+          "R": 0.2719510463379713,
+          "n_reactivations": 4,
+          "coverage": 0.2631578947368421,
+          "intensity": 52984.963507618035,
+          "windows": 57
+        },
+        "summer olympics": {
+          "Ph": 160.74430376558743,
+          "thgee": 17698.248978717813,
+          "recency_ratio": 110.10187337354782,
+          "R": 0.24022527569778745,
+          "n_reactivations": 7,
+          "coverage": 0.4393939393939394,
+          "intensity": 106410.88248530013,
+          "windows": 66
+        },
+        "total lunar eclipse": {
+          "Ph": 54.12565255702996,
+          "thgee": 732.5728916308948,
+          "recency_ratio": 13.534670845012226,
+          "R": 0.2054842992839784,
+          "n_reactivations": 6,
+          "coverage": 0.46875,
+          "intensity": 5185.662465798295,
+          "windows": 64
+        },
+        "chatgpt": {
+          "Ph": 77857.47842946512,
+          "thgee": 74990.67729076887,
+          "recency_ratio": 0.9631788596737895,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 1.0,
+          "intensity": 77857.47842946512,
+          "windows": 14
+        },
+        "deepseek ai": {
+          "Ph": 2315.243604905198,
+          "thgee": 1943.6353995133445,
+          "recency_ratio": 0.8394949867890599,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 0.8571428571428571,
+          "intensity": 8424.226895414322,
+          "windows": 7
+        },
+        "threads app": {
+          "Ph": 1607.61567115525,
+          "thgee": 1704.1169045994156,
+          "recency_ratio": 1.0600275520919864,
+          "R": 0.07010835057929066,
+          "n_reactivations": 1,
+          "coverage": 1.0,
+          "intensity": 1607.61567115525,
+          "windows": 13
+        },
+        "flat earth": {
+          "Ph": 6637.702959526573,
+          "thgee": 43437.772056404894,
+          "recency_ratio": 6.544097004832383,
+          "R": 0.07979914134820594,
+          "n_reactivations": 3,
+          "coverage": 0.7916666666666666,
+          "intensity": 67280.33734480872,
+          "windows": 48
+        },
+        "moon landing hoax": {
+          "Ph": 107.51943009346056,
+          "thgee": 5292.5070643157605,
+          "recency_ratio": 49.22372690885065,
+          "R": 0.2468156555033181,
+          "n_reactivations": 8,
+          "coverage": 0.4794520547945205,
+          "intensity": 17597.963090361733,
+          "windows": 73
+        },
+        "5g coronavirus": {
+          "Ph": 310.98273189531017,
+          "thgee": 917.3748989129259,
+          "recency_ratio": 2.949922310225742,
+          "R": 0.22318321320526702,
+          "n_reactivations": 4,
+          "coverage": 0.7083333333333334,
+          "intensity": 3318.9037414019676,
+          "windows": 24
+        },
+        "chemtrails": {
+          "Ph": 204.07636350621945,
+          "thgee": 3651.1855593602186,
+          "recency_ratio": 17.891271172366537,
+          "R": 0.10074396749706323,
+          "n_reactivations": 4,
+          "coverage": 0.6176470588235294,
+          "intensity": 5533.7939835592915,
+          "windows": 68
+        },
+        "pizzagate": {
+          "Ph": 45.28261032140973,
+          "thgee": 840.6413095418264,
+          "recency_ratio": 18.564329741043423,
+          "R": 0.10585861441796522,
+          "n_reactivations": 3,
+          "coverage": 0.4444444444444444,
+          "intensity": 5586.147685837641,
+          "windows": 63
+        },
+        "bigfoot sighting": {
+          "Ph": 15.935485663301225,
+          "thgee": 768.1050134587599,
+          "recency_ratio": 48.20091647584199,
+          "R": 0.16269736200172275,
+          "n_reactivations": 4,
+          "coverage": 0.35135135135135137,
+          "intensity": 3142.0202089246736,
+          "windows": 74
+        },
+        "loch ness monster": {
+          "Ph": 186.66282554085393,
+          "thgee": 3757.1450437813437,
+          "recency_ratio": 20.12797691717699,
+          "R": 0.1251399697182404,
+          "n_reactivations": 4,
+          "coverage": 0.5689655172413793,
+          "intensity": 9898.984205652194,
+          "windows": 58
+        },
+        "area 51 aliens": {
+          "Ph": 120.32099075609392,
+          "thgee": 9255.483814230756,
+          "recency_ratio": 76.92326796903467,
+          "R": 0.14175342025817214,
+          "n_reactivations": 4,
+          "coverage": 0.45588235294117646,
+          "intensity": 37256.553877918464,
+          "windows": 68
+        },
+        "climate change hoax": {
+          "Ph": 46.33435765857242,
+          "thgee": 718.7028172126784,
+          "recency_ratio": 15.51122867632351,
+          "R": 0.23333006552758487,
+          "n_reactivations": 8,
+          "coverage": 0.5588235294117647,
+          "intensity": 993.6819604767794,
+          "windows": 68
+        },
+        "mandela effect": {
+          "Ph": 3016.916708769398,
+          "thgee": 14522.258070557527,
+          "recency_ratio": 4.81360921511193,
+          "R": 0.09514814323007273,
+          "n_reactivations": 3,
+          "coverage": 0.7560975609756098,
+          "intensity": 40011.29472331979,
+          "windows": 41
+        },
+        "birds aren't real": {
+          "Ph": 15.33070220577569,
+          "thgee": 762.9077979759351,
+          "recency_ratio": 49.763395553304605,
+          "R": 0.12273807581693323,
+          "n_reactivations": 3,
+          "coverage": 0.35,
+          "intensity": 2921.3226877244606,
+          "windows": 80
+        },
+        "hollow earth": {
+          "Ph": 82.53397924293873,
+          "thgee": 982.0333178166966,
+          "recency_ratio": 11.898533510980757,
+          "R": 0.08197984182042616,
+          "n_reactivations": 3,
+          "coverage": 0.5205479452054794,
+          "intensity": 4919.3987596810975,
+          "windows": 73
+        },
+        "phantom time hypothesis": {
+          "Ph": 15.180488739993667,
+          "thgee": 156.12708072156002,
+          "recency_ratio": 10.284720300884407,
+          "R": 0.24722395691553903,
+          "n_reactivations": 5,
+          "coverage": 0.46296296296296297,
+          "intensity": 407.7162761676396,
+          "windows": 54
+        },
+        "project blue beam": {
+          "Ph": 8.554117489748958,
+          "thgee": 179.35917101325555,
+          "recency_ratio": 20.967583298709087,
+          "R": 0.33980892964889414,
+          "n_reactivations": 7,
+          "coverage": 0.29577464788732394,
+          "intensity": 2059.523951909312,
+          "windows": 71
+        },
+        "haarp weather control": {
+          "Ph": 19.881999210284135,
+          "thgee": 158.17729505944638,
+          "recency_ratio": 7.955804312557653,
+          "R": 0.22926618372660584,
+          "n_reactivations": 8,
+          "coverage": 0.5897435897435898,
+          "intensity": 171.93161129538265,
+          "windows": 78
+        },
+        "paul is dead conspiracy": {
+          "Ph": 51.16802042380903,
+          "thgee": 804.4400500395972,
+          "recency_ratio": 15.721539418110506,
+          "R": 0.13756923314173522,
+          "n_reactivations": 5,
+          "coverage": 0.5443037974683544,
+          "intensity": 1428.655044329646,
+          "windows": 79
+        },
+        "fluoride water poisoning": {
+          "Ph": 19.40776777480435,
+          "thgee": 298.6796691932027,
+          "recency_ratio": 15.389697190264,
+          "R": 0.2868325562395085,
+          "n_reactivations": 11,
+          "coverage": 0.5375,
+          "intensity": 272.41909662350645,
+          "windows": 80
+        },
+        "mothman": {
+          "Ph": 103.29805261812305,
+          "thgee": 4214.350660272572,
+          "recency_ratio": 40.79796814614091,
+          "R": 0.07189004832489478,
+          "n_reactivations": 3,
+          "coverage": 0.5189873417721519,
+          "intensity": 7741.365204741714,
+          "windows": 79
+        },
+        "cern portals": {
+          "Ph": 76.78406206311313,
+          "thgee": 1040.9597894181575,
+          "recency_ratio": 13.556977339418879,
+          "R": 0.17947751225028885,
+          "n_reactivations": 5,
+          "coverage": 0.5625,
+          "intensity": 2298.2347949350356,
+          "windows": 48
+        }
+      }
+    },
+    "v1_robustspan": {
+      "50": {
+        "meditation music": {
+          "Ph": 1425.4783060793072,
+          "thgee": 304.8823014103793,
+          "recency_ratio": 0.2138807024351986,
+          "R": 0.11240714404603959,
+          "n_reactivations": 3,
+          "coverage": 0.6222222222222222,
+          "intensity": 117314.32269918596,
+          "windows": 45
+        },
+        "lofi hip hop": {
+          "Ph": 4963.504612219844,
+          "thgee": 9641.134262915584,
+          "recency_ratio": 1.9424046145096154,
+          "R": 0.11946687270315756,
+          "n_reactivations": 3,
+          "coverage": 0.7647058823529411,
+          "intensity": 68086.6756750492,
+          "windows": 34
+        },
+        "yoga for beginners": {
+          "Ph": 1474.7054598489692,
+          "thgee": 3702.991459811707,
+          "recency_ratio": 2.5110041026029335,
+          "R": 0.21511290526203894,
+          "n_reactivations": 7,
+          "coverage": 0.6470588235294118,
+          "intensity": 78984.06253497448,
+          "windows": 51
+        },
+        "minecraft tutorial": {
+          "Ph": 3341.3215183083075,
+          "thgee": 10520.006942327955,
+          "recency_ratio": 3.1484569457578497,
+          "R": 0.1344995779940099,
+          "n_reactivations": 3,
+          "coverage": 0.6764705882352942,
+          "intensity": 161979.4471405696,
+          "windows": 34
+        },
+        "how to tie a tie": {
+          "Ph": 154.82847562106352,
+          "thgee": 1248.5068320785836,
+          "recency_ratio": 8.063806267357782,
+          "R": 0.21791815055517416,
+          "n_reactivations": 6,
+          "coverage": 0.45161290322580644,
+          "intensity": 71637.50843660995,
+          "windows": 62
+        },
+        "harlem shake": {
+          "Ph": 15.13341765733168,
+          "thgee": 8.78983905483581,
+          "recency_ratio": 0.5808231328749062,
+          "R": 0.32413448519779847,
+          "n_reactivations": 4,
+          "coverage": 0.23728813559322035,
+          "intensity": 122942.05953965498,
+          "windows": 59
+        },
+        "gangnam style": {
+          "Ph": 75.31804583409439,
+          "thgee": 59.92788125489554,
+          "recency_ratio": 0.7956643137940768,
+          "R": 0.40346254382797025,
+          "n_reactivations": 7,
+          "coverage": 0.34615384615384615,
+          "intensity": 274599.2446655024,
+          "windows": 52
+        },
+        "ice bucket challenge": {
+          "Ph": 24.352447484369016,
+          "thgee": 1026.8723952802516,
+          "recency_ratio": 42.167112604980055,
+          "R": 0.26078483660752644,
+          "n_reactivations": 3,
+          "coverage": 0.26666666666666666,
+          "intensity": 184107.81986095564,
+          "windows": 45
+        },
+        "fidget spinner": {
+          "Ph": 490.56736513006257,
+          "thgee": 1909.2195483337557,
+          "recency_ratio": 3.8918600869985926,
+          "R": 0.1867278693407815,
+          "n_reactivations": 3,
+          "coverage": 0.5151515151515151,
+          "intensity": 167816.66380036421,
+          "windows": 33
+        },
+        "mannequin challenge": {
+          "Ph": 224.69092736580038,
+          "thgee": 1011.0612831634544,
+          "recency_ratio": 4.499786862855529,
+          "R": 0.42337262700219214,
+          "n_reactivations": 7,
+          "coverage": 0.4722222222222222,
+          "intensity": 96362.4220018803,
+          "windows": 36
+        },
+        "solar eclipse": {
+          "Ph": 224.6175371332208,
+          "thgee": 1099.5215400562886,
+          "recency_ratio": 4.895083233880183,
+          "R": 0.3133959074113686,
+          "n_reactivations": 7,
+          "coverage": 0.46938775510204084,
+          "intensity": 103205.5795117438,
+          "windows": 49
+        },
+        "super bowl halftime": {
+          "Ph": 85.59658857863228,
+          "thgee": 114.98124071416375,
+          "recency_ratio": 1.3432923276905786,
+          "R": 0.4879864610504266,
+          "n_reactivations": 7,
+          "coverage": 0.36585365853658536,
+          "intensity": 197621.08415291706,
+          "windows": 41
+        },
+        "world cup final": {
+          "Ph": 216.21662690570471,
+          "thgee": 3697.023009946305,
+          "recency_ratio": 17.09869894306802,
+          "R": 0.16427445745407473,
+          "n_reactivations": 3,
+          "coverage": 0.4634146341463415,
+          "intensity": 110348.21457037065,
+          "windows": 41
+        },
+        "summer olympics": {
+          "Ph": 97.89411875435646,
+          "thgee": 8393.597850286857,
+          "recency_ratio": 85.74159466462665,
+          "R": 0.19704931835453063,
+          "n_reactivations": 4,
+          "coverage": 0.37735849056603776,
+          "intensity": 193731.1649716985,
+          "windows": 53
+        },
+        "total lunar eclipse": {
+          "Ph": 19.598377091776644,
+          "thgee": 105.22079484505628,
+          "recency_ratio": 5.368852448971719,
+          "R": 0.42771653974423013,
+          "n_reactivations": 9,
+          "coverage": 0.3333333333333333,
+          "intensity": 8738.750070765516,
+          "windows": 66
+        },
+        "chatgpt": {
+          "Ph": 152742.84449534936,
+          "thgee": 142759.76958113513,
+          "recency_ratio": 0.9346412923813384,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 1.0,
+          "intensity": 152742.84449534936,
+          "windows": 14
+        },
+        "deepseek ai": {
+          "Ph": 3291.1776139706444,
+          "thgee": 3903.8916829392037,
+          "recency_ratio": 1.1861686426061187,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 0.8333333333333334,
+          "intensity": 16632.357005769754,
+          "windows": 6
+        },
+        "threads app": {
+          "Ph": 319.83729557343565,
+          "thgee": 304.73185433994684,
+          "recency_ratio": 0.9527714827427918,
+          "R": 0.22384422608794863,
+          "n_reactivations": 2,
+          "coverage": 0.75,
+          "intensity": 2195.408568036387,
+          "windows": 12
+        },
+        "flat earth": {
+          "Ph": 4130.287911876463,
+          "thgee": 12429.885125645584,
+          "recency_ratio": 3.0094476198387987,
+          "R": 0.11059477544698436,
+          "n_reactivations": 3,
+          "coverage": 0.725,
+          "intensity": 97207.46512595669,
+          "windows": 40
+        },
+        "moon landing hoax": {
+          "Ph": 62.09165840688905,
+          "thgee": 3552.36736118366,
+          "recency_ratio": 57.21166823899047,
+          "R": 0.3353295779075193,
+          "n_reactivations": 8,
+          "coverage": 0.390625,
+          "intensity": 40543.14765153413,
+          "windows": 64
+        },
+        "5g coronavirus": {
+          "Ph": 110.52656930889893,
+          "thgee": 196.5905566609015,
+          "recency_ratio": 1.778672385202435,
+          "R": 0.285172582179675,
+          "n_reactivations": 3,
+          "coverage": 0.5217391304347826,
+          "intensity": 8396.34166984436,
+          "windows": 23
+        },
+        "chemtrails": {
+          "Ph": 54.96266819395019,
+          "thgee": 773.6431618782168,
+          "recency_ratio": 14.075793393949034,
+          "R": 0.23074455022467094,
+          "n_reactivations": 6,
+          "coverage": 0.45161290322580644,
+          "intensity": 7418.019031636412,
+          "windows": 62
+        },
+        "pizzagate": {
+          "Ph": 24.47586684493522,
+          "thgee": 91.49324807136715,
+          "recency_ratio": 3.738100417485308,
+          "R": 0.4270560138447687,
+          "n_reactivations": 6,
+          "coverage": 0.38461538461538464,
+          "intensity": 4527.301372066481,
+          "windows": 39
+        },
+        "bigfoot sighting": {
+          "Ph": 14.958281660137342,
+          "thgee": 821.8254772117351,
+          "recency_ratio": 54.94116877086465,
+          "R": 0.24311477668565026,
+          "n_reactivations": 5,
+          "coverage": 0.3235294117647059,
+          "intensity": 5226.8215313447245,
+          "windows": 68
+        },
+        "loch ness monster": {
+          "Ph": 271.30157080009525,
+          "thgee": 4262.505015869556,
+          "recency_ratio": 15.711317126911597,
+          "R": 0.15575251031394718,
+          "n_reactivations": 4,
+          "coverage": 0.5833333333333334,
+          "intensity": 14939.725266679206,
+          "windows": 48
+        },
+        "area 51 aliens": {
+          "Ph": 412.68823062648806,
+          "thgee": 2961.251180972065,
+          "recency_ratio": 7.175516433983808,
+          "R": 0.188278566226551,
+          "n_reactivations": 4,
+          "coverage": 0.5348837209302325,
+          "intensity": 77989.39778026845,
+          "windows": 43
+        },
+        "climate change hoax": {
+          "Ph": 29.359313616550768,
+          "thgee": 730.7181351997831,
+          "recency_ratio": 24.88880171871097,
+          "R": 0.2708017798261152,
+          "n_reactivations": 7,
+          "coverage": 0.4090909090909091,
+          "intensity": 4200.267346210988,
+          "windows": 66
+        },
+        "mandela effect": {
+          "Ph": 1340.419220875934,
+          "thgee": 5145.066800043525,
+          "recency_ratio": 3.838401240383094,
+          "R": 0.12892418617268017,
+          "n_reactivations": 3,
+          "coverage": 0.631578947368421,
+          "intensity": 89530.76879099467,
+          "windows": 38
+        },
+        "birds aren't real": {
+          "Ph": 531.8519430669734,
+          "thgee": 777.3756726430431,
+          "recency_ratio": 1.4616392452385047,
+          "R": 0.11957839791580735,
+          "n_reactivations": 3,
+          "coverage": 0.7272727272727273,
+          "intensity": 5610.565176352373,
+          "windows": 33
+        },
+        "hollow earth": {
+          "Ph": 58.18470709434521,
+          "thgee": 1393.8523320383154,
+          "recency_ratio": 23.95564748273485,
+          "R": 0.15754912967054768,
+          "n_reactivations": 4,
+          "coverage": 0.4126984126984127,
+          "intensity": 19686.925108446685,
+          "windows": 63
+        },
+        "phantom time hypothesis": {
+          "Ph": 19.172173862371675,
+          "thgee": 221.70366801912638,
+          "recency_ratio": 11.563825240196353,
+          "R": 0.274819014825511,
+          "n_reactivations": 5,
+          "coverage": 0.46808510638297873,
+          "intensity": 611.9516640280045,
+          "windows": 47
+        },
+        "project blue beam": {
+          "Ph": 6.620064794639024,
+          "thgee": 286.8087322256534,
+          "recency_ratio": 43.324157862912934,
+          "R": 0.24938295018475093,
+          "n_reactivations": 4,
+          "coverage": 0.2463768115942029,
+          "intensity": 3798.396150344579,
+          "windows": 69
+        },
+        "haarp weather control": {
+          "Ph": 15.665399045089007,
+          "thgee": 139.42707407192873,
+          "recency_ratio": 8.900320615556751,
+          "R": 0.3014080319982942,
+          "n_reactivations": 9,
+          "coverage": 0.4657534246575342,
+          "intensity": 419.0589245296202,
+          "windows": 73
+        },
+        "paul is dead conspiracy": {
+          "Ph": 40.73339850443132,
+          "thgee": 506.68825359839957,
+          "recency_ratio": 12.439135260056382,
+          "R": 0.2091156624452267,
+          "n_reactivations": 6,
+          "coverage": 0.4583333333333333,
+          "intensity": 3431.423875621574,
+          "windows": 72
+        },
+        "fluoride water poisoning": {
+          "Ph": 14.133206387066942,
+          "thgee": 306.43847172861206,
+          "recency_ratio": 21.6821620894908,
+          "R": 0.3205465942821743,
+          "n_reactivations": 9,
+          "coverage": 0.4027777777777778,
+          "intensity": 849.1268842298189,
+          "windows": 72
+        },
+        "mothman": {
+          "Ph": 717.0037315513216,
+          "thgee": 3573.3533248574395,
+          "recency_ratio": 4.983730443251767,
+          "R": 0.20601372033937435,
+          "n_reactivations": 6,
+          "coverage": 0.6888888888888889,
+          "intensity": 13994.562979487471,
+          "windows": 45
+        },
+        "cern portals": {
+          "Ph": 23.679592428198212,
+          "thgee": 609.4800459299363,
+          "recency_ratio": 25.738620619337738,
+          "R": 0.17030064102873893,
+          "n_reactivations": 3,
+          "coverage": 0.38,
+          "intensity": 4612.678463092032,
+          "windows": 50
+        }
+      },
+      "100": {
+        "meditation music": {
+          "Ph": 17938.132189200645,
+          "thgee": 20851.70848992298,
+          "recency_ratio": 1.1624236163493324,
+          "R": 0.10716435718027308,
+          "n_reactivations": 4,
+          "coverage": 0.8636363636363636,
+          "intensity": 84226.5731375562,
+          "windows": 44
+        },
+        "lofi hip hop": {
+          "Ph": 8760.156879647262,
+          "thgee": 16548.35116550117,
+          "recency_ratio": 1.8890473530158411,
+          "R": 0.07532076542472926,
+          "n_reactivations": 2,
+          "coverage": 0.8484848484848485,
+          "intensity": 44318.03429421937,
+          "windows": 33
+        },
+        "yoga for beginners": {
+          "Ph": 4989.770752905952,
+          "thgee": 28073.10517169727,
+          "recency_ratio": 5.626131251690873,
+          "R": 0.15929809861651348,
+          "n_reactivations": 6,
+          "coverage": 0.7755102040816326,
+          "intensity": 58705.991831322455,
+          "windows": 49
+        },
+        "minecraft tutorial": {
+          "Ph": 16355.979171679017,
+          "thgee": 34894.65289397243,
+          "recency_ratio": 2.1334493354206403,
+          "R": 0.06183726325013424,
+          "n_reactivations": 2,
+          "coverage": 0.8205128205128205,
+          "intensity": 136598.98571794407,
+          "windows": 39
+        },
+        "how to tie a tie": {
+          "Ph": 1141.6416900009838,
+          "thgee": 17033.56932242164,
+          "recency_ratio": 14.920241150624907,
+          "R": 0.12830730751315372,
+          "n_reactivations": 6,
+          "coverage": 0.6666666666666666,
+          "intensity": 38623.69813435528,
+          "windows": 72
+        },
+        "harlem shake": {
+          "Ph": 24.308848351480396,
+          "thgee": 10.282424220026257,
+          "recency_ratio": 0.42299100604657247,
+          "R": 0.27773623523765445,
+          "n_reactivations": 4,
+          "coverage": 0.2916666666666667,
+          "intensity": 64745.99258333734,
+          "windows": 48
+        },
+        "gangnam style": {
+          "Ph": 1479.5740824733377,
+          "thgee": 5143.840737918023,
+          "recency_ratio": 3.476568560405772,
+          "R": 0.1856402170664092,
+          "n_reactivations": 6,
+          "coverage": 0.625,
+          "intensity": 118218.25779324066,
+          "windows": 56
+        },
+        "ice bucket challenge": {
+          "Ph": 43.77127853563071,
+          "thgee": 1007.7129749358592,
+          "recency_ratio": 23.022242179093773,
+          "R": 0.3215965286104982,
+          "n_reactivations": 5,
+          "coverage": 0.3469387755102041,
+          "intensity": 57379.35823360591,
+          "windows": 49
+        },
+        "fidget spinner": {
+          "Ph": 1488.168198221247,
+          "thgee": 12219.621123417706,
+          "recency_ratio": 8.211182807174197,
+          "R": 0.09309888844799244,
+          "n_reactivations": 2,
+          "coverage": 0.6216216216216216,
+          "intensity": 127144.44912378729,
+          "windows": 37
+        },
+        "mannequin challenge": {
+          "Ph": 1349.9706965388564,
+          "thgee": 5182.528266727883,
+          "recency_ratio": 3.8389931574182983,
+          "R": 0.24083992770568957,
+          "n_reactivations": 6,
+          "coverage": 0.6578947368421053,
+          "intensity": 57355.390389318796,
+          "windows": 38
+        },
+        "solar eclipse": {
+          "Ph": 221.45924876737124,
+          "thgee": 1274.1864678073869,
+          "recency_ratio": 5.753593380720975,
+          "R": 0.24284113220784878,
+          "n_reactivations": 8,
+          "coverage": 0.5,
+          "intensity": 49487.11736214315,
+          "windows": 66
+        },
+        "super bowl halftime": {
+          "Ph": 134.9597701883868,
+          "thgee": 340.816665274359,
+          "recency_ratio": 2.5253204328861996,
+          "R": 0.38618722743042294,
+          "n_reactivations": 8,
+          "coverage": 0.43137254901960786,
+          "intensity": 88232.44792206098,
+          "windows": 51
+        },
+        "world cup final": {
+          "Ph": 23.377256827679332,
+          "thgee": 1140.004272323168,
+          "recency_ratio": 48.76552799699624,
+          "R": 0.23972467140019327,
+          "n_reactivations": 4,
+          "coverage": 0.2982456140350877,
+          "intensity": 44716.60725390283,
+          "windows": 57
+        },
+        "summer olympics": {
+          "Ph": 248.2432316664587,
+          "thgee": 15534.083569927865,
+          "recency_ratio": 62.57606084825533,
+          "R": 0.22910492661700885,
+          "n_reactivations": 6,
+          "coverage": 0.4727272727272727,
+          "intensity": 117429.31165408045,
+          "windows": 55
+        },
+        "total lunar eclipse": {
+          "Ph": 158.32861994662835,
+          "thgee": 1072.5017097835532,
+          "recency_ratio": 6.773896659650588,
+          "R": 0.16893875018227097,
+          "n_reactivations": 4,
+          "coverage": 0.5909090909090909,
+          "intensity": 5331.842151415191,
+          "windows": 44
+        },
+        "chatgpt": {
+          "Ph": 41602.95600310285,
+          "thgee": 55919.37421918561,
+          "recency_ratio": 1.3441202162417256,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 0.9230769230769231,
+          "intensity": 100938.8172542049,
+          "windows": 13
+        },
+        "deepseek ai": {
+          "Ph": 7425.597843144505,
+          "thgee": 6753.882844010193,
+          "recency_ratio": 0.9095406170219068,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 1.0,
+          "intensity": 7425.597843144505,
+          "windows": 7
+        },
+        "threads app": {
+          "Ph": 1530.0344746677315,
+          "thgee": 1573.991306881029,
+          "recency_ratio": 1.0287293083529006,
+          "R": 0.07646263349332062,
+          "n_reactivations": 1,
+          "coverage": 1.0,
+          "intensity": 1530.0344746677315,
+          "windows": 12
+        },
+        "flat earth": {
+          "Ph": 10019.303522207088,
+          "thgee": 24544.543774956812,
+          "recency_ratio": 2.449725544351016,
+          "R": 0.08693429901780375,
+          "n_reactivations": 3,
+          "coverage": 0.8372093023255814,
+          "intensity": 60092.83721343822,
+          "windows": 43
+        },
+        "moon landing hoax": {
+          "Ph": 116.27702385854498,
+          "thgee": 5204.888173101765,
+          "recency_ratio": 44.76282588238319,
+          "R": 0.26346956258797044,
+          "n_reactivations": 8,
+          "coverage": 0.4852941176470588,
+          "intensity": 18357.310768629446,
+          "windows": 68
+        },
+        "5g coronavirus": {
+          "Ph": 293.12558550203727,
+          "thgee": 802.4762408553665,
+          "recency_ratio": 2.73765334909596,
+          "R": 0.2452197297695605,
+          "n_reactivations": 4,
+          "coverage": 0.6956521739130435,
+          "intensity": 3535.0297217611164,
+          "windows": 23
+        },
+        "chemtrails": {
+          "Ph": 274.2787997065089,
+          "thgee": 3387.9680977911844,
+          "recency_ratio": 12.352278416765964,
+          "R": 0.14764319285393734,
+          "n_reactivations": 6,
+          "coverage": 0.65625,
+          "intensity": 5219.943299571497,
+          "windows": 64
+        },
+        "pizzagate": {
+          "Ph": 311.2797239205865,
+          "thgee": 1110.4396005220597,
+          "recency_ratio": 3.567336755944163,
+          "R": 0.0745762896371815,
+          "n_reactivations": 2,
+          "coverage": 0.6666666666666666,
+          "intensity": 5517.43180583265,
+          "windows": 39
+        },
+        "bigfoot sighting": {
+          "Ph": 17.74069796634869,
+          "thgee": 768.0530287176422,
+          "recency_ratio": 43.29328136776342,
+          "R": 0.16845666793432304,
+          "n_reactivations": 4,
+          "coverage": 0.36231884057971014,
+          "intensity": 3256.532081822293,
+          "windows": 69
+        },
+        "loch ness monster": {
+          "Ph": 4237.719448548825,
+          "thgee": 9356.215927157722,
+          "recency_ratio": 2.2078422228639245,
+          "R": 0.09654025248565257,
+          "n_reactivations": 3,
+          "coverage": 0.8947368421052632,
+          "intensity": 11322.17354033473,
+          "windows": 38
+        },
+        "area 51 aliens": {
+          "Ph": 1165.002846691106,
+          "thgee": 12044.857853387886,
+          "recency_ratio": 10.338908516488383,
+          "R": 0.1774568492065003,
+          "n_reactivations": 5,
+          "coverage": 0.6521739130434783,
+          "intensity": 50380.69058918826,
+          "windows": 46
+        },
+        "climate change hoax": {
+          "Ph": 54.59118225372507,
+          "thgee": 658.5161204318191,
+          "recency_ratio": 12.062682895769028,
+          "R": 0.27292461748064606,
+          "n_reactivations": 10,
+          "coverage": 0.5882352941176471,
+          "intensity": 924.7848029396891,
+          "windows": 68
+        },
+        "mandela effect": {
+          "Ph": 2656.191794884234,
+          "thgee": 15159.871600008217,
+          "recency_ratio": 5.707370841671069,
+          "R": 0.07163280612550754,
+          "n_reactivations": 2,
+          "coverage": 0.7368421052631579,
+          "intensity": 44403.919006991244,
+          "windows": 38
+        },
+        "birds aren't real": {
+          "Ph": 865.4473686578708,
+          "thgee": 1128.0602814006127,
+          "recency_ratio": 1.3034418062302275,
+          "R": 0.08409293571157749,
+          "n_reactivations": 2,
+          "coverage": 0.875,
+          "intensity": 2276.2968343702587,
+          "windows": 32
+        },
+        "hollow earth": {
+          "Ph": 178.61773987015604,
+          "thgee": 3508.2592516480913,
+          "recency_ratio": 19.641158007028736,
+          "R": 0.026749751427668816,
+          "n_reactivations": 1,
+          "coverage": 0.5901639344262295,
+          "intensity": 6603.949845172254,
+          "windows": 61
+        },
+        "phantom time hypothesis": {
+          "Ph": 40.10388510575487,
+          "thgee": 157.499548473239,
+          "recency_ratio": 3.927289040897386,
+          "R": 0.2537824859002943,
+          "n_reactivations": 5,
+          "coverage": 0.6111111111111112,
+          "intensity": 436.4206148346414,
+          "windows": 36
+        },
+        "project blue beam": {
+          "Ph": 10.43716500169197,
+          "thgee": 329.05436439542103,
+          "recency_ratio": 31.52717853383347,
+          "R": 0.28632547859459123,
+          "n_reactivations": 6,
+          "coverage": 0.3142857142857143,
+          "intensity": 2329.1114004825454,
+          "windows": 70
+        },
+        "haarp weather control": {
+          "Ph": 19.10224052935789,
+          "thgee": 49.70434054259488,
+          "recency_ratio": 2.6020162643332427,
+          "R": 0.2555561669684006,
+          "n_reactivations": 8,
+          "coverage": 0.6056338028169014,
+          "intensity": 140.8628785927843,
+          "windows": 71
+        },
+        "paul is dead conspiracy": {
+          "Ph": 68.74110567878148,
+          "thgee": 1071.352414305075,
+          "recency_ratio": 15.585324148135902,
+          "R": 0.13470249806347245,
+          "n_reactivations": 5,
+          "coverage": 0.5753424657534246,
+          "intensity": 1599.1443196557418,
+          "windows": 73
+        },
+        "fluoride water poisoning": {
+          "Ph": 19.689855905328926,
+          "thgee": 258.76639813354245,
+          "recency_ratio": 13.142117412017681,
+          "R": 0.2814187299913379,
+          "n_reactivations": 10,
+          "coverage": 0.5352112676056338,
+          "intensity": 286.3352775324173,
+          "windows": 71
+        },
+        "mothman": {
+          "Ph": 1185.4988620193806,
+          "thgee": 4113.627726161286,
+          "recency_ratio": 3.469955018897383,
+          "R": 0.11311365701883404,
+          "n_reactivations": 4,
+          "coverage": 0.7872340425531915,
+          "intensity": 8037.044146722014,
+          "windows": 47
+        },
+        "cern portals": {
+          "Ph": 58.09190061772379,
+          "thgee": 958.3651420869805,
+          "recency_ratio": 16.49739691585481,
+          "R": 0.1260065403978183,
+          "n_reactivations": 3,
+          "coverage": 0.5217391304347826,
+          "intensity": 2484.584818138486,
+          "windows": 46
+        }
+      }
+    },
+    "v2_decomposed": {
+      "50": {
+        "meditation music": {
+          "Ph": 1425.4783060793072,
+          "thgee": 304.8823014103793,
+          "recency_ratio": 0.2138807024351986,
+          "R": 0.11240714404603959,
+          "n_reactivations": 3,
+          "coverage": 0.6222222222222222,
+          "intensity": 117314.32269918596,
+          "windows": 45
+        },
+        "lofi hip hop": {
+          "Ph": 4963.504612219844,
+          "thgee": 9641.134262915584,
+          "recency_ratio": 1.9424046145096154,
+          "R": 0.11946687270315756,
+          "n_reactivations": 3,
+          "coverage": 0.7647058823529411,
+          "intensity": 68086.6756750492,
+          "windows": 34
+        },
+        "yoga for beginners": {
+          "Ph": 1474.7054598489692,
+          "thgee": 3702.991459811707,
+          "recency_ratio": 2.5110041026029335,
+          "R": 0.21511290526203894,
+          "n_reactivations": 7,
+          "coverage": 0.6470588235294118,
+          "intensity": 78984.06253497448,
+          "windows": 51
+        },
+        "minecraft tutorial": {
+          "Ph": 3341.3215183083075,
+          "thgee": 10520.006942327955,
+          "recency_ratio": 3.1484569457578497,
+          "R": 0.1344995779940099,
+          "n_reactivations": 3,
+          "coverage": 0.6764705882352942,
+          "intensity": 161979.4471405696,
+          "windows": 34
+        },
+        "how to tie a tie": {
+          "Ph": 154.82847562106352,
+          "thgee": 1248.5068320785836,
+          "recency_ratio": 8.063806267357782,
+          "R": 0.21791815055517416,
+          "n_reactivations": 6,
+          "coverage": 0.45161290322580644,
+          "intensity": 71637.50843660995,
+          "windows": 62
+        },
+        "harlem shake": {
+          "Ph": 15.13341765733168,
+          "thgee": 8.78983905483581,
+          "recency_ratio": 0.5808231328749062,
+          "R": 0.32413448519779847,
+          "n_reactivations": 4,
+          "coverage": 0.23728813559322035,
+          "intensity": 122942.05953965498,
+          "windows": 59
+        },
+        "gangnam style": {
+          "Ph": 75.31804583409439,
+          "thgee": 59.92788125489554,
+          "recency_ratio": 0.7956643137940768,
+          "R": 0.40346254382797025,
+          "n_reactivations": 7,
+          "coverage": 0.34615384615384615,
+          "intensity": 274599.2446655024,
+          "windows": 52
+        },
+        "ice bucket challenge": {
+          "Ph": 24.352447484369016,
+          "thgee": 1026.8723952802516,
+          "recency_ratio": 42.167112604980055,
+          "R": 0.26078483660752644,
+          "n_reactivations": 3,
+          "coverage": 0.26666666666666666,
+          "intensity": 184107.81986095564,
+          "windows": 45
+        },
+        "fidget spinner": {
+          "Ph": 490.56736513006257,
+          "thgee": 1909.2195483337557,
+          "recency_ratio": 3.8918600869985926,
+          "R": 0.1867278693407815,
+          "n_reactivations": 3,
+          "coverage": 0.5151515151515151,
+          "intensity": 167816.66380036421,
+          "windows": 33
+        },
+        "mannequin challenge": {
+          "Ph": 224.69092736580038,
+          "thgee": 1011.0612831634544,
+          "recency_ratio": 4.499786862855529,
+          "R": 0.42337262700219214,
+          "n_reactivations": 7,
+          "coverage": 0.4722222222222222,
+          "intensity": 96362.4220018803,
+          "windows": 36
+        },
+        "solar eclipse": {
+          "Ph": 224.6175371332208,
+          "thgee": 1099.5215400562886,
+          "recency_ratio": 4.895083233880183,
+          "R": 0.3133959074113686,
+          "n_reactivations": 7,
+          "coverage": 0.46938775510204084,
+          "intensity": 103205.5795117438,
+          "windows": 49
+        },
+        "super bowl halftime": {
+          "Ph": 85.59658857863228,
+          "thgee": 114.98124071416375,
+          "recency_ratio": 1.3432923276905786,
+          "R": 0.4879864610504266,
+          "n_reactivations": 7,
+          "coverage": 0.36585365853658536,
+          "intensity": 197621.08415291706,
+          "windows": 41
+        },
+        "world cup final": {
+          "Ph": 216.21662690570471,
+          "thgee": 3697.023009946305,
+          "recency_ratio": 17.09869894306802,
+          "R": 0.16427445745407473,
+          "n_reactivations": 3,
+          "coverage": 0.4634146341463415,
+          "intensity": 110348.21457037065,
+          "windows": 41
+        },
+        "summer olympics": {
+          "Ph": 97.89411875435646,
+          "thgee": 8393.597850286857,
+          "recency_ratio": 85.74159466462665,
+          "R": 0.19704931835453063,
+          "n_reactivations": 4,
+          "coverage": 0.37735849056603776,
+          "intensity": 193731.1649716985,
+          "windows": 53
+        },
+        "total lunar eclipse": {
+          "Ph": 19.598377091776644,
+          "thgee": 105.22079484505628,
+          "recency_ratio": 5.368852448971719,
+          "R": 0.42771653974423013,
+          "n_reactivations": 9,
+          "coverage": 0.3333333333333333,
+          "intensity": 8738.750070765516,
+          "windows": 66
+        },
+        "chatgpt": {
+          "Ph": 152742.84449534936,
+          "thgee": 142759.76958113513,
+          "recency_ratio": 0.9346412923813384,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 1.0,
+          "intensity": 152742.84449534936,
+          "windows": 14
+        },
+        "deepseek ai": {
+          "Ph": 3291.1776139706444,
+          "thgee": 3903.8916829392037,
+          "recency_ratio": 1.1861686426061187,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 0.8333333333333334,
+          "intensity": 16632.357005769754,
+          "windows": 6
+        },
+        "threads app": {
+          "Ph": 319.83729557343565,
+          "thgee": 304.73185433994684,
+          "recency_ratio": 0.9527714827427918,
+          "R": 0.22384422608794863,
+          "n_reactivations": 2,
+          "coverage": 0.75,
+          "intensity": 2195.408568036387,
+          "windows": 12
+        },
+        "flat earth": {
+          "Ph": 4130.287911876463,
+          "thgee": 12429.885125645584,
+          "recency_ratio": 3.0094476198387987,
+          "R": 0.11059477544698436,
+          "n_reactivations": 3,
+          "coverage": 0.725,
+          "intensity": 97207.46512595669,
+          "windows": 40
+        },
+        "moon landing hoax": {
+          "Ph": 62.09165840688905,
+          "thgee": 3552.36736118366,
+          "recency_ratio": 57.21166823899047,
+          "R": 0.3353295779075193,
+          "n_reactivations": 8,
+          "coverage": 0.390625,
+          "intensity": 40543.14765153413,
+          "windows": 64
+        },
+        "5g coronavirus": {
+          "Ph": 110.52656930889893,
+          "thgee": 196.5905566609015,
+          "recency_ratio": 1.778672385202435,
+          "R": 0.285172582179675,
+          "n_reactivations": 3,
+          "coverage": 0.5217391304347826,
+          "intensity": 8396.34166984436,
+          "windows": 23
+        },
+        "chemtrails": {
+          "Ph": 54.96266819395019,
+          "thgee": 773.6431618782168,
+          "recency_ratio": 14.075793393949034,
+          "R": 0.23074455022467094,
+          "n_reactivations": 6,
+          "coverage": 0.45161290322580644,
+          "intensity": 7418.019031636412,
+          "windows": 62
+        },
+        "pizzagate": {
+          "Ph": 24.47586684493522,
+          "thgee": 91.49324807136715,
+          "recency_ratio": 3.738100417485308,
+          "R": 0.4270560138447687,
+          "n_reactivations": 6,
+          "coverage": 0.38461538461538464,
+          "intensity": 4527.301372066481,
+          "windows": 39
+        },
+        "bigfoot sighting": {
+          "Ph": 14.958281660137342,
+          "thgee": 821.8254772117351,
+          "recency_ratio": 54.94116877086465,
+          "R": 0.24311477668565026,
+          "n_reactivations": 5,
+          "coverage": 0.3235294117647059,
+          "intensity": 5226.8215313447245,
+          "windows": 68
+        },
+        "loch ness monster": {
+          "Ph": 271.30157080009525,
+          "thgee": 4262.505015869556,
+          "recency_ratio": 15.711317126911597,
+          "R": 0.15575251031394718,
+          "n_reactivations": 4,
+          "coverage": 0.5833333333333334,
+          "intensity": 14939.725266679206,
+          "windows": 48
+        },
+        "area 51 aliens": {
+          "Ph": 412.68823062648806,
+          "thgee": 2961.251180972065,
+          "recency_ratio": 7.175516433983808,
+          "R": 0.188278566226551,
+          "n_reactivations": 4,
+          "coverage": 0.5348837209302325,
+          "intensity": 77989.39778026845,
+          "windows": 43
+        },
+        "climate change hoax": {
+          "Ph": 29.359313616550768,
+          "thgee": 730.7181351997831,
+          "recency_ratio": 24.88880171871097,
+          "R": 0.2708017798261152,
+          "n_reactivations": 7,
+          "coverage": 0.4090909090909091,
+          "intensity": 4200.267346210988,
+          "windows": 66
+        },
+        "mandela effect": {
+          "Ph": 1340.419220875934,
+          "thgee": 5145.066800043525,
+          "recency_ratio": 3.838401240383094,
+          "R": 0.12892418617268017,
+          "n_reactivations": 3,
+          "coverage": 0.631578947368421,
+          "intensity": 89530.76879099467,
+          "windows": 38
+        },
+        "birds aren't real": {
+          "Ph": 531.8519430669734,
+          "thgee": 777.3756726430431,
+          "recency_ratio": 1.4616392452385047,
+          "R": 0.11957839791580735,
+          "n_reactivations": 3,
+          "coverage": 0.7272727272727273,
+          "intensity": 5610.565176352373,
+          "windows": 33
+        },
+        "hollow earth": {
+          "Ph": 58.18470709434521,
+          "thgee": 1393.8523320383154,
+          "recency_ratio": 23.95564748273485,
+          "R": 0.15754912967054768,
+          "n_reactivations": 4,
+          "coverage": 0.4126984126984127,
+          "intensity": 19686.925108446685,
+          "windows": 63
+        },
+        "phantom time hypothesis": {
+          "Ph": 19.172173862371675,
+          "thgee": 221.70366801912638,
+          "recency_ratio": 11.563825240196353,
+          "R": 0.274819014825511,
+          "n_reactivations": 5,
+          "coverage": 0.46808510638297873,
+          "intensity": 611.9516640280045,
+          "windows": 47
+        },
+        "project blue beam": {
+          "Ph": 6.620064794639024,
+          "thgee": 286.8087322256534,
+          "recency_ratio": 43.324157862912934,
+          "R": 0.24938295018475093,
+          "n_reactivations": 4,
+          "coverage": 0.2463768115942029,
+          "intensity": 3798.396150344579,
+          "windows": 69
+        },
+        "haarp weather control": {
+          "Ph": 15.665399045089007,
+          "thgee": 139.42707407192873,
+          "recency_ratio": 8.900320615556751,
+          "R": 0.3014080319982942,
+          "n_reactivations": 9,
+          "coverage": 0.4657534246575342,
+          "intensity": 419.0589245296202,
+          "windows": 73
+        },
+        "paul is dead conspiracy": {
+          "Ph": 40.73339850443132,
+          "thgee": 506.68825359839957,
+          "recency_ratio": 12.439135260056382,
+          "R": 0.2091156624452267,
+          "n_reactivations": 6,
+          "coverage": 0.4583333333333333,
+          "intensity": 3431.423875621574,
+          "windows": 72
+        },
+        "fluoride water poisoning": {
+          "Ph": 14.133206387066942,
+          "thgee": 306.43847172861206,
+          "recency_ratio": 21.6821620894908,
+          "R": 0.3205465942821743,
+          "n_reactivations": 9,
+          "coverage": 0.4027777777777778,
+          "intensity": 849.1268842298189,
+          "windows": 72
+        },
+        "mothman": {
+          "Ph": 717.0037315513216,
+          "thgee": 3573.3533248574395,
+          "recency_ratio": 4.983730443251767,
+          "R": 0.20601372033937435,
+          "n_reactivations": 6,
+          "coverage": 0.6888888888888889,
+          "intensity": 13994.562979487471,
+          "windows": 45
+        },
+        "cern portals": {
+          "Ph": 23.679592428198212,
+          "thgee": 609.4800459299363,
+          "recency_ratio": 25.738620619337738,
+          "R": 0.17030064102873893,
+          "n_reactivations": 3,
+          "coverage": 0.38,
+          "intensity": 4612.678463092032,
+          "windows": 50
+        }
+      },
+      "100": {
+        "meditation music": {
+          "Ph": 17938.132189200645,
+          "thgee": 20851.70848992298,
+          "recency_ratio": 1.1624236163493324,
+          "R": 0.10716435718027308,
+          "n_reactivations": 4,
+          "coverage": 0.8636363636363636,
+          "intensity": 84226.5731375562,
+          "windows": 44
+        },
+        "lofi hip hop": {
+          "Ph": 8760.156879647262,
+          "thgee": 16548.35116550117,
+          "recency_ratio": 1.8890473530158411,
+          "R": 0.07532076542472926,
+          "n_reactivations": 2,
+          "coverage": 0.8484848484848485,
+          "intensity": 44318.03429421937,
+          "windows": 33
+        },
+        "yoga for beginners": {
+          "Ph": 4989.770752905952,
+          "thgee": 28073.10517169727,
+          "recency_ratio": 5.626131251690873,
+          "R": 0.15929809861651348,
+          "n_reactivations": 6,
+          "coverage": 0.7755102040816326,
+          "intensity": 58705.991831322455,
+          "windows": 49
+        },
+        "minecraft tutorial": {
+          "Ph": 16355.979171679017,
+          "thgee": 34894.65289397243,
+          "recency_ratio": 2.1334493354206403,
+          "R": 0.06183726325013424,
+          "n_reactivations": 2,
+          "coverage": 0.8205128205128205,
+          "intensity": 136598.98571794407,
+          "windows": 39
+        },
+        "how to tie a tie": {
+          "Ph": 1141.6416900009838,
+          "thgee": 17033.56932242164,
+          "recency_ratio": 14.920241150624907,
+          "R": 0.12830730751315372,
+          "n_reactivations": 6,
+          "coverage": 0.6666666666666666,
+          "intensity": 38623.69813435528,
+          "windows": 72
+        },
+        "harlem shake": {
+          "Ph": 24.308848351480396,
+          "thgee": 10.282424220026257,
+          "recency_ratio": 0.42299100604657247,
+          "R": 0.27773623523765445,
+          "n_reactivations": 4,
+          "coverage": 0.2916666666666667,
+          "intensity": 64745.99258333734,
+          "windows": 48
+        },
+        "gangnam style": {
+          "Ph": 1479.5740824733377,
+          "thgee": 5143.840737918023,
+          "recency_ratio": 3.476568560405772,
+          "R": 0.1856402170664092,
+          "n_reactivations": 6,
+          "coverage": 0.625,
+          "intensity": 118218.25779324066,
+          "windows": 56
+        },
+        "ice bucket challenge": {
+          "Ph": 43.77127853563071,
+          "thgee": 1007.7129749358592,
+          "recency_ratio": 23.022242179093773,
+          "R": 0.3215965286104982,
+          "n_reactivations": 5,
+          "coverage": 0.3469387755102041,
+          "intensity": 57379.35823360591,
+          "windows": 49
+        },
+        "fidget spinner": {
+          "Ph": 1488.168198221247,
+          "thgee": 12219.621123417706,
+          "recency_ratio": 8.211182807174197,
+          "R": 0.09309888844799244,
+          "n_reactivations": 2,
+          "coverage": 0.6216216216216216,
+          "intensity": 127144.44912378729,
+          "windows": 37
+        },
+        "mannequin challenge": {
+          "Ph": 1349.9706965388564,
+          "thgee": 5182.528266727883,
+          "recency_ratio": 3.8389931574182983,
+          "R": 0.24083992770568957,
+          "n_reactivations": 6,
+          "coverage": 0.6578947368421053,
+          "intensity": 57355.390389318796,
+          "windows": 38
+        },
+        "solar eclipse": {
+          "Ph": 221.45924876737124,
+          "thgee": 1274.1864678073869,
+          "recency_ratio": 5.753593380720975,
+          "R": 0.24284113220784878,
+          "n_reactivations": 8,
+          "coverage": 0.5,
+          "intensity": 49487.11736214315,
+          "windows": 66
+        },
+        "super bowl halftime": {
+          "Ph": 134.9597701883868,
+          "thgee": 340.816665274359,
+          "recency_ratio": 2.5253204328861996,
+          "R": 0.38618722743042294,
+          "n_reactivations": 8,
+          "coverage": 0.43137254901960786,
+          "intensity": 88232.44792206098,
+          "windows": 51
+        },
+        "world cup final": {
+          "Ph": 23.377256827679332,
+          "thgee": 1140.004272323168,
+          "recency_ratio": 48.76552799699624,
+          "R": 0.23972467140019327,
+          "n_reactivations": 4,
+          "coverage": 0.2982456140350877,
+          "intensity": 44716.60725390283,
+          "windows": 57
+        },
+        "summer olympics": {
+          "Ph": 248.2432316664587,
+          "thgee": 15534.083569927865,
+          "recency_ratio": 62.57606084825533,
+          "R": 0.22910492661700885,
+          "n_reactivations": 6,
+          "coverage": 0.4727272727272727,
+          "intensity": 117429.31165408045,
+          "windows": 55
+        },
+        "total lunar eclipse": {
+          "Ph": 158.32861994662835,
+          "thgee": 1072.5017097835532,
+          "recency_ratio": 6.773896659650588,
+          "R": 0.16893875018227097,
+          "n_reactivations": 4,
+          "coverage": 0.5909090909090909,
+          "intensity": 5331.842151415191,
+          "windows": 44
+        },
+        "chatgpt": {
+          "Ph": 41602.95600310285,
+          "thgee": 55919.37421918561,
+          "recency_ratio": 1.3441202162417256,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 0.9230769230769231,
+          "intensity": 100938.8172542049,
+          "windows": 13
+        },
+        "deepseek ai": {
+          "Ph": 7425.597843144505,
+          "thgee": 6753.882844010193,
+          "recency_ratio": 0.9095406170219068,
+          "R": 0.0,
+          "n_reactivations": 0,
+          "coverage": 1.0,
+          "intensity": 7425.597843144505,
+          "windows": 7
+        },
+        "threads app": {
+          "Ph": 1530.0344746677315,
+          "thgee": 1573.991306881029,
+          "recency_ratio": 1.0287293083529006,
+          "R": 0.07646263349332062,
+          "n_reactivations": 1,
+          "coverage": 1.0,
+          "intensity": 1530.0344746677315,
+          "windows": 12
+        },
+        "flat earth": {
+          "Ph": 10019.303522207088,
+          "thgee": 24544.543774956812,
+          "recency_ratio": 2.449725544351016,
+          "R": 0.08693429901780375,
+          "n_reactivations": 3,
+          "coverage": 0.8372093023255814,
+          "intensity": 60092.83721343822,
+          "windows": 43
+        },
+        "moon landing hoax": {
+          "Ph": 116.27702385854498,
+          "thgee": 5204.888173101765,
+          "recency_ratio": 44.76282588238319,
+          "R": 0.26346956258797044,
+          "n_reactivations": 8,
+          "coverage": 0.4852941176470588,
+          "intensity": 18357.310768629446,
+          "windows": 68
+        },
+        "5g coronavirus": {
+          "Ph": 293.12558550203727,
+          "thgee": 802.4762408553665,
+          "recency_ratio": 2.73765334909596,
+          "R": 0.2452197297695605,
+          "n_reactivations": 4,
+          "coverage": 0.6956521739130435,
+          "intensity": 3535.0297217611164,
+          "windows": 23
+        },
+        "chemtrails": {
+          "Ph": 274.2787997065089,
+          "thgee": 3387.9680977911844,
+          "recency_ratio": 12.352278416765964,
+          "R": 0.14764319285393734,
+          "n_reactivations": 6,
+          "coverage": 0.65625,
+          "intensity": 5219.943299571497,
+          "windows": 64
+        },
+        "pizzagate": {
+          "Ph": 311.2797239205865,
+          "thgee": 1110.4396005220597,
+          "recency_ratio": 3.567336755944163,
+          "R": 0.0745762896371815,
+          "n_reactivations": 2,
+          "coverage": 0.6666666666666666,
+          "intensity": 5517.43180583265,
+          "windows": 39
+        },
+        "bigfoot sighting": {
+          "Ph": 17.74069796634869,
+          "thgee": 768.0530287176422,
+          "recency_ratio": 43.29328136776342,
+          "R": 0.16845666793432304,
+          "n_reactivations": 4,
+          "coverage": 0.36231884057971014,
+          "intensity": 3256.532081822293,
+          "windows": 69
+        },
+        "loch ness monster": {
+          "Ph": 4237.719448548825,
+          "thgee": 9356.215927157722,
+          "recency_ratio": 2.2078422228639245,
+          "R": 0.09654025248565257,
+          "n_reactivations": 3,
+          "coverage": 0.8947368421052632,
+          "intensity": 11322.17354033473,
+          "windows": 38
+        },
+        "area 51 aliens": {
+          "Ph": 1165.002846691106,
+          "thgee": 12044.857853387886,
+          "recency_ratio": 10.338908516488383,
+          "R": 0.1774568492065003,
+          "n_reactivations": 5,
+          "coverage": 0.6521739130434783,
+          "intensity": 50380.69058918826,
+          "windows": 46
+        },
+        "climate change hoax": {
+          "Ph": 54.59118225372507,
+          "thgee": 658.5161204318191,
+          "recency_ratio": 12.062682895769028,
+          "R": 0.27292461748064606,
+          "n_reactivations": 10,
+          "coverage": 0.5882352941176471,
+          "intensity": 924.7848029396891,
+          "windows": 68
+        },
+        "mandela effect": {
+          "Ph": 2656.191794884234,
+          "thgee": 15159.871600008217,
+          "recency_ratio": 5.707370841671069,
+          "R": 0.07163280612550754,
+          "n_reactivations": 2,
+          "coverage": 0.7368421052631579,
+          "intensity": 44403.919006991244,
+          "windows": 38
+        },
+        "birds aren't real": {
+          "Ph": 865.4473686578708,
+          "thgee": 1128.0602814006127,
+          "recency_ratio": 1.3034418062302275,
+          "R": 0.08409293571157749,
+          "n_reactivations": 2,
+          "coverage": 0.875,
+          "intensity": 2276.2968343702587,
+          "windows": 32
+        },
+        "hollow earth": {
+          "Ph": 178.61773987015604,
+          "thgee": 3508.2592516480913,
+          "recency_ratio": 19.641158007028736,
+          "R": 0.026749751427668816,
+          "n_reactivations": 1,
+          "coverage": 0.5901639344262295,
+          "intensity": 6603.949845172254,
+          "windows": 61
+        },
+        "phantom time hypothesis": {
+          "Ph": 40.10388510575487,
+          "thgee": 157.499548473239,
+          "recency_ratio": 3.927289040897386,
+          "R": 0.2537824859002943,
+          "n_reactivations": 5,
+          "coverage": 0.6111111111111112,
+          "intensity": 436.4206148346414,
+          "windows": 36
+        },
+        "project blue beam": {
+          "Ph": 10.43716500169197,
+          "thgee": 329.05436439542103,
+          "recency_ratio": 31.52717853383347,
+          "R": 0.28632547859459123,
+          "n_reactivations": 6,
+          "coverage": 0.3142857142857143,
+          "intensity": 2329.1114004825454,
+          "windows": 70
+        },
+        "haarp weather control": {
+          "Ph": 19.10224052935789,
+          "thgee": 49.70434054259488,
+          "recency_ratio": 2.6020162643332427,
+          "R": 0.2555561669684006,
+          "n_reactivations": 8,
+          "coverage": 0.6056338028169014,
+          "intensity": 140.8628785927843,
+          "windows": 71
+        },
+        "paul is dead conspiracy": {
+          "Ph": 68.74110567878148,
+          "thgee": 1071.352414305075,
+          "recency_ratio": 15.585324148135902,
+          "R": 0.13470249806347245,
+          "n_reactivations": 5,
+          "coverage": 0.5753424657534246,
+          "intensity": 1599.1443196557418,
+          "windows": 73
+        },
+        "fluoride water poisoning": {
+          "Ph": 19.689855905328926,
+          "thgee": 258.76639813354245,
+          "recency_ratio": 13.142117412017681,
+          "R": 0.2814187299913379,
+          "n_reactivations": 10,
+          "coverage": 0.5352112676056338,
+          "intensity": 286.3352775324173,
+          "windows": 71
+        },
+        "mothman": {
+          "Ph": 1185.4988620193806,
+          "thgee": 4113.627726161286,
+          "recency_ratio": 3.469955018897383,
+          "R": 0.11311365701883404,
+          "n_reactivations": 4,
+          "coverage": 0.7872340425531915,
+          "intensity": 8037.044146722014,
+          "windows": 47
+        },
+        "cern portals": {
+          "Ph": 58.09190061772379,
+          "thgee": 958.3651420869805,
+          "recency_ratio": 16.49739691585481,
+          "R": 0.1260065403978183,
+          "n_reactivations": 3,
+          "coverage": 0.5217391304347826,
+          "intensity": 2484.584818138486,
+          "windows": 46
+        }
+      }
+    }
+  },
+  "separation_persistent_over_acute": {
+    "v0_baseline.Ph": [
+      14.816696376402538,
+      1.64432458847194
+    ],
+    "v0_baseline.coverage": [
+      1.8603773584905658,
+      1.1333333333333335
+    ],
+    "v0_baseline.recency_ratio": [
+      0.4035545616444553,
+      2.3050173914527408
+    ],
+    "v0_baseline.R": [
+      0.42782472869387916,
+      0.5291132192070487
+    ],
+    "v1_robustspan.Ph": [
+      19.579709530666168,
+      6.4891459511729614
+    ],
+    "v1_robustspan.coverage": [
+      1.8692810457516342,
+      1.3199554069119286
+    ],
+    "v1_robustspan.recency_ratio": [
+      0.6451938267234635,
+      0.5557314764414358
+    ],
+    "v1_robustspan.R": [
+      0.4149499178155433,
+      0.4449609257117438
+    ],
+    "v2_decomposed.coverage": [
+      1.8692810457516342,
+      1.3199554069119286
+    ],
+    "v2_decomposed.intensity": [
+      0.47065685103199545,
+      0.9067123614756459
+    ],
+    "v2_decomposed.R": [
+      0.4149499178155433,
+      0.4449609257117438
+    ]
+  }
+}

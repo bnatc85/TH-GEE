@@ -1,0 +1,651 @@
+{
+  "weights": {
+    "publication": 1.0,
+    "like": 0.3,
+    "comment": 0.7
+  },
+  "params": {
+    "window_days": 30,
+    "gamma": 0.1,
+    "dormancy": 2
+  },
+  "synthetic": {
+    "rq1": {
+      "total_volume": 63.0,
+      "persistent_Ph": 10.459927473535231,
+      "acute_Ph": 1.0
+    },
+    "rq2": {
+      "n_unique_perms": 718,
+      "Ph_std": 3.444687843676371e-16,
+      "thgee_std": 2.0398180572350517,
+      "thgee_range": [
+        1.8921374563936015,
+        10.483210012929936
+      ],
+      "reduction_identity_max_abs_diff": 4.440892098500626e-15
+    },
+    "rq3": {
+      "continuous_R": 0.0,
+      "reemergent_R": 0.35302924373700345,
+      "formerly_active_R": 0.0,
+      "late_first_R": 0.0
+    },
+    "rq4_d": {
+      "1": 0.5247903053815051,
+      "2": 0.26548504701606634,
+      "3": 0.26548504701606634,
+      "4": 0.0
+    },
+    "rq4_gamma": {
+      "early": {
+        "0.0": 5.675000094851094,
+        "0.1": 4.816461256772407,
+        "0.5": 2.6187433409602123,
+        "1.0": 1.6145861522840068,
+        "2.0": 1.142241052939044
+      },
+      "late": {
+        "0.0": 5.675000094851094,
+        "0.1": 6.652425387336021,
+        "0.5": 11.064664943443786,
+        "1.0": 15.247016060010903,
+        "2.0": 18.523955206941153
+      }
+    }
+  },
+  "topics": {
+    "meditation music": {
+      "Ph": 594.58734488326,
+      "thgee": 460.9448104634449,
+      "recency_ratio": 0.7752348152548484,
+      "R": 0.14480175371323212,
+      "n_reactivations": 4,
+      "windows": 53,
+      "active_windows": 29,
+      "pattern": "persistent",
+      "n_videos": 50,
+      "span_years": 13.0,
+      "span": [
+        "2012-11-16",
+        "2025-11-25"
+      ]
+    },
+    "lofi hip hop": {
+      "Ph": 2346.5844452256506,
+      "thgee": 2046.1697997063047,
+      "recency_ratio": 0.8719779097954186,
+      "R": 0.11383094084525558,
+      "n_reactivations": 3,
+      "windows": 40,
+      "active_windows": 28,
+      "pattern": "persistent",
+      "n_videos": 50,
+      "span_years": 9.7,
+      "span": [
+        "2016-09-07",
+        "2026-06-04"
+      ]
+    },
+    "yoga for beginners": {
+      "Ph": 235.93691370135735,
+      "thgee": 3005.3423648809035,
+      "recency_ratio": 12.737906577370023,
+      "R": 0.2645005694847539,
+      "n_reactivations": 8,
+      "windows": 63,
+      "active_windows": 30,
+      "pattern": "persistent",
+      "n_videos": 50,
+      "span_years": 15.3,
+      "span": [
+        "2010-12-06",
+        "2026-03-24"
+      ]
+    },
+    "minecraft tutorial": {
+      "Ph": 2063.427300479801,
+      "thgee": 4384.185596124398,
+      "recency_ratio": 2.1247104732524185,
+      "R": 0.16888942161865084,
+      "n_reactivations": 4,
+      "windows": 38,
+      "active_windows": 24,
+      "pattern": "persistent",
+      "n_videos": 50,
+      "span_years": 9.2,
+      "span": [
+        "2017-02-25",
+        "2026-04-29"
+      ]
+    },
+    "how to tie a tie": {
+      "Ph": 162.52243461629533,
+      "thgee": 2811.876215063216,
+      "recency_ratio": 17.301465005135253,
+      "R": 0.15328795467892156,
+      "n_reactivations": 5,
+      "windows": 73,
+      "active_windows": 33,
+      "pattern": "persistent",
+      "n_videos": 50,
+      "span_years": 17.8,
+      "span": [
+        "2008-02-29",
+        "2026-01-03"
+      ]
+    },
+    "harlem shake": {
+      "Ph": 11.634935762624828,
+      "thgee": 14.645399270589566,
+      "recency_ratio": 1.2587434575818905,
+      "R": 0.31544654920364396,
+      "n_reactivations": 5,
+      "windows": 72,
+      "active_windows": 16,
+      "pattern": "acute",
+      "n_videos": 50,
+      "span_years": 17.6,
+      "span": [
+        "2007-02-12",
+        "2024-09-06"
+      ]
+    },
+    "gangnam style": {
+      "Ph": 40.12954910989575,
+      "thgee": 59.92588651357332,
+      "recency_ratio": 1.4933107359234168,
+      "R": 0.4784936386133547,
+      "n_reactivations": 9,
+      "windows": 68,
+      "active_windows": 20,
+      "pattern": "acute",
+      "n_videos": 50,
+      "span_years": 16.6,
+      "span": [
+        "2009-06-17",
+        "2026-02-04"
+      ]
+    },
+    "ice bucket challenge": {
+      "Ph": 17.071339638016042,
+      "thgee": 116.39772834599107,
+      "recency_ratio": 6.818312494163365,
+      "R": 0.4441543526414233,
+      "n_reactivations": 5,
+      "windows": 49,
+      "active_windows": 12,
+      "pattern": "acute",
+      "n_videos": 50,
+      "span_years": 12.0,
+      "span": [
+        "2014-06-08",
+        "2026-05-27"
+      ]
+    },
+    "fidget spinner": {
+      "Ph": 590.6248374679521,
+      "thgee": 3109.6334850423,
+      "recency_ratio": 5.264989360036915,
+      "R": 0.1759751941011718,
+      "n_reactivations": 3,
+      "windows": 34,
+      "active_windows": 18,
+      "pattern": "acute",
+      "n_videos": 50,
+      "span_years": 8.3,
+      "span": [
+        "2017-05-02",
+        "2025-08-17"
+      ]
+    },
+    "mannequin challenge": {
+      "Ph": 198.1381264349386,
+      "thgee": 1914.749739946581,
+      "recency_ratio": 9.663711746942937,
+      "R": 0.35829615353675237,
+      "n_reactivations": 6,
+      "windows": 37,
+      "active_windows": 17,
+      "pattern": "acute",
+      "n_videos": 50,
+      "span_years": 9.0,
+      "span": [
+        "2016-09-22",
+        "2025-09-30"
+      ]
+    },
+    "solar eclipse": {
+      "Ph": 89.33476689309927,
+      "thgee": 767.8583942797986,
+      "recency_ratio": 8.595291855394233,
+      "R": 0.27917090612050705,
+      "n_reactivations": 7,
+      "windows": 65,
+      "active_windows": 26,
+      "pattern": "reemergent",
+      "n_videos": 50,
+      "span_years": 15.8,
+      "span": [
+        "2009-11-15",
+        "2025-09-12"
+      ]
+    },
+    "super bowl halftime": {
+      "Ph": 50.85189990211617,
+      "thgee": 120.97985645762229,
+      "recency_ratio": 2.3790626641382926,
+      "R": 0.522511862569227,
+      "n_reactivations": 8,
+      "windows": 49,
+      "active_windows": 16,
+      "pattern": "reemergent",
+      "n_videos": 50,
+      "span_years": 12.0,
+      "span": [
+        "2014-02-03",
+        "2026-02-10"
+      ]
+    },
+    "world cup final": {
+      "Ph": 56.828834709092625,
+      "thgee": 3326.668429036314,
+      "recency_ratio": 58.53838893698178,
+      "R": 0.2036640039026724,
+      "n_reactivations": 4,
+      "windows": 57,
+      "active_windows": 20,
+      "pattern": "reemergent",
+      "n_videos": 50,
+      "span_years": 14.0,
+      "span": [
+        "2012-07-11",
+        "2026-07-15"
+      ]
+    },
+    "summer olympics": {
+      "Ph": 114.57122343502107,
+      "thgee": 10803.24503976069,
+      "recency_ratio": 94.2928312700417,
+      "R": 0.2400221466592753,
+      "n_reactivations": 5,
+      "windows": 54,
+      "active_windows": 21,
+      "pattern": "reemergent",
+      "n_videos": 50,
+      "span_years": 13.2,
+      "span": [
+        "2012-06-26",
+        "2025-09-10"
+      ]
+    },
+    "total lunar eclipse": {
+      "Ph": 14.750886982579598,
+      "thgee": 189.27830529077406,
+      "recency_ratio": 12.831655853258631,
+      "R": 0.35388438338704115,
+      "n_reactivations": 8,
+      "windows": 78,
+      "active_windows": 24,
+      "pattern": "reemergent",
+      "n_videos": 50,
+      "span_years": 19.0,
+      "span": [
+        "2007-03-06",
+        "2026-03-03"
+      ]
+    },
+    "chatgpt": {
+      "Ph": 26976.261186189724,
+      "thgee": 42192.606263326365,
+      "recency_ratio": 1.5640642701415763,
+      "R": 0.08528923176917594,
+      "n_reactivations": 1,
+      "windows": 14,
+      "active_windows": 12,
+      "pattern": "recent",
+      "n_videos": 50,
+      "span_years": 3.4,
+      "span": [
+        "2023-02-22",
+        "2026-07-15"
+      ]
+    },
+    "deepseek ai": {
+      "Ph": 11640.699283863747,
+      "thgee": 11013.563940362837,
+      "recency_ratio": 0.9461256297231009,
+      "R": 0.0,
+      "n_reactivations": 0,
+      "windows": 7,
+      "active_windows": 7,
+      "pattern": "recent",
+      "n_videos": 50,
+      "span_years": 1.5,
+      "span": [
+        "2025-01-03",
+        "2026-07-03"
+      ]
+    },
+    "threads app": {
+      "Ph": 319.83729557343565,
+      "thgee": 304.73185433994684,
+      "recency_ratio": 0.9527714827427918,
+      "R": 0.22384422608794863,
+      "n_reactivations": 2,
+      "windows": 12,
+      "active_windows": 9,
+      "pattern": "recent",
+      "n_videos": 50,
+      "span_years": 2.9,
+      "span": [
+        "2023-07-06",
+        "2026-05-29"
+      ]
+    },
+    "flat earth": {
+      "Ph": 2120.0493168007065,
+      "thgee": 32388.29220287552,
+      "recency_ratio": 15.277140935453133,
+      "R": 0.10018389110609652,
+      "n_reactivations": 3,
+      "windows": 48,
+      "active_windows": 32,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 11.6,
+      "span": [
+        "2014-12-04",
+        "2026-07-09"
+      ]
+    },
+    "moon landing hoax": {
+      "Ph": 46.23783289593714,
+      "thgee": 2055.9137679934342,
+      "recency_ratio": 44.46388680499957,
+      "R": 0.24694536781307933,
+      "n_reactivations": 6,
+      "windows": 72,
+      "active_windows": 26,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 17.7,
+      "span": [
+        "2008-09-07",
+        "2026-05-06"
+      ]
+    },
+    "5g coronavirus": {
+      "Ph": 61.58587049664995,
+      "thgee": 84.29065378547712,
+      "recency_ratio": 1.3686687077040216,
+      "R": 0.27735428546233265,
+      "n_reactivations": 3,
+      "windows": 26,
+      "active_windows": 12,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 6.2,
+      "span": [
+        "2020-02-19",
+        "2026-05-12"
+      ]
+    },
+    "chemtrails": {
+      "Ph": 45.737104069328524,
+      "thgee": 576.5883594582767,
+      "recency_ratio": 12.606577770736891,
+      "R": 0.23582304928550665,
+      "n_reactivations": 6,
+      "windows": 64,
+      "active_windows": 27,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 15.7,
+      "span": [
+        "2010-07-16",
+        "2026-03-21"
+      ]
+    },
+    "pizzagate": {
+      "Ph": 32.84466475072695,
+      "thgee": 103.04237018581682,
+      "recency_ratio": 3.137263569832485,
+      "R": 0.3227222466306019,
+      "n_reactivations": 5,
+      "windows": 39,
+      "active_windows": 17,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 9.5,
+      "span": [
+        "2016-12-06",
+        "2026-06-08"
+      ]
+    },
+    "bigfoot sighting": {
+      "Ph": 14.770899905638728,
+      "thgee": 995.102377970709,
+      "recency_ratio": 67.3691098259242,
+      "R": 0.22435945846371785,
+      "n_reactivations": 5,
+      "windows": 74,
+      "active_windows": 24,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 18.1,
+      "span": [
+        "2008-04-29",
+        "2026-05-28"
+      ]
+    },
+    "loch ness monster": {
+      "Ph": 54.35167667619053,
+      "thgee": 1284.2412939813046,
+      "recency_ratio": 23.62836571965191,
+      "R": 0.15927945207294555,
+      "n_reactivations": 4,
+      "windows": 61,
+      "active_windows": 26,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 14.9,
+      "span": [
+        "2011-04-10",
+        "2026-02-27"
+      ]
+    },
+    "area 51 aliens": {
+      "Ph": 364.38820407674785,
+      "thgee": 2389.0694127747975,
+      "recency_ratio": 6.556385157494311,
+      "R": 0.2624724321840103,
+      "n_reactivations": 6,
+      "windows": 46,
+      "active_windows": 24,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 11.2,
+      "span": [
+        "2015-03-13",
+        "2026-05-26"
+      ]
+    },
+    "climate change hoax": {
+      "Ph": 27.05464753165502,
+      "thgee": 571.7947994494044,
+      "recency_ratio": 21.134808678633924,
+      "R": 0.3126842013347772,
+      "n_reactivations": 8,
+      "windows": 68,
+      "active_windows": 27,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 16.6,
+      "span": [
+        "2009-12-06",
+        "2026-07-07"
+      ]
+    },
+    "mandela effect": {
+      "Ph": 939.5479875276518,
+      "thgee": 3110.2879826348944,
+      "recency_ratio": 3.3104088603493023,
+      "R": 0.12882902691337758,
+      "n_reactivations": 3,
+      "windows": 40,
+      "active_windows": 24,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 9.8,
+      "span": [
+        "2016-08-30",
+        "2026-06-24"
+      ]
+    },
+    "birds aren't real": {
+      "Ph": 543.8591013035084,
+      "thgee": 1360.062969245459,
+      "recency_ratio": 2.5007634624219635,
+      "R": 0.09251542870802815,
+      "n_reactivations": 2,
+      "windows": 35,
+      "active_windows": 26,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 8.6,
+      "span": [
+        "2017-10-20",
+        "2026-05-28"
+      ]
+    },
+    "hollow earth": {
+      "Ph": 51.085256016845946,
+      "thgee": 1885.7312606563469,
+      "recency_ratio": 36.91341509641266,
+      "R": 0.10817205812427905,
+      "n_reactivations": 3,
+      "windows": 72,
+      "active_windows": 29,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 17.5,
+      "span": [
+        "2008-10-24",
+        "2026-05-02"
+      ]
+    },
+    "phantom time hypothesis": {
+      "Ph": 15.352484650623737,
+      "thgee": 238.88301733463726,
+      "recency_ratio": 15.559892927489882,
+      "R": 0.25626404748865717,
+      "n_reactivations": 6,
+      "windows": 54,
+      "active_windows": 24,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 13.1,
+      "span": [
+        "2013-06-09",
+        "2026-07-06"
+      ]
+    },
+    "project blue beam": {
+      "Ph": 6.9349871734742505,
+      "thgee": 192.41276849543746,
+      "recency_ratio": 27.745223413159337,
+      "R": 0.22795652414906853,
+      "n_reactivations": 4,
+      "windows": 71,
+      "active_windows": 18,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 17.4,
+      "span": [
+        "2009-02-05",
+        "2026-06-21"
+      ]
+    },
+    "haarp weather control": {
+      "Ph": 15.226901944381208,
+      "thgee": 168.32513642231336,
+      "recency_ratio": 11.054457238717957,
+      "R": 0.28350099567637915,
+      "n_reactivations": 9,
+      "windows": 78,
+      "active_windows": 36,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 19.1,
+      "span": [
+        "2007-05-23",
+        "2026-07-13"
+      ]
+    },
+    "paul is dead conspiracy": {
+      "Ph": 27.96906949488918,
+      "thgee": 241.74544750012757,
+      "recency_ratio": 8.643313913046052,
+      "R": 0.20899379444333888,
+      "n_reactivations": 6,
+      "windows": 78,
+      "active_windows": 32,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 19.0,
+      "span": [
+        "2007-04-07",
+        "2026-04-26"
+      ]
+    },
+    "fluoride water poisoning": {
+      "Ph": 12.148694133301015,
+      "thgee": 171.44949629789883,
+      "recency_ratio": 14.112586457167884,
+      "R": 0.43703055271807273,
+      "n_reactivations": 13,
+      "windows": 80,
+      "active_windows": 31,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 19.7,
+      "span": [
+        "2006-06-30",
+        "2026-02-26"
+      ]
+    },
+    "mothman": {
+      "Ph": 362.43801657616234,
+      "thgee": 1039.401055611546,
+      "recency_ratio": 2.867803619031028,
+      "R": 0.28874579428748115,
+      "n_reactivations": 8,
+      "windows": 47,
+      "active_windows": 29,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 11.4,
+      "span": [
+        "2014-10-02",
+        "2026-02-13"
+      ]
+    },
+    "cern portals": {
+      "Ph": 12.426938418506545,
+      "thgee": 826.0743883745624,
+      "recency_ratio": 66.47448957696204,
+      "R": 0.19555675578240625,
+      "n_reactivations": 4,
+      "windows": 66,
+      "active_windows": 21,
+      "pattern": "debunked",
+      "n_videos": 50,
+      "span_years": 16.2,
+      "span": [
+        "2010-04-09",
+        "2026-07-05"
+      ]
+    }
+  }
+}

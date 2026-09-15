@@ -2,10 +2,13 @@ from __future__ import annotations
 
 import os
 from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import urlsplit
 
 from sqlalchemy import (
     Boolean,
     DateTime,
+    Float,
     ForeignKey,
     Integer,
     String,
@@ -16,9 +19,50 @@ from sqlalchemy import (
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker
 
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///data/thgee.db")
+SQLITE_DEFAULT_URL = "sqlite:///data/thgee.db"
+
+
+def resolve_database_url() -> str:
+    """Return the database URL to use.
+
+    SQLite is used locally by default. A PostgreSQL database is only used when
+    DATABASE_URL is explicitly set to a valid PostgreSQL URL. Anything else
+    (unset, blank, or a non-PostgreSQL/non-SQLite value) falls back to the local
+    SQLite database so the app never fails to start on a bad or empty env var.
+    """
+    raw = os.getenv("DATABASE_URL", "").strip()
+
+    if not raw:
+        return SQLITE_DEFAULT_URL
+
+    scheme = urlsplit(raw).scheme.lower()
+
+    # Normalize the legacy "postgres://" scheme (rejected by SQLAlchemy) to the
+    # "postgresql://" form it expects.
+    if scheme == "postgres" or scheme.startswith("postgres+"):
+        raw = "postgresql" + raw[len("postgres"):]
+        scheme = urlsplit(raw).scheme.lower()
+
+    if scheme == "postgresql" or scheme.startswith("postgresql+"):
+        return raw
+
+    # An explicit local SQLite URL is honored; anything else is not a valid
+    # PostgreSQL URL, so fall back to the local SQLite default.
+    if scheme.startswith("sqlite"):
+        return raw
+
+    return SQLITE_DEFAULT_URL
+
+
+DATABASE_URL = resolve_database_url()
 
 connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
+
+if DATABASE_URL.startswith("sqlite:///") and ":memory:" not in DATABASE_URL:
+    # Ensure the parent directory for the SQLite file exists so create_engine /
+    # connections don't fail with "unable to open database file".
+    db_path = Path(DATABASE_URL[len("sqlite:///"):])
+    db_path.parent.mkdir(parents=True, exist_ok=True)
 
 engine = create_engine(
     DATABASE_URL,
@@ -89,6 +133,9 @@ class EngagementEvent(Base):
     actor_did: Mapped[str] = mapped_column(String(200), nullable=False)
     event_type: Mapped[str] = mapped_column(String(40), nullable=False)
     event_time: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    # Engagement magnitude carried by the event (e.g. a video's like or comment
+    # count at its publication time). Defaults to 1.0 so a bare event counts once.
+    magnitude: Mapped[float] = mapped_column(Float, default=1.0, nullable=False)
     observed_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         default=lambda: datetime.now(timezone.utc),
@@ -96,8 +143,25 @@ class EngagementEvent(Base):
     )
 
 
+def _ensure_magnitude_column() -> None:
+    """Additive migration: add engagement_events.magnitude to older databases."""
+    from sqlalchemy import inspect, text
+
+    inspector = inspect(engine)
+    if "engagement_events" not in inspector.get_table_names():
+        return
+    columns = {col["name"] for col in inspector.get_columns("engagement_events")}
+    if "magnitude" not in columns:
+        with engine.begin() as connection:
+            connection.execute(text(
+                "ALTER TABLE engagement_events "
+                "ADD COLUMN magnitude FLOAT NOT NULL DEFAULT 1.0"
+            ))
+
+
 def initialize_database() -> None:
     Base.metadata.create_all(bind=engine)
+    _ensure_magnitude_column()
 
 
 if __name__ == "__main__":

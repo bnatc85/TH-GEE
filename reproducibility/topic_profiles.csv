@@ -1,0 +1,38 @@
+topic,query,group,expected_pattern,n_videos,span_start,span_end,span_years,windows,active_windows,coverage,Ph,thgee,recency_ratio,R_h,n_reactivations,profile
+meditation music,meditation music,known-pattern,persistent,50,2012-11-16,2025-11-25,13.0,53,29,0.54717,594.587345,460.94481,0.775235,0.144802,4,
+lofi hip hop,lofi hip hop,known-pattern,persistent,50,2016-09-07,2026-06-04,9.7,40,28,0.7,2346.584445,2046.1698,0.871978,0.113831,3,
+yoga for beginners,yoga for beginners,known-pattern,persistent,50,2010-12-06,2026-03-24,15.3,63,30,0.47619,235.936914,3005.342365,12.737907,0.264501,8,
+minecraft tutorial,minecraft tutorial,known-pattern,persistent,50,2017-02-25,2026-04-29,9.2,38,24,0.631579,2063.4273,4384.185596,2.12471,0.168889,4,
+how to tie a tie,how to tie a tie,known-pattern,persistent,50,2008-02-29,2026-01-03,17.8,73,33,0.452055,162.522435,2811.876215,17.301465,0.153288,5,
+harlem shake,harlem shake,known-pattern,acute,50,2007-02-12,2024-09-06,17.6,72,16,0.222222,11.634936,14.645399,1.258743,0.315447,5,
+gangnam style,gangnam style,known-pattern,acute,50,2009-06-17,2026-02-04,16.6,68,20,0.294118,40.129549,59.925887,1.493311,0.478494,9,
+ice bucket challenge,ice bucket challenge,known-pattern,acute,50,2014-06-08,2026-05-27,12.0,49,12,0.244898,17.07134,116.397728,6.818312,0.444154,5,
+fidget spinner,fidget spinner,known-pattern,acute,50,2017-05-02,2025-08-17,8.3,34,18,0.529412,590.624837,3109.633485,5.264989,0.175975,3,
+mannequin challenge,mannequin challenge,known-pattern,acute,50,2016-09-22,2025-09-30,9.0,37,17,0.459459,198.138126,1914.74974,9.663712,0.358296,6,
+solar eclipse,solar eclipse,known-pattern,reemergent,50,2009-11-15,2025-09-12,15.8,65,26,0.4,89.334767,767.858394,8.595292,0.279171,7,
+super bowl halftime,super bowl halftime,known-pattern,reemergent,50,2014-02-03,2026-02-10,12.0,49,16,0.326531,50.8519,120.979856,2.379063,0.522512,8,
+world cup final,world cup final,known-pattern,reemergent,50,2012-07-11,2026-07-15,14.0,57,20,0.350877,56.828835,3326.668429,58.538389,0.203664,4,
+summer olympics,summer olympics,known-pattern,reemergent,50,2012-06-26,2025-09-10,13.2,54,21,0.388889,114.571223,10803.24504,94.292831,0.240022,5,
+total lunar eclipse,total lunar eclipse,known-pattern,reemergent,50,2007-03-06,2026-03-03,19.0,78,24,0.307692,14.750887,189.278305,12.831656,0.353884,8,
+chatgpt,chatgpt,known-pattern,recent,50,2023-02-22,2026-07-15,3.4,14,12,0.857143,26976.261186,42192.606263,1.564064,0.085289,1,
+deepseek ai,deepseek ai,known-pattern,recent,50,2025-01-03,2026-07-03,1.5,7,7,1.0,11640.699284,11013.56394,0.946126,0.0,0,
+threads app,threads app,known-pattern,recent,50,2023-07-06,2026-05-29,2.9,12,9,0.75,319.837296,304.731854,0.952771,0.223844,2,
+flat earth,flat earth,debunked,,50,2014-12-04,2026-07-09,11.6,48,32,0.666667,2120.049317,32388.292203,15.277141,0.100184,3,"persistent, strongly recency-weighted"
+moon-landing hoax,moon landing hoax,debunked,,50,2008-09-07,2026-05-06,17.7,72,26,0.361111,46.237833,2055.913768,44.463887,0.246945,6,"intermittent, strongly recency-weighted"
+5G–coronavirus,5g coronavirus,debunked,,50,2020-02-19,2026-05-12,6.2,26,12,0.461538,61.58587,84.290654,1.368669,0.277354,3,"intermittent, recency-weighted"
+chemtrails,chemtrails,debunked,,50,2010-07-16,2026-03-21,15.7,64,27,0.421875,45.737104,576.588359,12.606578,0.235823,6,"intermittent, strongly recency-weighted"
+pizzagate,pizzagate,debunked,,50,2016-12-06,2026-06-08,9.5,39,17,0.435897,32.844665,103.04237,3.137264,0.322722,5,"intermittent, recency-weighted"
+bigfoot,bigfoot sighting,debunked,,50,2008-04-29,2026-05-28,18.1,74,24,0.324324,14.7709,995.102378,67.36911,0.224359,5,"intermittent, strongly recency-weighted"
+Loch Ness monster,loch ness monster,debunked,,50,2011-04-10,2026-02-27,14.9,61,26,0.42623,54.351677,1284.241294,23.628366,0.159279,4,"intermittent, strongly recency-weighted"
+Area 51 aliens,area 51 aliens,debunked,,50,2015-03-13,2026-05-26,11.2,46,24,0.521739,364.388204,2389.069413,6.556385,0.262472,6,"intermittent, recency-weighted"
+climate change (hoax),climate change hoax,debunked,,50,2009-12-06,2026-07-07,16.6,68,27,0.397059,27.054648,571.794799,21.134809,0.312684,8,"intermittent, strongly recency-weighted"
+Mandela effect,mandela effect,debunked,,50,2016-08-30,2026-06-24,9.8,40,24,0.6,939.547988,3110.287983,3.310409,0.128829,3,"persistent, recency-weighted"
+Birds aren't real,birds aren't real,debunked,,50,2017-10-20,2026-05-28,8.6,35,26,0.742857,543.859101,1360.062969,2.500763,0.092515,2,"persistent, recency-weighted"
+Hollow Earth,hollow earth,debunked,,50,2008-10-24,2026-05-02,17.5,72,29,0.402778,51.085256,1885.731261,36.913415,0.108172,3,"intermittent, strongly recency-weighted"
+phantom time hypothesis,phantom time hypothesis,debunked,,50,2013-06-09,2026-07-06,13.1,54,24,0.444444,15.352485,238.883017,15.559893,0.256264,6,"intermittent, strongly recency-weighted"
+Project Blue Beam,project blue beam,debunked,,50,2009-02-05,2026-06-21,17.4,71,18,0.253521,6.934987,192.412768,27.745223,0.227957,4,"intermittent, strongly recency-weighted"
+HAARP weather control,haarp weather control,debunked,,50,2007-05-23,2026-07-13,19.1,78,36,0.461538,15.226902,168.325136,11.054457,0.283501,9,"intermittent, strongly recency-weighted"
+Paul McCartney (“Paul is dead”),paul is dead conspiracy,debunked,,50,2007-04-07,2026-04-26,19.0,78,32,0.410256,27.969069,241.745448,8.643314,0.208994,6,"intermittent, recency-weighted"
+fluoride water poisoning,fluoride water poisoning,debunked,,50,2006-06-30,2026-02-26,19.7,80,31,0.3875,12.148694,171.449496,14.112586,0.437031,13,"intermittent, strongly recency-weighted"
+Mothman,mothman,debunked,,50,2014-10-02,2026-02-13,11.4,47,29,0.617021,362.438017,1039.401056,2.867804,0.288746,8,"persistent, recency-weighted"
+CERN portals,cern portals,debunked,,50,2010-04-09,2026-07-05,16.2,66,21,0.318182,12.426938,826.074388,66.47449,0.195557,4,"intermittent, strongly recency-weighted"

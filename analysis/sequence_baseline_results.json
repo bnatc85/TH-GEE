@@ -1,0 +1,1551 @@
+{
+  "params": {
+    "window_days": 90,
+    "n_days": 3960,
+    "qh_rule": "quartile",
+    "qh_k": 2.0,
+    "n_windows": 44,
+    "horizon": [
+      "2015-07-01",
+      "2026-06-30"
+    ],
+    "kleinberg": {
+      "s": 2.0,
+      "gamma": 1.0,
+      "states": 3
+    },
+    "pelt": {
+      "cost": "L2 on log1p(daily views)",
+      "penalty": "4.0 * sigma^2 * ln(n)",
+      "min_segment_days": 14
+    }
+  },
+  "topics": {
+    "meditation music": {
+      "pattern": "persistent",
+      "R": 0.0,
+      "n_reactivations": 0,
+      "reactivation_windows": [],
+      "recency_ratio": 0.5962353421102782,
+      "ga_ratio": 0.8629910902454682,
+      "n_bursts": 5,
+      "burst_days": 2236,
+      "burst_onset_windows": [
+        0,
+        9,
+        12,
+        16,
+        20
+      ],
+      "n_changepoints": 8,
+      "changepoint_windows": [
+        10,
+        14,
+        18,
+        25,
+        29,
+        32,
+        39,
+        41
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "lofi hip hop": {
+      "pattern": "persistent",
+      "R": 0.0,
+      "n_reactivations": 0,
+      "reactivation_windows": [],
+      "recency_ratio": 0.958746620156497,
+      "ga_ratio": 0.8967571689933607,
+      "n_bursts": 5,
+      "burst_days": 1743,
+      "burst_onset_windows": [
+        8,
+        10,
+        12,
+        16,
+        20
+      ],
+      "n_changepoints": 21,
+      "changepoint_windows": [
+        4,
+        6,
+        8,
+        9,
+        12,
+        17,
+        19,
+        21,
+        22,
+        23,
+        27,
+        31,
+        34,
+        35,
+        38,
+        42
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "yoga for beginners": {
+      "pattern": "persistent",
+      "R": 0.024493474020892653,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        16
+      ],
+      "recency_ratio": 1.6666053917299024,
+      "ga_ratio": 0.6439330689994608,
+      "n_bursts": 2,
+      "burst_days": 1135,
+      "burst_onset_windows": [
+        16,
+        20
+      ],
+      "n_changepoints": 20,
+      "changepoint_windows": [
+        1,
+        3,
+        4,
+        6,
+        7,
+        10,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        22,
+        24,
+        26,
+        27,
+        39,
+        41
+      ],
+      "react_hits_burst": 1,
+      "react_hits_cp": 1
+    },
+    "minecraft tutorial": {
+      "pattern": "persistent",
+      "R": 0.04506228462802243,
+      "n_reactivations": 2,
+      "reactivation_windows": [
+        13,
+        16
+      ],
+      "recency_ratio": 1.1098509689917107,
+      "ga_ratio": 0.9517487727514251,
+      "n_bursts": 9,
+      "burst_days": 1344,
+      "burst_onset_windows": [
+        0,
+        1,
+        13,
+        16,
+        17,
+        18,
+        20,
+        22,
+        26
+      ],
+      "n_changepoints": 15,
+      "changepoint_windows": [
+        2,
+        8,
+        13,
+        16,
+        19,
+        23,
+        27,
+        31,
+        36,
+        37,
+        39,
+        40,
+        43
+      ],
+      "react_hits_burst": 2,
+      "react_hits_cp": 2
+    },
+    "how to tie a tie": {
+      "pattern": "persistent",
+      "R": 0.022457440390476275,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        29
+      ],
+      "recency_ratio": 0.8057500010744161,
+      "ga_ratio": 0.9691692880703466,
+      "n_bursts": 8,
+      "burst_days": 1926,
+      "burst_onset_windows": [
+        0,
+        8,
+        10,
+        12,
+        17,
+        22,
+        24,
+        26
+      ],
+      "n_changepoints": 12,
+      "changepoint_windows": [
+        3,
+        7,
+        12,
+        14,
+        19,
+        21,
+        22,
+        24,
+        35,
+        42
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "harlem shake": {
+      "pattern": "acute",
+      "R": 0.06734237598021198,
+      "n_reactivations": 3,
+      "reactivation_windows": [
+        28,
+        33,
+        39
+      ],
+      "recency_ratio": 0.8871039282097416,
+      "ga_ratio": 0.9729319821221849,
+      "n_bursts": 9,
+      "burst_days": 1890,
+      "burst_onset_windows": [
+        0,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        21,
+        26
+      ],
+      "n_changepoints": 9,
+      "changepoint_windows": [
+        4,
+        5,
+        7,
+        9,
+        10,
+        17,
+        19,
+        23
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "gangnam style": {
+      "pattern": "acute",
+      "R": 0.022337249059443353,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        18
+      ],
+      "recency_ratio": 0.9707243207493627,
+      "ga_ratio": 0.9777184528795761,
+      "n_bursts": 16,
+      "burst_days": 1473,
+      "burst_onset_windows": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        10,
+        12,
+        14,
+        17,
+        21,
+        24,
+        27,
+        30,
+        34,
+        36
+      ],
+      "n_changepoints": 7,
+      "changepoint_windows": [
+        2,
+        4,
+        8,
+        19,
+        30,
+        41
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "ice bucket challenge": {
+      "pattern": "acute",
+      "R": 0.06614828010661991,
+      "n_reactivations": 3,
+      "reactivation_windows": [
+        29,
+        32,
+        37
+      ],
+      "recency_ratio": 0.7826752409016866,
+      "ga_ratio": 0.9169716668883156,
+      "n_bursts": 9,
+      "burst_days": 1528,
+      "burst_onset_windows": [
+        0,
+        8,
+        10,
+        12,
+        14,
+        17,
+        21,
+        39
+      ],
+      "n_changepoints": 12,
+      "changepoint_windows": [
+        1,
+        12,
+        18,
+        21,
+        22,
+        24,
+        39,
+        40,
+        42
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "fidget spinner": {
+      "pattern": "acute",
+      "R": 0.027049346181652917,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        29
+      ],
+      "recency_ratio": 1.7431572382967457,
+      "ga_ratio": 0.13950886250368305,
+      "n_bursts": 3,
+      "burst_days": 318,
+      "burst_onset_windows": [
+        7,
+        15,
+        34
+      ],
+      "n_changepoints": 32,
+      "changepoint_windows": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        18,
+        26,
+        29,
+        30,
+        34,
+        35,
+        36,
+        38,
+        42
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 1
+    },
+    "mannequin challenge": {
+      "pattern": "acute",
+      "R": 0.07108136490799265,
+      "n_reactivations": 3,
+      "reactivation_windows": [
+        29,
+        33,
+        42
+      ],
+      "recency_ratio": 1.1190947951701988,
+      "ga_ratio": 0.11977028649833457,
+      "n_bursts": 1,
+      "burst_days": 173,
+      "burst_onset_windows": [
+        5
+      ],
+      "n_changepoints": 22,
+      "changepoint_windows": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        18,
+        19,
+        24,
+        28,
+        38,
+        39,
+        42,
+        43
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 1
+    },
+    "solar eclipse": {
+      "pattern": "reemergent",
+      "R": 0.0,
+      "n_reactivations": 0,
+      "reactivation_windows": [],
+      "recency_ratio": 0.8563747918475413,
+      "ga_ratio": 0.6943892527065626,
+      "n_bursts": 23,
+      "burst_days": 362,
+      "burst_onset_windows": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        23,
+        25,
+        26,
+        27,
+        29,
+        31,
+        33,
+        35,
+        36,
+        39,
+        41
+      ],
+      "n_changepoints": 40,
+      "changepoint_windows": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        18,
+        20,
+        23,
+        24,
+        29,
+        31,
+        33,
+        34,
+        35,
+        36,
+        39,
+        40,
+        41,
+        43
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "super bowl halftime": {
+      "pattern": "reemergent",
+      "R": 0.10496360489323295,
+      "n_reactivations": 5,
+      "reactivation_windows": [
+        5,
+        9,
+        13,
+        17,
+        21
+      ],
+      "recency_ratio": 1.7236878863860474,
+      "ga_ratio": 0.4975014036327562,
+      "n_bursts": 13,
+      "burst_days": 299,
+      "burst_onset_windows": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30,
+        34,
+        37,
+        38,
+        41,
+        42
+      ],
+      "n_changepoints": 29,
+      "changepoint_windows": [
+        1,
+        2,
+        6,
+        10,
+        13,
+        14,
+        16,
+        18,
+        22,
+        26,
+        27,
+        30,
+        31,
+        32,
+        34,
+        35,
+        37,
+        38,
+        39,
+        41,
+        42,
+        43
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 1
+    },
+    "world cup final": {
+      "pattern": "reemergent",
+      "R": 0.11155076462944305,
+      "n_reactivations": 5,
+      "reactivation_windows": [
+        3,
+        7,
+        15,
+        19,
+        39
+      ],
+      "recency_ratio": 1.048873383443009,
+      "ga_ratio": 0.4935414809796691,
+      "n_bursts": 6,
+      "burst_days": 297,
+      "burst_onset_windows": [
+        3,
+        11,
+        15,
+        24,
+        29,
+        36
+      ],
+      "n_changepoints": 21,
+      "changepoint_windows": [
+        3,
+        4,
+        6,
+        11,
+        12,
+        15,
+        16,
+        19,
+        24,
+        27,
+        29,
+        30,
+        36,
+        40
+      ],
+      "react_hits_burst": 2,
+      "react_hits_cp": 3
+    },
+    "summer olympics": {
+      "pattern": "reemergent",
+      "R": 0.06647454357107191,
+      "n_reactivations": 3,
+      "reactivation_windows": [
+        16,
+        22,
+        40
+      ],
+      "recency_ratio": 1.0145180230653041,
+      "ga_ratio": 0.7769547542864423,
+      "n_bursts": 8,
+      "burst_days": 724,
+      "burst_onset_windows": [
+        0,
+        2,
+        10,
+        23,
+        26,
+        28,
+        36,
+        43
+      ],
+      "n_changepoints": 28,
+      "changepoint_windows": [
+        0,
+        2,
+        4,
+        10,
+        12,
+        15,
+        18,
+        19,
+        22,
+        24,
+        25,
+        26,
+        34,
+        36,
+        37,
+        39,
+        43
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 1
+    },
+    "total lunar eclipse": {
+      "pattern": "reemergent",
+      "R": 0.0,
+      "n_reactivations": 0,
+      "reactivation_windows": [],
+      "recency_ratio": 0.8609846578529995,
+      "ga_ratio": 0.7907340740415876,
+      "n_bursts": 26,
+      "burst_days": 477,
+      "burst_onset_windows": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        19,
+        20,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        41,
+        43
+      ],
+      "n_changepoints": 27,
+      "changepoint_windows": [
+        0,
+        1,
+        6,
+        8,
+        10,
+        12,
+        14,
+        19,
+        20,
+        27,
+        29,
+        33,
+        35,
+        39,
+        41,
+        43
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "chatgpt": {
+      "pattern": "recent",
+      "R": 0.06978432164567441,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        38
+      ],
+      "recency_ratio": 161.70250605492754,
+      "ga_ratio": 0.0011471037024288673,
+      "n_bursts": 4,
+      "burst_days": 960,
+      "burst_onset_windows": [
+        30,
+        37,
+        39,
+        43
+      ],
+      "n_changepoints": 1,
+      "changepoint_windows": [
+        30
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "deepseek ai": {
+      "pattern": "recent",
+      "R": 0.0,
+      "n_reactivations": 0,
+      "reactivation_windows": [],
+      "recency_ratio": 21.24209644667335,
+      "ga_ratio": 0.0016909926254064082,
+      "n_bursts": 3,
+      "burst_days": 311,
+      "burst_onset_windows": [
+        38,
+        40,
+        41
+      ],
+      "n_changepoints": 1,
+      "changepoint_windows": [
+        38
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "threads app": {
+      "pattern": "recent",
+      "R": 0.0,
+      "n_reactivations": 0,
+      "reactivation_windows": [],
+      "recency_ratio": 23.41532964349179,
+      "ga_ratio": 0.01544374174488446,
+      "n_bursts": 4,
+      "burst_days": 657,
+      "burst_onset_windows": [
+        32,
+        38,
+        39,
+        40
+      ],
+      "n_changepoints": 1,
+      "changepoint_windows": [
+        32
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "flat earth": {
+      "pattern": "debunked",
+      "R": 0.022723592197040832,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        18
+      ],
+      "recency_ratio": 1.0042995709771987,
+      "ga_ratio": 0.9682221545062347,
+      "n_bursts": 13,
+      "burst_days": 1597,
+      "burst_onset_windows": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        17,
+        18,
+        20,
+        22,
+        26,
+        37
+      ],
+      "n_changepoints": 16,
+      "changepoint_windows": [
+        0,
+        2,
+        6,
+        7,
+        11,
+        14,
+        15,
+        17,
+        19,
+        25,
+        35,
+        37,
+        38
+      ],
+      "react_hits_burst": 1,
+      "react_hits_cp": 0
+    },
+    "moon landing hoax": {
+      "pattern": "debunked",
+      "R": 0.021812030529984483,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        32
+      ],
+      "recency_ratio": 0.8535253934125967,
+      "ga_ratio": 0.9252637779205601,
+      "n_bursts": 7,
+      "burst_days": 1489,
+      "burst_onset_windows": [
+        0,
+        5,
+        8,
+        12,
+        16,
+        33,
+        43
+      ],
+      "n_changepoints": 11,
+      "changepoint_windows": [
+        16,
+        20,
+        24,
+        28,
+        33,
+        35,
+        36,
+        43
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "5g coronavirus": {
+      "pattern": "debunked",
+      "R": 0.0,
+      "n_reactivations": 0,
+      "reactivation_windows": [],
+      "recency_ratio": 10.826419320432455,
+      "ga_ratio": 0.07470172301927049,
+      "n_bursts": 4,
+      "burst_days": 928,
+      "burst_onset_windows": [
+        33,
+        39,
+        40,
+        43
+      ],
+      "n_changepoints": 1,
+      "changepoint_windows": [
+        33
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "chemtrails": {
+      "pattern": "debunked",
+      "R": 0.044872382583699084,
+      "n_reactivations": 2,
+      "reactivation_windows": [
+        22,
+        31
+      ],
+      "recency_ratio": 0.9307910135568129,
+      "ga_ratio": 0.9436407208989368,
+      "n_bursts": 12,
+      "burst_days": 1379,
+      "burst_onset_windows": [
+        0,
+        1,
+        2,
+        5,
+        8,
+        10,
+        12,
+        14,
+        17,
+        18,
+        22
+      ],
+      "n_changepoints": 10,
+      "changepoint_windows": [
+        2,
+        3,
+        12,
+        18,
+        19,
+        24,
+        31,
+        34,
+        40
+      ],
+      "react_hits_burst": 1,
+      "react_hits_cp": 1
+    },
+    "pizzagate": {
+      "pattern": "debunked",
+      "R": 0.025328428057107888,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        29
+      ],
+      "recency_ratio": 3.054269608199585,
+      "ga_ratio": 0.2595474253184495,
+      "n_bursts": 6,
+      "burst_days": 530,
+      "burst_onset_windows": [
+        6,
+        12,
+        18,
+        19,
+        34,
+        42
+      ],
+      "n_changepoints": 19,
+      "changepoint_windows": [
+        6,
+        7,
+        15,
+        16,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        28,
+        34,
+        42,
+        43
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "bigfoot sighting": {
+      "pattern": "debunked",
+      "R": 0.06802671077265,
+      "n_reactivations": 3,
+      "reactivation_windows": [
+        6,
+        15,
+        18
+      ],
+      "recency_ratio": 0.9591952194420201,
+      "ga_ratio": 0.990197598260705,
+      "n_bursts": 15,
+      "burst_days": 1885,
+      "burst_onset_windows": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        17,
+        21,
+        22,
+        24,
+        26,
+        33
+      ],
+      "n_changepoints": 14,
+      "changepoint_windows": [
+        0,
+        1,
+        3,
+        6,
+        7,
+        9,
+        10,
+        19,
+        22,
+        24,
+        28,
+        33,
+        37
+      ],
+      "react_hits_burst": 1,
+      "react_hits_cp": 1
+    },
+    "loch ness monster": {
+      "pattern": "debunked",
+      "R": 0.02259816125677335,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        10
+      ],
+      "recency_ratio": 0.9299153126390697,
+      "ga_ratio": 0.9918369182016292,
+      "n_bursts": 16,
+      "burst_days": 1956,
+      "burst_onset_windows": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        21,
+        22,
+        24,
+        26,
+        33
+      ],
+      "n_changepoints": 7,
+      "changepoint_windows": [
+        3,
+        16,
+        17,
+        33,
+        36
+      ],
+      "react_hits_burst": 1,
+      "react_hits_cp": 0
+    },
+    "area 51 aliens": {
+      "pattern": "debunked",
+      "R": 0.044283306754818154,
+      "n_reactivations": 2,
+      "reactivation_windows": [
+        30,
+        36
+      ],
+      "recency_ratio": 0.815289179460735,
+      "ga_ratio": 0.8452452337309818,
+      "n_bursts": 7,
+      "burst_days": 1291,
+      "burst_onset_windows": [
+        0,
+        2,
+        6,
+        8,
+        10,
+        12,
+        14
+      ],
+      "n_changepoints": 15,
+      "changepoint_windows": [
+        10,
+        16,
+        17,
+        20,
+        22,
+        24,
+        33,
+        35,
+        40,
+        41
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "climate change hoax": {
+      "pattern": "debunked",
+      "R": 0.047051074764295986,
+      "n_reactivations": 2,
+      "reactivation_windows": [
+        5,
+        32
+      ],
+      "recency_ratio": 0.8991911830053928,
+      "ga_ratio": 0.948069211744346,
+      "n_bursts": 13,
+      "burst_days": 1554,
+      "burst_onset_windows": [
+        1,
+        2,
+        4,
+        6,
+        7,
+        8,
+        10,
+        12,
+        16,
+        18,
+        21,
+        24,
+        27
+      ],
+      "n_changepoints": 13,
+      "changepoint_windows": [
+        3,
+        5,
+        7,
+        13,
+        17,
+        19,
+        21,
+        32,
+        38,
+        42
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 2
+    },
+    "mandela effect": {
+      "pattern": "debunked",
+      "R": 0.02215811501473114,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        14
+      ],
+      "recency_ratio": 2.7720575996191803,
+      "ga_ratio": 0.5123975748335957,
+      "n_bursts": 15,
+      "burst_days": 905,
+      "burst_onset_windows": [
+        5,
+        16,
+        17,
+        21,
+        23,
+        24,
+        26,
+        30,
+        32,
+        37,
+        39,
+        41,
+        43
+      ],
+      "n_changepoints": 22,
+      "changepoint_windows": [
+        5,
+        6,
+        8,
+        10,
+        11,
+        12,
+        16,
+        20,
+        21,
+        28,
+        30,
+        31,
+        32,
+        33,
+        35,
+        39,
+        43
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "birds aren't real": {
+      "pattern": "debunked",
+      "R": 0.0,
+      "n_reactivations": 0,
+      "reactivation_windows": [],
+      "recency_ratio": 18.706576834076355,
+      "ga_ratio": 0.04076831631563097,
+      "n_bursts": 2,
+      "burst_days": 842,
+      "burst_onset_windows": [
+        26,
+        33
+      ],
+      "n_changepoints": 1,
+      "changepoint_windows": [
+        26
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "hollow earth": {
+      "pattern": "debunked",
+      "R": 0.0,
+      "n_reactivations": 0,
+      "reactivation_windows": [],
+      "recency_ratio": 0.882567706786142,
+      "ga_ratio": 0.9302033233355969,
+      "n_bursts": 14,
+      "burst_days": 1680,
+      "burst_onset_windows": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12,
+        14,
+        18,
+        21,
+        22,
+        26,
+        35
+      ],
+      "n_changepoints": 13,
+      "changepoint_windows": [
+        2,
+        6,
+        7,
+        11,
+        22,
+        23,
+        25,
+        35,
+        36,
+        38
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 0
+    },
+    "phantom time hypothesis": {
+      "pattern": "debunked",
+      "R": 0.08241717417612442,
+      "n_reactivations": 1,
+      "reactivation_windows": [
+        39
+      ],
+      "recency_ratio": 18.750428598937088,
+      "ga_ratio": 0.02232047402933833,
+      "n_bursts": 7,
+      "burst_days": 800,
+      "burst_onset_windows": [
+        32,
+        35,
+        39,
+        40,
+        41,
+        43
+      ],
+      "n_changepoints": 1,
+      "changepoint_windows": [
+        32
+      ],
+      "react_hits_burst": 1,
+      "react_hits_cp": 0
+    },
+    "project blue beam": {
+      "pattern": "debunked",
+      "R": 0.06647763798678773,
+      "n_reactivations": 3,
+      "reactivation_windows": [
+        19,
+        23,
+        30
+      ],
+      "recency_ratio": 1.064320228792939,
+      "ga_ratio": 0.5338679425992995,
+      "n_bursts": 7,
+      "burst_days": 339,
+      "burst_onset_windows": [
+        0,
+        4,
+        11,
+        12,
+        32,
+        36,
+        38
+      ],
+      "n_changepoints": 14,
+      "changepoint_windows": [
+        1,
+        4,
+        14,
+        19,
+        20,
+        30,
+        32,
+        33,
+        36,
+        37,
+        38
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 2
+    },
+    "haarp weather control": {
+      "pattern": "debunked",
+      "R": 0.032320347261420974,
+      "n_reactivations": 3,
+      "reactivation_windows": [
+        4,
+        7,
+        19
+      ],
+      "recency_ratio": 11.988777004962815,
+      "ga_ratio": 0.06991275279364147,
+      "n_bursts": 4,
+      "burst_days": 1143,
+      "burst_onset_windows": [
+        20,
+        30,
+        32,
+        35
+      ],
+      "n_changepoints": 32,
+      "changepoint_windows": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        37,
+        38,
+        40,
+        41,
+        42,
+        43
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 1
+    },
+    "paul is dead conspiracy": {
+      "pattern": "debunked",
+      "R": 0.06785365908830873,
+      "n_reactivations": 3,
+      "reactivation_windows": [
+        26,
+        29,
+        39
+      ],
+      "recency_ratio": 0.8728779704614825,
+      "ga_ratio": 0.9802953563236595,
+      "n_bursts": 13,
+      "burst_days": 1619,
+      "burst_onset_windows": [
+        0,
+        2,
+        6,
+        8,
+        10,
+        12,
+        16,
+        18,
+        25,
+        28,
+        31,
+        32
+      ],
+      "n_changepoints": 9,
+      "changepoint_windows": [
+        8,
+        20,
+        26,
+        29,
+        32,
+        34
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 2
+    },
+    "fluoride water poisoning": {
+      "pattern": "debunked",
+      "R": 0.08386853495621144,
+      "n_reactivations": 3,
+      "reactivation_windows": [
+        22,
+        29,
+        38
+      ],
+      "recency_ratio": 3.15345269401413,
+      "ga_ratio": 0.2136936250703955,
+      "n_bursts": 2,
+      "burst_days": 481,
+      "burst_onset_windows": [
+        38,
+        43
+      ],
+      "n_changepoints": 8,
+      "changepoint_windows": [
+        7,
+        11,
+        19,
+        33,
+        38,
+        40,
+        42
+      ],
+      "react_hits_burst": 1,
+      "react_hits_cp": 1
+    },
+    "mothman": {
+      "pattern": "debunked",
+      "R": 0.04507418474106362,
+      "n_reactivations": 2,
+      "reactivation_windows": [
+        3,
+        41
+      ],
+      "recency_ratio": 0.9244486335978058,
+      "ga_ratio": 0.9837306464884084,
+      "n_bursts": 17,
+      "burst_days": 1981,
+      "burst_onset_windows": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        36,
+        37
+      ],
+      "n_changepoints": 11,
+      "changepoint_windows": [
+        11,
+        13,
+        19,
+        21,
+        25,
+        36,
+        37,
+        38,
+        41,
+        42
+      ],
+      "react_hits_burst": 0,
+      "react_hits_cp": 1
+    },
+    "cern portals": {
+      "pattern": "debunked",
+      "R": 0.04441201815545595,
+      "n_reactivations": 2,
+      "reactivation_windows": [
+        23,
+        26
+      ],
+      "recency_ratio": 0.8585179246910812,
+      "ga_ratio": 0.9553409570596012,
+      "n_bursts": 8,
+      "burst_days": 1577,
+      "burst_onset_windows": [
+        0,
+        5,
+        8,
+        10,
+        12,
+        17,
+        26,
+        35
+      ],
+      "n_changepoints": 13,
+      "changepoint_windows": [
+        0,
+        1,
+        9,
+        15,
+        20,
+        26,
+        28,
+        32,
+        35
+      ],
+      "react_hits_burst": 1,
+      "react_hits_cp": 1
+    }
+  },
+  "localisation": {
+    "kleinberg_burst_onset": {
+      "reactivation_windows_total": 60,
+      "reactivation_windows_marked": 12,
+      "precision": 0.2,
+      "base_rate_mean": 0.19724025974025977,
+      "lift_aggregate": 1.013991769547325,
+      "lift_median": 0.0,
+      "recall_of_marks": 0.04938271604938271,
+      "permutation_p": 0.5121487851214879,
+      "null_mean_marked": 11.7134
+    },
+    "pelt_changepoint": {
+      "reactivation_windows_total": 60,
+      "reactivation_windows_marked": 22,
+      "precision": 0.36666666666666664,
+      "base_rate_mean": 0.25487012987012986,
+      "lift_aggregate": 1.4386411889596602,
+      "lift_median": 0.7805788982259569,
+      "recall_of_marks": 0.07006369426751592,
+      "permutation_p": 0.0785921407859214,
+      "null_mean_marked": 16.6752
+    }
+  },
+  "rank_agreement": {
+    "R~n_bursts": {
+      "rho": -0.028973637917292343,
+      "p": 0.8607069646517674
+    },
+    "R~burst_days": {
+      "rho": -0.1671485101035977,
+      "p": 0.3232338383080846
+    },
+    "R~n_changepoints": {
+      "rho": 0.10285670366121225,
+      "p": 0.5505724713764312
+    },
+    "n_reactivations~n_bursts": {
+      "rho": 0.06567490319102307,
+      "p": 0.6972151392430378
+    },
+    "n_reactivations~burst_days": {
+      "rho": -0.0822311809730562,
+      "p": 0.6290685465726714
+    },
+    "n_reactivations~n_changepoints": {
+      "rho": 0.2803770405847103,
+      "p": 0.09454527273636318
+    }
+  },
+  "group_medians": {
+    "persistent": {
+      "n": 5,
+      "R": 0.022457440390476275,
+      "n_reactivations": 1.0,
+      "n_bursts": 5.0,
+      "burst_days": 1743.0,
+      "n_changepoints": 15.0
+    },
+    "acute": {
+      "n": 5,
+      "R": 0.06614828010661991,
+      "n_reactivations": 3.0,
+      "n_bursts": 9.0,
+      "burst_days": 1473.0,
+      "n_changepoints": 12.0
+    },
+    "reemergent": {
+      "n": 5,
+      "R": 0.06647454357107191,
+      "n_reactivations": 3.0,
+      "n_bursts": 13.0,
+      "burst_days": 362.0,
+      "n_changepoints": 28.0
+    },
+    "recent": {
+      "n": 3,
+      "R": 0.0,
+      "n_reactivations": 0.0,
+      "n_bursts": 4.0,
+      "burst_days": 657.0,
+      "n_changepoints": 1.0
+    },
+    "debunked": {
+      "n": 19,
+      "R": 0.044283306754818154,
+      "n_reactivations": 2.0,
+      "n_bursts": 8.0,
+      "burst_days": 1379.0,
+      "n_changepoints": 13.0
+    }
+  }
+}

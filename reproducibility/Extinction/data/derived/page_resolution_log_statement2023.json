@@ -1,0 +1,496 @@
+{
+  "resolution": {
+    "AI alignment": {
+      "requested": "AI alignment",
+      "resolved": "AI alignment",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "AI alignment"
+    },
+    "AI capability control": {
+      "requested": "AI capability control",
+      "resolved": "AI capability control",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "AI capability control"
+    },
+    "AI safety": {
+      "requested": "AI safety",
+      "resolved": "AI safety",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "AI safety"
+    },
+    "AI takeover": {
+      "requested": "AI takeover",
+      "resolved": "AI takeover",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "AI takeover"
+    },
+    "Anthropic": {
+      "requested": "Anthropic",
+      "resolved": "Anthropic",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Anthropic"
+    },
+    "Artificial Intelligence Act": {
+      "requested": "Artificial Intelligence Act",
+      "resolved": "Artificial Intelligence Act",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Artificial Intelligence Act"
+    },
+    "Artificial general intelligence": {
+      "requested": "Artificial general intelligence",
+      "resolved": "Artificial general intelligence",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Artificial general intelligence"
+    },
+    "Artificial intelligence": {
+      "requested": "Artificial intelligence",
+      "resolved": "Artificial intelligence",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Artificial intelligence"
+    },
+    "Association football": {
+      "requested": "Association football",
+      "resolved": "Association football",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Association football"
+    },
+    "Autonomous agent": {
+      "requested": "Autonomous agent",
+      "resolved": "Autonomous agent",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Autonomous agent"
+    },
+    "Biosecurity": {
+      "requested": "Biosecurity",
+      "resolved": "Biosecurity",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Biosecurity"
+    },
+    "Business continuity planning": {
+      "requested": "Business continuity planning",
+      "resolved": "Business continuity planning",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Business continuity planning"
+    },
+    "Coffee": {
+      "requested": "Coffee",
+      "resolved": "Coffee",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Coffee"
+    },
+    "Computer security incident management": {
+      "requested": "Computer security incident management",
+      "resolved": "Computer security incident management",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Computer security incident management"
+    },
+    "Critical infrastructure": {
+      "requested": "Critical infrastructure",
+      "resolved": "Critical infrastructure",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Critical infrastructure"
+    },
+    "Critical infrastructure protection": {
+      "requested": "Critical infrastructure protection",
+      "resolved": "U.S. critical infrastructure protection",
+      "resolution": "redirect",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "U.S. critical infrastructure protection"
+    },
+    "Cyber resilience": {
+      "requested": "Cyber resilience",
+      "resolved": "Cyber resilience",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Cyber resilience"
+    },
+    "Cyber-physical system": {
+      "requested": "Cyber-physical system",
+      "resolved": "Cyber-physical system",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Cyber-physical system"
+    },
+    "Cybersecurity": {
+      "requested": "Cybersecurity",
+      "resolved": "Computer security",
+      "resolution": "redirect",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Computer security"
+    },
+    "Dario Amodei": {
+      "requested": "Dario Amodei",
+      "resolved": "Dario Amodei",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "as_of_resolved": "Dario Amodei",
+      "as_of_baseline_coverage": 0.0,
+      "as_of_candidates": {
+        "Dario Amodei": 0.0,
+        "Dario amode": 0.0,
+        "D. amodei": 0.0,
+        "Cami Clark": 0.0,
+        "Camilla Clark": 0.0
+      }
+    },
+    "Demis Hassabis": {
+      "requested": "Demis Hassabis",
+      "resolved": "Demis Hassabis",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Demis Hassabis"
+    },
+    "Disaster recovery": {
+      "requested": "Disaster recovery",
+      "resolved": "Disaster recovery",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": true
+    },
+    "Emergency management": {
+      "requested": "Emergency management",
+      "resolved": "Emergency management",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Emergency management"
+    },
+    "Emergency preparedness": {
+      "requested": "Emergency preparedness",
+      "resolved": "Emergency management",
+      "resolution": "redirect",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Emergency management"
+    },
+    "Existential risk from artificial intelligence": {
+      "requested": "Existential risk from artificial intelligence",
+      "resolved": "Existential risk from artificial intelligence",
+      "resolution": "as-of-event title",
+      "missing": false,
+      "disambiguation": false,
+      "as_of_resolved": "Existential risk from advanced artificial intelligence",
+      "as_of_baseline_coverage": 1.0,
+      "as_of_candidates": {
+        "Existential risk from artificial intelligence": 0.0,
+        "Terminator scenario": 0.179,
+        "Existential risk of AI": 0.125,
+        "Existential risk of artificial intelligence": 0.018,
+        "Existential risk from advanced artificial intelligence": 1.0,
+        "Existential risk from advanced AI": 0.018,
+        "Existential Risk from Artificial General Intelligence": 0.018,
+        "Existential risk from ai": 0.054,
+        "Existential risk of artificial general intelligence": 0.107,
+        "X-risk from AI": 0.018,
+        "AI risk": 0.125,
+        "Orthogonality thesis": 1.0,
+        "Existential risks from artificial general intelligence": 0.607,
+        "Existential risk from agi": 0.018,
+        "Agi risk": 0.054,
+        "AI apocalypse": 0.0,
+        "AI x-risk": 0.0,
+        "X-risk from artificial intelligence": 0.0,
+        "AI-caused human extinction": 0.0,
+        "AI-caused extinction": 0.0,
+        "AGI apocalypse": 0.0,
+        "AGI existential risk": 0.0,
+        "AI existential risk": 0.0,
+        "AGI x-risk": 0.0,
+        "Existential risk from artificial superintelligence": 0.0,
+        "Existential risk from artificial general intelligence": 1.0,
+        "Existential risk from AI": 0.0,
+        "Risks of AI": 0.0,
+        "AIpocalypse": 0.0,
+        "Risks of artificial intelligence": 0.0,
+        "Risks from AI": 0.0,
+        "Risk from AI": 0.0,
+        "Risks from advanced AI": 0.0,
+        "Existential threat from artificial intelligence": 0.0
+      },
+      "series_title": "Existential risk from advanced artificial intelligence"
+    },
+    "Existential risk studies": {
+      "requested": "Existential risk studies",
+      "resolved": "Existential risk studies",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "as_of_resolved": "Existential risk studies",
+      "as_of_baseline_coverage": 0.0,
+      "as_of_candidates": {
+        "Existential risk studies": 0.0
+      }
+    },
+    "Fail-safe": {
+      "requested": "Fail-safe",
+      "resolved": "Fail-safe",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Fail-safe"
+    },
+    "Fault tolerance": {
+      "requested": "Fault tolerance",
+      "resolved": "Fault tolerance",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Fault tolerance"
+    },
+    "Geoffrey Hinton": {
+      "requested": "Geoffrey Hinton",
+      "resolved": "Geoffrey Hinton",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Geoffrey Hinton"
+    },
+    "Global catastrophic risk": {
+      "requested": "Global catastrophic risk",
+      "resolved": "Global catastrophic risk",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Global catastrophic risk"
+    },
+    "Google DeepMind": {
+      "requested": "Google DeepMind",
+      "resolved": "Google DeepMind",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Google DeepMind"
+    },
+    "High availability": {
+      "requested": "High availability",
+      "resolved": "High availability",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "High availability"
+    },
+    "History of artificial intelligence": {
+      "requested": "History of artificial intelligence",
+      "resolved": "History of artificial intelligence",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "History of artificial intelligence"
+    },
+    "Human extinction": {
+      "requested": "Human extinction",
+      "resolved": "Human extinction",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Human extinction"
+    },
+    "Infrastructure security": {
+      "requested": "Infrastructure security",
+      "resolved": "Infrastructure security",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Infrastructure security"
+    },
+    "Intelligent agent": {
+      "requested": "Intelligent agent",
+      "resolved": "Intelligent agent",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Intelligent agent"
+    },
+    "Internet kill switch": {
+      "requested": "Internet kill switch",
+      "resolved": "Internet kill switch",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Internet kill switch"
+    },
+    "Kill switch": {
+      "requested": "Kill switch",
+      "resolved": "Kill switch",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Kill switch"
+    },
+    "Misaligned goals in artificial intelligence": {
+      "requested": "Misaligned goals in artificial intelligence",
+      "resolved": "AI alignment",
+      "resolution": "redirect",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "AI alignment"
+    },
+    "Mount Everest": {
+      "requested": "Mount Everest",
+      "resolved": "Mount Everest",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Mount Everest"
+    },
+    "OpenAI": {
+      "requested": "OpenAI",
+      "resolved": "OpenAI",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "OpenAI"
+    },
+    "Pause Giant AI Experiments: An Open Letter": {
+      "requested": "Pause Giant AI Experiments: An Open Letter",
+      "resolved": "Pause Giant AI Experiments: An Open Letter",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "as_of_resolved": "Pause Giant AI Experiments: An Open Letter",
+      "as_of_baseline_coverage": 0.0,
+      "as_of_candidates": {
+        "Pause Giant AI Experiments: An Open Letter": 0.0,
+        "Pause Giant AI Experiments": 0.0
+      }
+    },
+    "Photosynthesis": {
+      "requested": "Photosynthesis",
+      "resolved": "Photosynthesis",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Photosynthesis"
+    },
+    "Recursive self-improvement": {
+      "requested": "Recursive self-improvement",
+      "resolved": "Recursive self-improvement",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Recursive self-improvement"
+    },
+    "Regulation of artificial intelligence": {
+      "requested": "Regulation of artificial intelligence",
+      "resolved": "Regulation of artificial intelligence",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Regulation of artificial intelligence"
+    },
+    "Roman Empire": {
+      "requested": "Roman Empire",
+      "resolved": "Roman Empire",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Roman Empire"
+    },
+    "Safety engineering": {
+      "requested": "Safety engineering",
+      "resolved": "Safety engineering",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Safety engineering"
+    },
+    "Sam Altman": {
+      "requested": "Sam Altman",
+      "resolved": "Sam Altman",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Sam Altman"
+    },
+    "Shutdown (computing)": {
+      "requested": "Shutdown (computing)",
+      "resolved": "Shutdown (computing)",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Shutdown (computing)"
+    },
+    "Statement on AI Risk": {
+      "requested": "Statement on AI Risk",
+      "resolved": "Statement on AI Extinction Risk",
+      "resolution": "redirect",
+      "missing": false,
+      "disambiguation": false,
+      "as_of_resolved": "Statement on AI Extinction Risk",
+      "as_of_baseline_coverage": 0.0,
+      "as_of_candidates": {
+        "Statement on AI Extinction Risk": 0.0,
+        "Statement on AI risk": 0.0,
+        "Statement on AI risk of extinction": 0.0,
+        "Statement on AI Risk": 0.0
+      }
+    },
+    "Superintelligence": {
+      "requested": "Superintelligence",
+      "resolved": "Superintelligence",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Superintelligence"
+    },
+    "Technological singularity": {
+      "requested": "Technological singularity",
+      "resolved": "Technological singularity",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Technological singularity"
+    },
+    "Volcano": {
+      "requested": "Volcano",
+      "resolved": "Volcano",
+      "resolution": "direct",
+      "missing": false,
+      "disambiguation": false,
+      "series_title": "Volcano"
+    }
+  },
+  "dropped": {
+    "Disaster recovery": "disambiguation page",
+    "Dario Amodei": "insufficient baseline observations (best coverage 0.00 at 'Dario Amodei')",
+    "Existential risk studies": "insufficient baseline observations (best coverage 0.00 at 'Existential risk studies')",
+    "Pause Giant AI Experiments: An Open Letter": "insufficient baseline observations (best coverage 0.00 at 'Pause Giant AI Experiments: An Open Letter')",
+    "Statement on AI Risk": "insufficient baseline observations (best coverage 0.00 at 'Statement on AI Extinction Risk')"
+  }
+}

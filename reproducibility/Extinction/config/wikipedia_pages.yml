@@ -1,0 +1,132 @@
+# Preregistered Wikipedia page families (paper Appendix A, Table A.1).
+# Frozen before post-event outcomes are inspected. Pages may be removed only
+# under the documented rules: nonexistent page, unresolved redirect,
+# disambiguation page, or insufficient baseline observations. Removals are
+# logged to data/derived/page_resolution_log.json.
+
+project: en.wikipedia.org
+access: all-access
+agent: user          # excludes self-identified spiders and automated traffic
+
+families:
+  threat:
+    label: "Existential threat"
+    orientation: alarm
+    pages:
+      - Existential risk from artificial intelligence
+      - Human extinction
+      - Global catastrophic risk
+      - AI takeover
+      - Misaligned goals in artificial intelligence
+
+  capabilities:
+    label: "Capabilities/history"
+    orientation: curiosity
+    pages:
+      - Artificial general intelligence
+      - Superintelligence
+      - Technological singularity
+      - Recursive self-improvement
+      - Intelligent agent
+      - Autonomous agent
+      - History of artificial intelligence
+      - Artificial intelligence
+
+  actors:
+    label: "Actors/institutions"
+    orientation: curiosity
+    pages:
+      - Anthropic
+      - OpenAI
+      - Google DeepMind
+      - Dario Amodei
+      - Sam Altman
+      - Demis Hassabis
+      - Geoffrey Hinton
+
+  safety:
+    label: "Safety/governance"
+    orientation: preparedness
+    pages:
+      - AI alignment
+      - AI safety
+      - Regulation of artificial intelligence
+      - Statement on AI Risk
+      - "Pause Giant AI Experiments: An Open Letter"
+      - Artificial Intelligence Act
+      - Existential risk studies
+
+  infrastructure:
+    label: "Infrastructure/resilience"
+    orientation: preparedness
+    pages:
+      - Critical infrastructure
+      - Critical infrastructure protection
+      - Cyber-physical system
+      - Cyber resilience
+      - Infrastructure security
+      - Emergency management
+      - Emergency preparedness
+      - Cybersecurity
+      - Biosecurity
+      - Business continuity planning
+      - Disaster recovery
+      - Computer security incident management
+
+  control:
+    label: "Shutdown/control"
+    orientation: preparedness
+    pages:
+      - Kill switch
+      - AI capability control
+      - Fail-safe
+      - Shutdown (computing)
+      - Internet kill switch
+      - Safety engineering
+      - Fault tolerance
+      - High availability
+
+# Response-orientation vector R_t = (C_t, L_t, P_t)  (paper Eq. 5).
+orientation:
+  curiosity: [capabilities, actors]
+  alarm: [threat]
+  preparedness: [safety, infrastructure, control]
+
+# Threat-preparedness gap (paper Eq. 4).
+tpg:
+  threat_family: threat
+  preparedness_families: [safety, infrastructure, control]
+
+# Pages excluded in robustness check 4 (event-named pages).
+event_named_pages:
+  - Anthropic
+  - Statement on AI Risk
+
+# Page reported separately / dropped in robustness check 12.
+killswitch_page: Kill switch
+
+# Negative-control pages, selected before analysis (paper Sec. 6.2 item 8).
+# Topically unrelated, comparable baseline volume; no expected response.
+negative_controls:
+  - Association football
+  - Photosynthesis
+  - Mount Everest
+  - Coffee
+  - Roman Empire
+  - Volcano
+
+# Media frame -> information family map for the distributed-lag model
+# (paper Eq. 6, f(k)). The paper's frame 5 bundles governance with emergency
+# shutdown and kill-switch control; H3 states a directional expectation for
+# *control* framing specifically, so frame 5 is measured as two components
+# (governance, control) using the supplemental mechanism queries of Appendix B.
+# Both are reported; their union reproduces the paper's frame 5.
+frame_family_map:
+  existential: threat
+  infrastructure: infrastructure
+  bio: threat
+  economic: capabilities
+  governance: safety
+  control: control
+  capability: capabilities
+  skeptic: actors

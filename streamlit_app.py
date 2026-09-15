@@ -1,20 +1,50 @@
 from __future__ import annotations
 
+import os
 from datetime import datetime, timedelta, timezone
 
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-from sqlalchemy import select
+from sqlalchemy import func, select
 
+from collector import collect_for_query
 from database import (
     EngagementEvent,
     SessionLocal,
     TrackedQuery,
     initialize_database,
 )
-from metrics import calculate_profile, recency_weights
+from metrics import calculate_profile
+
+
+def get_api_key() -> str | None:
+    """YouTube API key from Streamlit secrets or the environment."""
+    try:
+        if "YOUTUBE_API_KEY" in st.secrets:
+            return st.secrets["YOUTUBE_API_KEY"]
+    except Exception:
+        pass
+    return os.getenv("YOUTUBE_API_KEY")
+
+
+def collect_query_now(query_id: int) -> None:
+    """Run a YouTube collection pass for one query, with UI feedback."""
+    api_key = get_api_key()
+    if not api_key:
+        st.error(
+            "No YouTube API key found. Set YOUTUBE_API_KEY in the environment "
+            "or in .streamlit/secrets.toml, then try again."
+        )
+        return
+    with st.spinner("Collecting from YouTube…"):
+        try:
+            result = collect_for_query(query_id, api_key=api_key)
+        except Exception as error:  # surface API/quota errors in the UI
+            st.error(f"Collection failed: {error}")
+            return
+    st.success(f"Collected {result['videos']} videos, {result['events']} new events.")
 
 
 initialize_database()
@@ -29,7 +59,7 @@ st.title("TH-GEE Temporal Engagement Analyzer")
 
 st.caption(
     "Measure persistence, recency, and re-emergence in public "
-    "Bluesky engagement. These measures describe temporal behavior; "
+    "YouTube engagement. These measures describe temporal behavior; "
     "they do not establish malicious intent, coordination, accuracy, "
     "synthetic origin, or persuasion."
 )
@@ -41,16 +71,16 @@ def load_queries() -> list[TrackedQuery]:
         return list(session.scalars(statement))
 
 
-def add_query(query_text: str, query_type: str) -> None:
+def add_query(query_text: str, query_type: str) -> int:
     with SessionLocal() as session:
-        session.add(
-            TrackedQuery(
-                query=query_text.strip(),
-                query_type=query_type,
-                active=True,
-            )
+        query = TrackedQuery(
+            query=query_text.strip(),
+            query_type=query_type,
+            active=True,
         )
+        session.add(query)
         session.commit()
+        return query.id
 
 
 def set_query_status(query_id: int, active: bool) -> None:
@@ -84,6 +114,7 @@ def load_events(
             "event_type": event.event_type,
             "target_uri": event.target_uri,
             "actor_did": event.actor_did,
+            "magnitude": event.magnitude,
         }
         for event in events
     ]
@@ -91,31 +122,51 @@ def load_events(
     return pd.DataFrame(rows)
 
 
+def _as_utc(value: datetime | None) -> datetime | None:
+    if value is None:
+        return None
+    return value if value.tzinfo else value.replace(tzinfo=timezone.utc)
+
+
+def event_bounds(query_id: int) -> tuple[datetime | None, datetime | None]:
+    """Earliest and latest event time for a query, so the observation horizon
+    can span the data that actually exists (YouTube traces can cover years)."""
+    with SessionLocal() as session:
+        earliest, latest = session.execute(
+            select(
+                func.min(EngagementEvent.event_time),
+                func.max(EngagementEvent.event_time),
+            ).where(EngagementEvent.query_id == query_id)
+        ).one()
+    return _as_utc(earliest), _as_utc(latest)
+
+
 with st.sidebar:
-    st.header("Track a Bluesky narrative")
+    st.header("Track a YouTube search")
 
     new_query = st.text_input(
-        "Hashtag or keyword",
-        placeholder="#cognitivewarfare",
+        "Search term",
+        placeholder="climate change",
     )
 
-    query_type = st.selectbox(
-        "Match type",
-        ["hashtag", "keyword"],
-    )
-
-    if st.button("Add query", type="primary"):
+    if st.button("Add & collect", type="primary"):
         if new_query.strip():
-            add_query(new_query, query_type)
-            st.success("Query added. Start collector.py to begin collection.")
+            new_id = add_query(new_query, "keyword")
+            collect_query_now(new_id)
             st.rerun()
         else:
-            st.error("Enter a hashtag or keyword.")
+            st.error("Enter a search term.")
+
+    if get_api_key() is None:
+        st.caption(
+            "No YouTube API key detected. Set `YOUTUBE_API_KEY` in the "
+            "environment or `.streamlit/secrets.toml` to collect from the app."
+        )
 
 queries = load_queries()
 
 if not queries:
-    st.info("Add a hashtag or keyword in the sidebar.")
+    st.info("Add a YouTube search term in the sidebar.")
     st.stop()
 
 query_labels = {
@@ -133,9 +184,14 @@ selected_query = next(
     query for query in queries if query.id == selected_query_id
 )
 
-status_col1, status_col2 = st.columns([1, 5])
+status_col1, status_col2, status_col3 = st.columns([1, 1, 4])
 
 with status_col1:
+    if st.button("Collect from YouTube", type="primary"):
+        collect_query_now(selected_query.id)
+        st.rerun()
+
+with status_col2:
     if selected_query.active:
         if st.button("Pause collection"):
             set_query_status(selected_query.id, False)
@@ -145,7 +201,7 @@ with status_col1:
             set_query_status(selected_query.id, True)
             st.rerun()
 
-with status_col2:
+with status_col3:
     st.write(
         f"Collection status: "
         f"**{'Active' if selected_query.active else 'Paused'}**"
@@ -153,21 +209,39 @@ with status_col2:
 
 st.subheader("Analysis settings")
 
+data_start, data_end = event_bounds(selected_query_id)
+
+if data_start is None:
+    st.warning(
+        "No events collected for this query yet. Click "
+        "**Collect from YouTube** above (needs YOUTUBE_API_KEY), or run "
+        "`python collector.py`."
+    )
+    st.stop()
+
+# The horizon spans the selected query's actual data, so multi-year YouTube
+# histories are visible instead of being clipped to a fixed recent window.
+available_days = max(1, (data_end - data_start).days + 1)
+
 settings_col1, settings_col2, settings_col3, settings_col4 = st.columns(4)
 
 with settings_col1:
     days = st.number_input(
         "Observation period (days)",
         min_value=1,
-        max_value=365,
-        value=30,
+        max_value=int(available_days),
+        value=int(available_days),
+        help=(
+            f"Collected data spans {data_start.date()} to {data_end.date()} "
+            f"({available_days} days). The window ends at the most recent event."
+        ),
     )
 
 with settings_col2:
     window_choice = st.selectbox(
         "Window size",
-        ["1 hour", "6 hours", "12 hours", "1 day", "7 days"],
-        index=3,
+        ["1 hour", "6 hours", "12 hours", "1 day", "7 days", "30 days"],
+        index=4 if available_days > 400 else 3,
     )
 
 with settings_col3:
@@ -187,24 +261,26 @@ with settings_col4:
         value=3,
     )
 
-window_rules = {
-    "1 hour": "1h",
-    "6 hours": "6h",
-    "12 hours": "12h",
-    "1 day": "1D",
-    "7 days": "7D",
+window_lengths = {
+    "1 hour": timedelta(hours=1),
+    "6 hours": timedelta(hours=6),
+    "12 hours": timedelta(hours=12),
+    "1 day": timedelta(days=1),
+    "7 days": timedelta(days=7),
+    "30 days": timedelta(days=30),
 }
 
 st.subheader("Interaction weights")
 
-weight_col1, weight_col2, weight_col3, weight_col4, weight_col5 = st.columns(5)
+weight_col1, weight_col2, weight_col3 = st.columns(3)
 
 with weight_col1:
     publication_weight = st.number_input(
-        "Publication",
+        "Publication (video)",
         min_value=0.0,
         value=1.0,
         step=0.1,
+        help="Weight per video published in the window (magnitude 1 each).",
     )
 
 with weight_col2:
@@ -213,33 +289,19 @@ with weight_col2:
         min_value=0.0,
         value=0.3,
         step=0.1,
+        help="Weight applied to each video's like count.",
     )
 
 with weight_col3:
-    reply_weight = st.number_input(
-        "Reply",
+    comment_weight = st.number_input(
+        "Comment",
         min_value=0.0,
         value=0.7,
         step=0.1,
+        help="Weight applied to each video's comment count.",
     )
 
-with weight_col4:
-    repost_weight = st.number_input(
-        "Repost",
-        min_value=0.0,
-        value=1.0,
-        step=0.1,
-    )
-
-with weight_col5:
-    quote_weight = st.number_input(
-        "Quote",
-        min_value=0.0,
-        value=1.0,
-        step=0.1,
-    )
-
-end_time = datetime.now(timezone.utc)
+end_time = data_end
 start_time = end_time - timedelta(days=int(days))
 
 events = load_events(
@@ -250,8 +312,8 @@ events = load_events(
 
 if events.empty:
     st.warning(
-        "No matching events have been collected in this period. "
-        "Make sure collector.py is running."
+        "No events fall inside this observation period. Widen the "
+        "observation period, or click **Collect from YouTube** to fetch more."
     )
     st.stop()
 
@@ -260,36 +322,47 @@ events["event_time"] = pd.to_datetime(events["event_time"], utc=True)
 weights = {
     "publication": publication_weight,
     "like": like_weight,
-    "reply": reply_weight,
-    "repost": repost_weight,
-    "quote": quote_weight,
+    "comment": comment_weight,
 }
 
 events["weighted_value"] = (
-    events["event_type"].map(weights).fillna(0.0)
+    events["event_type"].map(weights).fillna(0.0) * events["magnitude"]
 )
 
-window_rule = window_rules[window_choice]
+window_length = window_lengths[window_choice]
 
-windowed = (
-    events.set_index("event_time")
-    .resample(window_rule)["weighted_value"]
-    .sum()
-    .rename("engagement")
-    .to_frame()
+# Tile the observation horizon [start_time, end_time] into T consecutive
+# fixed-width windows (matching the framework's definition) and bin events by
+# integer offset from start_time. This anchors the window grid and the
+# engagement values to the same origin, so no windows are dropped by the
+# label misalignment that a calendar resample + reindex can introduce.
+start_ts = pd.Timestamp(start_time)
+span = pd.Timestamp(end_time) - start_ts
+window_count = max(1, int(np.ceil(span / window_length)))
+
+window_starts = pd.to_datetime(
+    [start_ts + index * window_length for index in range(window_count)],
+    utc=True,
 )
 
-full_index = pd.date_range(
-    start=start_time,
-    end=end_time,
-    freq=window_rule,
-    tz="UTC",
+window_offsets = (
+    ((events["event_time"] - start_ts) // window_length)
+    .astype("int64")
+    .clip(0, window_count - 1)
 )
 
-windowed = (
-    windowed.reindex(full_index, fill_value=0.0)
-    .rename_axis("window_start")
-    .reset_index()
+engagement_values = np.zeros(window_count, dtype=float)
+np.add.at(
+    engagement_values,
+    window_offsets.to_numpy(),
+    events["weighted_value"].to_numpy(),
+)
+
+windowed = pd.DataFrame(
+    {
+        "window_start": window_starts,
+        "engagement": engagement_values,
+    }
 )
 
 trace = windowed["engagement"].to_numpy(dtype=float)
@@ -367,21 +440,6 @@ figure.update_layout(
 )
 
 st.plotly_chart(figure, use_container_width=True)
-
-st.subheader("Recency weights")
-
-weights_array = recency_weights(len(trace), float(gamma))
-
-weights_frame = pd.DataFrame(
-    {
-        "window_start": windowed["window_start"],
-        "recency_weight": weights_array,
-    }
-)
-
-st.line_chart(
-    weights_frame.set_index("window_start")["recency_weight"]
-)
 
 st.subheader("Event counts")
 

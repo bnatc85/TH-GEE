@@ -1,0 +1,32 @@
+# Project-local Streamlit configuration for TH-GEE.
+# This file takes precedence over any global ~/.streamlit/config.toml and is
+# tuned to run correctly behind a reverse proxy (GitHub Codespaces, Cloud
+# Run, nginx, etc.), where the browser reaches the app through a forwarded
+# HTTPS domain rather than localhost.
+
+[server]
+headless = true
+port = 8501
+# Bind to all interfaces so the proxy/port-forwarder can reach the server.
+address = "0.0.0.0"
+# Behind a reverse proxy the Origin/Host of the websocket upgrade does not
+# match the server, so XSRF protection (and the CORS check it depends on)
+# must be disabled or the app never finishes connecting and appears to hang.
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+gatherUsageStats = false
+# Must be set explicitly to override any global config: a global
+# browser.serverAddress = "0.0.0.0" tells the browser to connect back to
+# 0.0.0.0 and breaks the app behind a proxy. "localhost" is a safe default
+# because the frontend builds its websocket URL from the page's own origin
+# (window.location), so the forwarded proxy domain is used at runtime.
+serverAddress = "localhost"
+
+[theme]
+primaryColor = "#00d4ff"
+backgroundColor = "#0e1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#fafafa"
+font = "sans serif"
