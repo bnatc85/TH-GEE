@@ -453,16 +453,48 @@ analysis relies on frame prevalence.
 
 \subsection{Financial data}
 
-Daily dividend- and split-adjusted closes and volume were retrieved from
-Financial Modeling Prep. Adjustment matters here: two portfolio constituents
-split 20:1 inside the 2023 estimation window, and an unadjusted series would
-enter those splits into the return series as enormous one-day moves. Thirteen
-securities were assigned in advance to three portfolios --- AI infrastructure
-(NVDA, AMD, AVGO, ORCL), AI platforms and exposure (MSFT, GOOGL, AMZN, META,
-PLTR), and cybersecurity and resilience (PANW, CRWD, FTNT, ZS) --- with QQQ,
-SPY, and SOXX as benchmarks. Membership, listing market, and selection rationale
-are recorded in \texttt{config/portfolios.csv} and were not revised after
-event-window returns were inspected.
+The market channel asks whether professional investors repriced firms whose
+revenues depend on AI capability differently from firms whose revenues depend
+on defending against its misuse. That requires daily prices for a fixed set of
+securities over a period long enough to estimate each security's normal
+relationship with the market, plus daily trading volume, which we use to
+distinguish an information-driven revaluation from a price drift on ordinary
+activity and to flag firm-specific announcements (\cref{sec:robust}).
+
+Daily dividend- and split-adjusted closing prices and volume were retrieved
+from Financial Modeling Prep (FMP), a commercial market-data provider, through
+its end-of-day dividend-adjusted price endpoint. Adjustment matters here
+because the market model for each security is estimated over the 220 trading
+sessions of $[-250,-30]$, and a corporate action inside that span would
+otherwise be indistinguishable from a price move. Two portfolio constituents,
+AMZN and GOOGL, split 20:1 in June and July 2022, inside the 2023 estimation
+window; an unadjusted series would enter each split as a one-day return of
+roughly $-95\%$, which would dominate the estimated market model. The
+adjustment basis of every ticker is recorded in the run manifest, and any
+remaining one-day move above 45\% is logged rather than silently removed, so
+that a genuine earnings reaction is never deleted as if it were a split.
+
+Thirteen securities were assigned in advance to three equal-weighted
+portfolios, each intended to capture a distinct exposure to the warning.
+\emph{AI infrastructure} (NVDA, AMD, AVGO, ORCL) comprises accelerator,
+custom-silicon, and training-capacity suppliers whose revenue scales with
+frontier-model capital expenditure, and whose value should fall if investors
+expect development to slow. \emph{AI platforms and exposure} (MSFT, GOOGL,
+AMZN, META, PLTR) comprises the laboratories' commercial partners and
+deployers, including the firms named in coverage of the episode, whose
+exposure is to demand for AI products rather than to compute. \emph{Cybersecurity
+and resilience} (PANW, CRWD, FTNT, ZS) comprises network, endpoint,
+operational-technology, and zero-trust security vendors whose demand should
+rise if the episode raises expected spending on safeguards; this is the
+portfolio that corresponds to the infrastructure and resilience information
+family. Anthropic and OpenAI, the organisations at the centre of the warning,
+were not publicly traded, so the platform portfolio is the closest tradable
+proxy for exposure to them. Three exchange-traded funds serve as benchmarks:
+SOXX for the semiconductor names and QQQ for the remaining firms in the
+sector-adjusted specification, and SPY for the broad-market specification.
+Membership, listing market, and a one-line selection rationale per security
+are recorded in \texttt{config/portfolios.csv}, which was frozen before any
+event-window return was inspected and has not been revised since.
 
 \section{Measures}
 
