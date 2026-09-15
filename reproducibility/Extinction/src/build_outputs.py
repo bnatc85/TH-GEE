@@ -48,7 +48,7 @@ INK_2 = "#1c1c1a"      # labels, ticks, zero lines
 MUTED = "#2e2e2b"      # comparison series, interval bars, notes
 SURFACE = "#fcfcfb"
 GRID = "#cfcfca"       # gridlines only
-BAND = "#c3c3bd"       # placebo range fill
+BAND = "#9a9a94"       # placebo range fill, drawn translucent
 
 FAMILY_ORDER = ["threat", "capabilities", "actors", "safety", "infrastructure", "control"]
 FAMILY_LABEL = {
@@ -179,8 +179,11 @@ def figure_gap(att: dict) -> Path:
             y = ypos[fam]
             band = placebo.get(fam, {}).get("p95_abs")
             if band:
+                # Light, translucent fill with a crisp outline: the band is
+                # context, and the estimate labels must stay legible over it.
                 ax.barh(y, 2 * band, left=-band, height=0.74,
-                        color=BAND, edgecolor=INK_2, linewidth=0.5, zorder=1)
+                        facecolor=BAND, alpha=0.22, edgecolor=INK_2,
+                        linewidth=0.6, zorder=1)
             prep = fam in ("safety", "infrastructure", "control")
             colour = SERIES[2] if prep else SERIES[1]
             ax.plot([s["ci_low"], s["ci_high"]], [y, y], color=MUTED,
@@ -188,10 +191,15 @@ def figure_gap(att: dict) -> Path:
             ax.plot([s["estimate"]], [y], "o", ms=7, color=colour,
                     mec=SURFACE, mew=1.3, zorder=4)
             inside = band is not None and abs(s["estimate"]) <= band
+            # Long "n.s." labels run rightward into open space instead of
+            # being centred, which would push them past the left axis.
             ax.annotate(f"{s['estimate']:.1f}" + ("  n.s. vs placebo" if inside else ""),
                         (s["estimate"], y), textcoords="offset points",
-                        xytext=(0, 9), ha="center", fontsize=7.4,
-                        color=INK_2 if not inside else MUTED)
+                        xytext=(-10, 9) if inside else (0, 9),
+                        ha="left" if inside else "center", fontsize=7.4,
+                        color=INK_2 if not inside else MUTED, zorder=5,
+                        bbox=dict(boxstyle="round,pad=0.15", facecolor=SURFACE,
+                                  edgecolor="none", alpha=0.9))
 
         ax.axvline(0, color=INK_2, lw=0.8, zorder=2)
         ax.set_yticks(list(ypos.values()))
@@ -208,7 +216,7 @@ def figure_gap(att: dict) -> Path:
                label="Threat-oriented family"),
         Line2D([], [], marker="o", ls="none", ms=7, color=SERIES[2],
                label="Preparedness-oriented family"),
-        Patch(facecolor=BAND, edgecolor=INK_2, linewidth=0.5,
+        Patch(facecolor=BAND, alpha=0.22, edgecolor=INK_2, linewidth=0.6,
               label="Placebo range (95th pct. of |effect|)"),
     ]
     fig.legend(handles=handles, loc="lower center", ncol=3, frameon=False,
