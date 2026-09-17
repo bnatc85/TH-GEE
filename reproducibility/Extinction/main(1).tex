@@ -33,7 +33,6 @@
   \usepackage[margin=1in]{geometry}
   \usepackage[numbers,sort&compress]{natbib}
 \fi
-
 \usepackage{xurl}
 \usepackage[hidelinks,breaklinks=true]{hyperref}
 \usepackage[nameinlink,noabbrev]{cleveref}
@@ -50,9 +49,8 @@
   \biboptions{numbers,sort&compress}
 \fi
 
-\newcommand{\papertitle}{Warned but not Prepared: Public Attention to
-Infrastructure Resilience During AI Extinction Warnings}
-\newcommand{\RepoURL}{https://github.com/USERNAME/REPOSITORY}
+\newcommand{\papertitle}{Threat Attention and Limited Preparedness Attention Following AI Extinction Warnings}
+\newcommand{\RepoURL}{https://github.com/bnatc85/REPOSITORY}
 
 \newcommand{\abstracttext}{Warnings that advanced artificial intelligence (AI) could cause catastrophic harm increasingly invoke critical infrastructure as the pathway through which that harm would arrive. Whether such warnings move attention toward protective capacity, however, is an empirical question that has not been tested. We treat a September 2026 AI extinction warning episode as a natural experiment, compare it with the May 2023 Statement on AI Risk, and measure the response through two revealed- behavior channels: English Wikipedia pageviews for six preregistered families of articles, and abnormal returns for prespecified portfolios of AI-exposed and cybersecurity firms. 
 Attention to existential threat rose sharply in both episodes and by far more in 2026 (cumulative abnormal attention 41.3 versus 10.4 standardized deviation-days). Attention to infrastructure and resilience barely moved: 3.7 in 2026 and statistically indistinguishable from zero in 2023. Shutdown and control attention in 2026 (7.0) cleared the range produced by placebo dates drawn from the same pre-event interval, but was one-sixth of the threat response. 
@@ -177,7 +175,8 @@ This paper aims to answer the following Research Questions (RQs):
   \item[RQ1 --- Magnitude.] Does a high-profile AI extinction warning produce abnormal public information seeking, measured as standardized abnormal Wikipedia attention over $[0,+3]$ days?
   \item[RQ2 --- Direction.] How is that attention distributed across existential threat, capabilities and history, actors and institutions, safety and governance, infrastructure and resilience, and shutdown and control? In particular, does attention reach the infrastructure and control families at all, relative to placebo dates drawn from the same pre-event interval?
   \item[RQ3 --- The threat--preparedness gap.] How large is the contrast between threat-oriented and preparedness-oriented attention, and does it differ between the May 2023 statement and the September 2026 episode?
-  \item[RQ4 --- Framing transmission.] Does daily prevalence of an infrastructure or control media frame precede abnormal attention to the corresponding information family within three days, and does it do so as strongly as existential framing does?
+  \item[RQ4 --- Frame--attention correspondence.] Does daily prevalence of an infrastructure or control media frame precede abnormal attention to the corresponding information family within three days, and is this association as large as the corresponding
+association for existential framing?
   \item[RQ5 --- Market divergence.] Do AI-exposed and cybersecurity/resilience portfolios earn different cumulative abnormal returns over the 2026 episode, and how does that compare with the public attention response?
 \end{description}
 
@@ -409,13 +408,8 @@ Because recently published Wikimedia data may be incomplete, we must distinguish
 
 We assigned pages to six conceptually distinct families before inspecting post-event outcomes (\cref{app:pages}). The taxonomy, depicted in Table \ref{tab:families}, is deductive rather than derived from correlations among the observed pageview series. The first three families distinguish attention to the feared outcome itself (\emph{existential threat}), the technology and mechanisms that could produce it (\emph{capabilities/history}), and the organizations and individuals associated with the warning (\emph{actors/institutions}). The remaining families distinguish three possible targets of protective attention: broad technical or institutional mitigation (\emph{safety/governance}), protection and recovery of essential systems (\emph{infrastructure/resilience}), and concrete interruption or containment mechanisms (\emph{shutdown/control}). 
 
-This structure draws on the distinction between threat appraisal and coping or efficacy information in fear-appeal research, as well as risk-information-seeking models that separate learning about a hazard from seeking information relevant to preventive action \citep{witte1992eppm,griffin1999risp,kahlor2010prism}. It also follows prior Wikipedia research showing that crises can change the \emph{topic distribution} of information seeking even when aggregate attention alone provides little indication of what people are trying to understand \citep{ribeiro2021wikipedia}. 
-Keeping the six families separate prevents increased attention to AI generally from being interpreted as infrastructure preparedness and allows interest in a concrete control mechanism such as a kill switch to be distinguished from broader interest in resilience or governance.
 
-Because the Wikimedia API does not attribute views of a redirect to its destination article, page identity is time-dependent \citep{wikimedia2026api}. Resolving every preregistered title to its current name would therefore be incorrect for a historical event. We resolve each title as of the event date by choosing among redirect aliases using pre-event baseline coverage alone, so no post-event outcome informs the choice. This distinction is consequential; for example, in May 2023, the article now titled \emph{Existential risk from artificial intelligence} was titled \emph{Existential risk from advanced artificial intelligence} and carried no traffic under its current name. We modeled 52 pages for 2026 and 48 for 2023; all removals are logged and explained in \cref{sec:scope}.
-
-
-\begin{table}[t]
+\begin{table}[ht!]
 \centering
 \scriptsize
 \caption{Information-seeking families and their interpretation}
@@ -434,143 +428,253 @@ Shutdown/ control & Kill switch; AI capability control; Fail-safe; Shutdown (com
 \end{tabular}
 \end{table}
 
+This structure draws on the distinction between threat appraisal and coping or efficacy information in fear-appeal research, as well as risk-information-seeking models that separate learning about a hazard from seeking information relevant to preventive action \citep{witte1992eppm,griffin1999risp,kahlor2010prism}. It also follows prior Wikipedia research showing that crises can change the \emph{topic distribution} of information seeking even when aggregate attention alone provides little indication of what people are trying to understand \citep{ribeiro2021wikipedia}. 
+Keeping the six families separate prevents increased attention to AI generally from being interpreted as infrastructure preparedness and allows interest in a concrete control mechanism such as a kill switch to be distinguished from broader interest in resilience or governance.
+
+Because the Wikimedia API does not attribute views of a redirect to its destination article, page identity is time-dependent \citep{wikimedia2026api}. Resolving every preregistered title to its current name would therefore be incorrect for a historical event. We resolve each title as of the event date by choosing among redirect aliases using pre-event baseline coverage alone, so no post-event outcome informs the choice. This distinction is consequential; for example, in May 2023, the article now titled \emph{Existential risk from artificial intelligence} was titled \emph{Existential risk from advanced artificial intelligence} and carried no traffic under its current name. We modeled 52 pages for 2026 and 48 for 2023; all removals are logged and explained in \cref{sec:scope}.
+
 
 \subsection{News coverage}
 
 We collected English-language news metadata via daily queries over each event window. The reproducible default in the study protocol was the GDELT DOC 2.0 API \citep{gdelt2026documentation}; that service refused every request from our environment under its shared-IP rate limit, and its static mirror is roughly 5\,MB per 15-minute slice, which is not tractable for an 85-day window. We therefore used Google News RSS, which additionally reaches May 2023, something the GDELT DOC rolling three-month archive cannot do.
 
-Two properties of this source constrain interpretation and we handle them explicitly. First, the service honors date operators coarsely: consecutive day-queries return largely the same ranked set, with publication dates spread across neighboring days. We therefore re-date each article from its publication timestamp and filter it to the event window. Second, results are a \emph{ranked sample}, not a census, and each query returns at most 100 items per day. Daily story counts therefore do not measure news volume, and we do not report them. Frame \emph{proportions} are the media construct throughout, computed under a query design that is identical on every day, so that day-to-day movement in a frame's share is interpretable even though its level is a property of the query set.
+Two properties of this source constrain interpretation, and we handle them explicitly. First, the service honors date operators coarsely: consecutive day-queries return largely the same ranked set, with publication dates spread across neighboring days. We therefore re-date each article from its publication timestamp and filter it to the event window. Second, results are a \emph{ranked sample}, not a census, and each query returns at most 100 items per day. Daily story counts therefore do not measure news volume, and we do not report them. Frame \emph{proportions} are the media construct throughout, computed under a query design that is identical on every day, so that day-to-day movement in a frame's share is interpretable even though its level is a property of the query set.
 
-After deduplication by canonical URL and then by normalized-title similarity,
-the corpus contains 5{,}656 unique stories from 1{,}722 outlets for the 2026
-window and 754 stories from 385 outlets for 2023. Records are classified into
-the seven frames of the study protocol, with the governance frame measured as
-two components --- governance and control --- so that control framing can be
-evaluated separately. Sentiment is scored with VADER \citep{hutto2014vader} as a
-transparent baseline, alongside a separate threat-intensity dictionary; because
-negative polarity is near-automatic in extinction coverage, the substantive
-analysis relies on frame prevalence.
+After deduplication by canonical URL and then by normalized-title similarity, the corpus contains 5{,}656 unique stories from 1{,}722 outlets for the 2026 window and 754 stories from 385 outlets for 2023. 
+
+Records are classified into the seven nonexclusive frame families specified in the study protocol. Following Entman \citep{entman1993framing}, these frames capture which problems, causes, evaluations, and remedies coverage makes salient. Within the broader governance-and-mitigation family, we code two components separately: \emph{governance}, which includes regulation, oversight, institutional responsibility, and development restrictions; and \emph{control}, which includes operational or technical mechanisms intended to constrain, interrupt, contain, or shut down an AI system. The components can be aggregated when reporting the prevalence of the broader protocol frame, but control is also reported separately. This distinction prevents frequent general discussion of regulation from obscuring rarer but more CIP-relevant references to kill switches, interruptibility, containment, fail-safe design, and emergency shutdown.
+
+Sentiment is scored with VADER as a transparent and reproducible polarity baseline \citep{hutto2014vader}. We separately apply a threat-intensity dictionary because evaluative valence and perceived threat severity are conceptually different: an article can use strongly negative language without specifying a concrete catastrophic mechanism, or describe a severe threat in comparatively neutral language. Moreover, negative polarity is partly built into reporting about extinction, loss of control, and catastrophic harm, limiting sentiment’s ability to distinguish among substantively different forms of coverage. Accordingly, frame prevalence is the primary media construct because it identifies \emph{what} the coverage emphasizes, while VADER sentiment and threat intensity are treated as complementary descriptive and robustness measures.
+
 
 \subsection{Financial data}
 
-The market channel asks whether professional investors repriced firms whose
-revenues depend on AI capability differently from firms whose revenues depend
-on defending against its misuse. That requires daily prices for a fixed set of
-securities over a period long enough to estimate each security's normal
-relationship with the market, plus daily trading volume, which we use to
-distinguish an information-driven revaluation from a price drift on ordinary
-activity and to flag firm-specific announcements (\cref{sec:robust}).
+The market channel asks whether professional investors repriced firms whose revenues depend on AI capability differently from firms whose revenues depend on defending against its misuse. That requires daily prices for a fixed set of securities over a period long enough to estimate each security's normal relationship with the market, plus daily trading volume, which we use to distinguish an information-driven revaluation from a price drift on ordinary activity and to flag firm-specific announcements (\cref{sec:robust}).
 
-Daily dividend- and split-adjusted closing prices and volume were retrieved
-from Financial Modeling Prep (FMP), a commercial market-data provider, through
-its end-of-day dividend-adjusted price endpoint. Adjustment matters here
-because the market model for each security is estimated over the 220 trading
-sessions of $[-250,-30]$, and a corporate action inside that span would
-otherwise be indistinguishable from a price move. Two portfolio constituents,
-AMZN and GOOGL, split 20:1 in June and July 2022, inside the 2023 estimation
-window; an unadjusted series would enter each split as a one-day return of
-roughly $-95\%$, which would dominate the estimated market model. The
-adjustment basis of every ticker is recorded in the run manifest, and any
-remaining one-day move above 45\% is logged rather than silently removed, so
-that a genuine earnings reaction is never deleted as if it were a split.
+Daily dividend- and split-adjusted closing prices and volume were retrieved from Financial Modeling Prep (FMP), a commercial market-data provider, through its end-of-day dividend-adjusted price endpoint. Adjustments matter because the market model for each security is estimated over the 220 trading sessions of $[-250,-30]$, and a corporate action within that span would otherwise be indistinguishable from a price move. Two portfolio constituents, AMZN and GOOGL, split 20:1 in June and July 2022, inside the 2023 estimation window; an unadjusted series would enter each split as a one-day return of roughly $-95\%$, which would dominate the estimated market model. The adjustment basis of every ticker is recorded in the run manifest, and any remaining one-day move above 45\% is logged rather than silently removed, so that a genuine earnings reaction is never deleted as if it were a split.
 
-Thirteen securities were assigned in advance to three equal-weighted
-portfolios, each intended to capture a distinct exposure to the warning.
-\emph{AI infrastructure} (NVDA, AMD, AVGO, ORCL) comprises accelerator,
-custom-silicon, and training-capacity suppliers whose revenue scales with
-frontier-model capital expenditure, and whose value should fall if investors
-expect development to slow. \emph{AI platforms and exposure} (MSFT, GOOGL,
-AMZN, META, PLTR) comprises the laboratories' commercial partners and
-deployers, including the firms named in coverage of the episode, whose
-exposure is to demand for AI products rather than to compute. \emph{Cybersecurity
-and resilience} (PANW, CRWD, FTNT, ZS) comprises network, endpoint,
-operational-technology, and zero-trust security vendors whose demand should
-rise if the episode raises expected spending on safeguards; this is the
-portfolio that corresponds to the infrastructure and resilience information
-family. Anthropic and OpenAI, the organisations at the centre of the warning,
-were not publicly traded, so the platform portfolio is the closest tradable
-proxy for exposure to them. Three exchange-traded funds serve as benchmarks:
-SOXX for the semiconductor names and QQQ for the remaining firms in the
-sector-adjusted specification, and SPY for the broad-market specification.
-Membership, listing market, and a one-line selection rationale per security
-are recorded in \texttt{config/portfolios.csv}, which was frozen before any
-event-window return was inspected and has not been revised since.
+Thirteen securities were assigned in advance to three equal-weighted portfolios, each intended to capture a distinct exposure to the warning. 
+
+\emph{AI infrastructure} (NVDA, AMD, AVGO, ORCL) comprises accelerator, custom-silicon, and training-capacity suppliers whose revenue scales with frontier-model capital expenditure, and whose value should fall if investors expect development to slow. 
+
+\emph{AI platforms and exposure} (MSFT, GOOGL, AMZN, META, PLTR) comprises the laboratories' commercial partners and deployers, including the firms named in coverage of the episode, whose exposure is to demand for AI products rather than to compute. 
+
+\emph{Cybersecurity and resilience} (PANW, CRWD, FTNT, ZS) comprises network, endpoint, operational-technology, and zero-trust security vendors whose demand should rise if the episode raises expected spending on safeguards; this portfolio corresponds to the infrastructure and resilience information family. 
+
+Anthropic and OpenAI, the organizations at the center of the warning, were not publicly traded, so the platform portfolio is the closest tradable proxy for exposure to them. Three exchange-traded funds serve as benchmarks: SOXX for the semiconductor names and QQQ for the remaining firms in the sector-adjusted specification, and SPY for the broad-market specification. Membership, listing market, and a one-line selection rationale per security are recorded in \texttt{config/portfolios.csv}.
+
+
 
 \section{Measures}
+\label{sec:measures}
+
+Let $e$ index the warning episode, $p$ a Wikipedia page, $k$ a preregistered page family, and $t$ a calendar day relative to the attention event, where $t=0$ is the attention-event date. Let $\mathcal{B}_e$ denote the set of pre-event baseline days for episode $e$, and let $\mathcal{P}_{ke}$ denote the set of pages retained in family $k$ for that episode. The event index is required because page availability and historical titles differ between the 2023 and 2026 episodes.
 
 \subsection{Abnormal attention}
 
-We model log-transformed daily pageviews,
+Let $V_{pd}$ denote the user-classified view count for page $p$ on calendar date $d$. After aligning calendar dates around warning episode $e$, we write the same observation as $V_{pet}$, where $t$ is the number of calendar days relative to that episode's attention-event date.
+We transform pageviews as
 \begin{equation}
-Y_{pt}=\log(1+V_{pt}),
+Y_{pet}=\log\!\left(1+V_{pet}\right),
+\label{eq:logviews}
 \end{equation}
-using only the pre-event interval. The counterfactual includes a page-specific
-level and linear trend, day-of-week effects, and AR(1) errors. Let
-$\widehat{Y}_{pt}^{(0)}$ denote the predicted value in the absence of the
-warning and $\widehat{\sigma}_p$ the pre-event residual standard deviation.
-standardized abnormal attention is
+where adding one permits days with zero recorded views to be retained. The logarithmic transformation reduces the influence of exceptionally high-volume days while preserving the ordering of the observations.
+
+For each page and episode, we estimate the following counterfactual model using only days $t\in\mathcal{B}_e$:
+\begin{align}
+Y_{pet}
+  &= \alpha_{pe}+\beta_{pe}t
+     +\sum_{d=1}^{6}\delta_{ped}
+       \mathbf{1}\!\left\{D(t)=d\right\}
+     +u_{pet},
+\label{eq:attentionmodel}\\
+u_{pet}
+  &= \rho_{pe}u_{pe,t-1}+\eta_{pet}.
+\label{eq:attentionar}
+\end{align}
+Here, $\alpha_{pe}$ is the baseline level for page $p$, $\beta_{pe}$ is its pre-event linear trend, and $D(t)$ identifies the day of the week. Six day-of-week indicators are included, with the seventh day serving as the reference category. The parameter $\rho_{pe}$ accounts for dependence between adjacent daily observations. No post-event observations are used to estimate these parameters.
+
+Let $\widehat{Y}_{pet}^{(0)}$ denote the value predicted by the pre-event model under continuation of the baseline trend, calendar pattern, and autoregressive process. Let $\widehat{\sigma}_{pe}$ be the standard deviation of the page's pre-event one-step-ahead residuals. Standardized abnormal attention is
 \begin{equation}
-A_{pt}=\frac{Y_{pt}-\widehat{Y}_{pt}^{(0)}}{\widehat{\sigma}_p}.
+A_{pet}
+  =\frac{Y_{pet}-\widehat{Y}_{pet}^{(0)}}{\widehat{\sigma}_{pe}}.
 \label{eq:abnormalattention}
 \end{equation}
-This standardisation prevents a high-volume page such as \emph{Artificial
-intelligence} from mechanically dominating its family and makes scores
-comparable across pages and events. Family-level abnormal attention is the
-equal-weighted mean
-\begin{equation}
-FAA_{kt}=\frac{1}{|\mathcal{P}_k|}\sum_{p\in\mathcal{P}_k} A_{pt},
-\label{eq:faa}
-\end{equation}
-and cumulative abnormal attention over a window is the sum of $FAA_{kt}$ across
-its days, reported in standardized deviation-days (SD-days). Uncertainty comes
-from a page-clustered bootstrap with 5{,}000 resamples.
+Thus, $A_{pet}=0$ indicates that observed attention equaled its counterfactual prediction, while $A_{pet}=1$ indicates that log pageviews were one pre-event residual standard deviation above the predicted value. Negative values indicate lower-than-predicted attention. The measure is a standardized deviation, not a percentage change, probability, or estimate of the proportion of the public responding to the warning.
 
-The threat--preparedness gap is
+For family $k$, family-level abnormal attention is the equal-weighted mean:
 \begin{equation}
-TPG_t=FAA_{\text{threat},t}-\frac{FAA_{\text{safety},t}+FAA_{\text{infrastructure},t}+FAA_{\text{control},t}}{3}.
+\overline{A}_{ket}
+=
+\frac{1}{\lvert\mathcal{P}_{ke}\rvert}
+\sum_{p\in\mathcal{P}_{ke}} A_{pet},
+\label{eq:familyattention}
+\end{equation}
+where \(\mathcal{P}_{ke}\) is the set of pages retained in family \(k\) for event \(e\). Thus, \(\overline{A}_{ket}=1\) means that the pages in family \(k\) averaged one pre-event residual standard deviation above their counterfactual predictions on day \(t\).
+
+Each retained page contributes equally, regardless of its raw traffic volume. This prevents a high-volume page such as \emph{Artificial intelligence} from mechanically determining the family score and makes families more comparable across events. Nevertheless, $\overline{A}_{ket}$ summarizes the family as a whole and does not identify which individual page generated an observed change.
+
+For an event window $W=[\tau_1,\tau_2]$, cumulative abnormal attention is
+\begin{equation}
+CA_{ke}(W)
+=
+\sum_{t=\tau_1}^{\tau_2}\overline{A}_{ket}.
+\label{eq:cumulativeattention}
+\end{equation}
+The resulting unit is standardized-deviation days, abbreviated SD-days. For example, a family score of one standard deviation above its counterfactual on each of four days produces $CA_{ke}([0,+3])=4$ SD-days.
+
+Uncertainty intervals are calculated from 5{,}000 page-clustered bootstrap replicates. Each replicate resamples complete page-level series with replacement within the relevant family and then recomputes the family and cumulative measures. Retaining each page's complete series preserves the temporal dependence among observations from that page. These intervals describe the sensitivity of the family result to its constituent pages; they are not individual-level confidence intervals for Wikipedia users.
+
+\subsubsection{Threat--preparedness gap}
+
+The threat--preparedness gap compares attention to catastrophic consequences
+with attention to three forms of mitigation:
+\begin{equation}
+TPG_{et}
+=
+\overline{A}_{\mathrm{threat},e,t}
+-
+\frac{
+\overline{A}_{\mathrm{safety},e,t}
++
+\overline{A}_{\mathrm{infrastructure},e,t}
++
+\overline{A}_{\mathrm{control},e,t}
+}{3}.
 \label{eq:tpg}
 \end{equation}
-A positive $TPG_t$ means attention to catastrophic consequences exceeds
-attention to safety, governance, infrastructure resilience, and control
-mechanisms. It does not establish panic, helplessness, or absence of offline
-preparation. For descriptive interpretation we also report a response-orientation
-vector $\mathbf{R}_t=(C_t,L_t,P_t)$, where curiosity $C_t$ averages capabilities
-and actor attention, alarm-oriented attention $L_t$ is the existential-threat
-score, and preparedness $P_t$ averages the three preparedness families.
 
-\subsection{Framing transmission}
+The three preparedness families receive equal weight, so differences in the number of pages assigned to each family do not alter their relative contribution. A positive $TPG_{et}$ indicates that standardized attention to existential consequences exceeded the mean standardized attention to safety and governance, infrastructure resilience, and shutdown or control mechanisms. A negative value indicates comparatively greater preparedness-oriented attention. The measure is a difference between standardized family scores, not a percentage-point gap.
 
-For frame $f$ and day $t$, $M_{ft}$ is the proportion of unique stories assigned
-to frame $f$. The distributed-lag model is
+For descriptive interpretation, we also report the response-orientation vector
 \begin{equation}
-FAA_{kt}=\alpha_k+\sum_{\ell=0}^{3}\beta_{k\ell}M_{f(k),t-\ell}
-+\gamma_k\log(1+N_t)+\mathbf{d}_t'\boldsymbol{\theta}_k+\varepsilon_{kt},
+\mathbf{R}_{et}=\left(C_{et},L_{et},P_{et}\right),
+\label{eq:responsevector}
+\end{equation}
+where
+\begin{align}
+C_{et}
+  &=
+  \frac{
+    \overline{A}_{\mathrm{capabilities},e,t}
+    +
+    \overline{A}_{\mathrm{actors},e,t}
+  }{2},
+\label{eq:curiosity}\\
+L_{et}
+  &=
+  \overline{A}_{\mathrm{threat},e,t},
+\label{eq:alarm}\\
+P_{et}
+  &=
+  \frac{
+    \overline{A}_{\mathrm{safety},e,t}
+    +
+    \overline{A}_{\mathrm{infrastructure},e,t}
+    +
+    \overline{A}_{\mathrm{control},e,t}
+  }{3}.
+\label{eq:preparedness}
+\end{align}
+Here, $C_{et}$ represents curiosity-oriented attention to AI capabilities, history, and associated actors; $L_{et}$ represents alarm-oriented attention to existential consequences; and $P_{et}$ represents preparedness-oriented attention. These components are neither mutually exclusive response categories nor proportions that sum to one. They describe the direction of aggregate information access.
+
+
+\subsection{Media-frame and attention correspondence}
+
+Let $\mathcal{S}_{et}$ be the set of unique news stories published on day $t$ during episode $e$, and let $N_{et}=\lvert\mathcal{S}_{et}\rvert$ be the number of stories in that set. For media frame $f$, daily frame prevalence is
+\begin{equation}
+M_{fet}
+  =\frac{1}{N_{et}}
+   \sum_{j\in\mathcal{S}_{et}}
+   \mathbf{1}\!\left\{j\text{ contains frame }f\right\}.
+\label{eq:frameprevalence}
+\end{equation}
+Thus, $M_{fet}$ is the proportion of unique stories published that day that contain frame $f$. Because frames are coded nonexclusively, one story may contribute to more than one frame, and the frame proportions are not expected to sum to one. Syndicated copies are collapsed before calculating $N_{et}$ and $M_{fet}$, so the denominator represents unique stories rather than total republications.
+
+For each prespecified media-frame and Wikipedia-family pair $(f,k)$, we
+estimate
+\begin{equation}
+\begin{split}
+\overline{A}_{ket}
+={}&
+\alpha_{fke}
++\sum_{\ell=0}^{3}
+\beta_{fke\ell}M_{fe,t-\ell}
++\gamma_{fke}\log(1+N_{et}) \\
+&+\mathbf{d}_{t}^{\mathsf{T}}\boldsymbol{\theta}_{fke}
++\varepsilon_{fket}.
+\end{split}
 \label{eq:distributedlag}
 \end{equation}
-where $f(k)$ maps frames to families, $N_t$ is corpus size, and $\mathbf{d}_t$
-contains day-of-week indicators. Inference uses heteroskedasticity- and
-autocorrelation-consistent standard errors, and the reported quantity is the
-cumulative lag-0 to lag-3 association. Because media coverage and public
-attention may respond to the same developments, coefficients are temporal
-associations, not evidence of individual-level media effects. Across the
-prespecified frame--family pairs we control the false-discovery rate using the
-Benjamini--Hochberg procedure and report $q$-values.
+where $M_{fe,t-\ell}$ is the prevalence of frame $f$ on the same day when $\ell=0$, one day earlier when $\ell=1$, and so forth through three days earlier. The term $\log(1+N_{et})$ controls for variation in the number of unique stories retrieved for that day. Because Google News RSS provides a ranked sample rather than a census, $N_{et}$ is the size of the retrieved daily corpus and is not interpreted as total news volume. The vector $\mathbf{d}_t$ contains six day-of-week indicators. Models are estimated separately for each warning episode.
 
-\subsection{Abnormal returns}
+The reported frame--family association is
+\begin{equation}
+B_{fke}^{(0:3)}=\sum_{\ell=0}^{3}\beta_{fke\ell}.
+\label{eq:cumulativelag}
+\end{equation}
+Because $M_{fet}$ is expressed as a proportion between zero and one, $0.10B_{fke}^{(0:3)}$ is the estimated difference in family-level abnormal attention associated with a 10-percentage-point increase in frame prevalence across lags zero through three. We calculate heteroskedasticity- and autocorrelation-consistent standard errors using a seven-day Newey--West lag \citep{neweywest1987hac}.
 
-For security $i$ the market model estimated before the event is
-$R_{it}=\alpha_i+\beta_iR_{mt}+\varepsilon_{it}$, with
-\begin{align}
-AR_{it}&=R_{it}-(\widehat{\alpha}_i+\widehat{\beta}_iR_{mt}),\\
-CAR_i(\tau_1,\tau_2)&=\sum_{t=\tau_1}^{\tau_2}AR_{it}.
+This model tests temporal correspondence between the information environment and subsequent topic-specific attention. It does not establish that particular individuals read the coded stories or that media framing caused their Wikipedia activity. News coverage and Wikipedia attention may both respond to the same underlying developments. Accordingly, $B_{fke}^{(0:3)}$ is interpreted as a temporal association rather than an individual-level media effect.
+
+Within each episode, tests for all prespecified frame--family pairs constitute one multiple-testing family. We control the false-discovery rate using the Benjamini--Hochberg procedure and report both unadjusted $p$-values and adjusted $q$-values \citep{benjamini1995fdr}. Exploratory frame--family combinations are identified separately and are not included among the confirmatory tests.
+
+\subsection{Abnormal returns and trading volume}
+
+Let $s$ denote a trading day relative to the market-event date, where $s=0$ is the designated market event date. Let $P_{is}$ be the adjusted closing price of security $i$ on trading day $s$. Its daily log return is
+\begin{equation}
+R_{is}=\log\!\left(\frac{P_{is}}{P_{i,s-1}}\right).
+\label{eq:return}
+\end{equation}
+For each security and event, the market model is estimated over trading days
+$s\in[-250,-30]$:
+\begin{equation}
+R_{is}=\alpha_{ie}+\beta_{ie}R_{ms}+\varepsilon_{ies},
+\label{eq:marketmodel}
+\end{equation}
+where $R_{ms}$ is the return on the designated benchmark and $\alpha_{ie}$ and $\beta_{ie}$ are estimated using only the pre-event estimation window \citep{mackinlay1997event}.
+
+Abnormal return is the difference between the observed return and the return predicted by the fitted market model:
+\begin{equation}
+AR_{ies}
+  =R_{is}
+   -\left(\widehat{\alpha}_{ie}
+   +\widehat{\beta}_{ie}R_{ms}\right).
+\label{eq:ar}
+\end{equation}
+For an event window $W=[\tau_1,\tau_2]$, cumulative abnormal return is
+\begin{equation}
+CAR_{ie}(W)=\sum_{s=\tau_1}^{\tau_2}AR_{ies}.
 \label{eq:car}
-\end{align}
-We report equal-weighted portfolio effects with conventional intervals and
-randomisation-based $p$-values from 5{,}000 pseudo-events drawn inside the
-estimation window, which does not rely on normality. A sector-adjusted
-specification uses SOXX for semiconductor firms and QQQ for platform firms; a
-broad-market specification uses SPY. Abnormal log volume is defined relative to
-the same security's pre-event distribution.
+\end{equation}
+Thus, $CAR_{ie}(W)$ is the portion of security $i$'s return during the event window that is not explained by its estimated relationship with the benchmark. For the 2026 episode, $W=[-4,0]$ corresponds to the trading days from September 8 through September 14.
+
+Let $\mathcal{I}_g$ denote the prespecified set of securities in portfolio $g$, where $g$ identifies the AI-infrastructure, AI-platform, or cybersecurity/resilience portfolio. The equal-weighted portfolio effect is
+\begin{equation}
+CAAR_{ge}(W)
+  =\frac{1}{\lvert\mathcal{I}_g\rvert}
+   \sum_{i\in\mathcal{I}_g}CAR_{ie}(W).
+\label{eq:caar}
+\end{equation}
+Each security receives equal weight, regardless of market capitalization. We calculate conventional 95\% intervals from the cross-sectional standard error of security-level cumulative abnormal returns within each portfolio.
+
+We supplement these intervals with randomization-based $p$-values. For each of 5{,}000 replicates, a common pseudo-event date is sampled from eligible trading days in the pre-event estimation period, and the portfolio statistic is recalculated using a pseudo-window with the same length as the observed event window. Using a common pseudo-date preserves contemporaneous market conditions across securities. The two-sided randomization $p$-value is the proportion of pseudo-event statistics whose absolute magnitude is at least as large as the observed statistic. This procedure does not require normally distributed cumulative abnormal returns, although it assumes that eligible pre-event dates provide an appropriate no-event reference distribution.
+
+In the sector-adjusted specification, $R_{ms}$ is the SOXX return for semiconductor firms, the QQQ return for platform firms, and the SPY return otherwise. In the broad-market specification, SPY is used for all securities. Comparing these specifications shows whether an estimated effect remains after accounting for broad market movement or movement in the firm's primary technology sector.
+
+Finally, let $Q_{is}$ denote the reported trading volume for security $i$ on day $s$. Standardized abnormal log volume is
+\begin{equation}
+AV_{ies}
+  =\frac{
+      \log\!\left(1+Q_{is}\right)-\widehat{\mu}_{Q,ie}
+    }{
+      \widehat{\sigma}_{Q,ie}
+    },
+\label{eq:abnormalvolume}
+\end{equation}
+where $\widehat{\mu}_{Q,ie}$ and $\widehat{\sigma}_{Q,ie}$ are the mean and standard deviation of log volume for the same security during the pre-event estimation window. A value of $AV_{ies}=1$ therefore indicates that log trading volume was one pre-event standard deviation above its historical mean. As with abnormal attention, this is a standardized within-security comparison rather than a percentage increase in the number of shares traded.
+
+
 
 \section{Results}
 
@@ -581,21 +685,21 @@ produced far more of it. \Cref{fig:attention} shows the daily family series
 around each event; \cref{fig:gap} summarises cumulative effects over $[0,+3]$
 against the placebo range.
 
-\begin{figure}[t]
+\begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.98\linewidth]{ figure_1_attention.pdf}
-  \caption{standardized abnormal Wikipedia attention by information family.
-  Colour identifies the family; the solid line is the September 2026 episode and
-  the dashed grey line the May 2023 statement. Existential-threat attention rises
+  \includegraphics[width=0.98\linewidth]{figure_1_attention.pdf}
+  \caption{Standardized abnormal Wikipedia attention by information family.
+  Color identifies the family; the solid line is the September 2026 episode and
+  the dashed gray line the May 2023 statement. Existential-threat attention rises
   by roughly an order of magnitude more than infrastructure attention and six
-  times more than control attention. For 2026 the day before $t_0$ is scored
+  times more than control attention. For 2026, the day before $t_0$ is scored
   out of sample, so the announcement-day rise in actor attention is
   visible.\label{fig:attention}}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.98\linewidth]{ figure_2_gap.pdf}
+  \includegraphics[width=0.98\linewidth]{figure_2_gap.pdf}
   \caption{Cumulative abnormal attention over $[0,+3]$ with page-clustered
   bootstrap intervals. The grey band is the 95th percentile of $|$effect$|$
   across placebo dates drawn from the same pre-event interval; an estimate
@@ -668,7 +772,8 @@ $\mathbf{R}=(1.23,\,2.59,\,0.52)$ for 2023 and $(5.89,\,10.34,\,2.57)$ for 2026:
 alarm-oriented attention grew roughly fourfold across the two episodes while
 preparedness-oriented attention remained the smallest component of both.
 
-\subsection{Framing transmission (RQ4)}
+
+\subsection{Media-frame and attention correspondence (RQ4)}
 
 \Cref{fig:transmission} reports cumulative lag-0 to lag-3 associations between
 frame prevalence and matched family attention.
@@ -678,14 +783,12 @@ frame prevalence and matched family attention.
   \includegraphics[width=0.98\linewidth]{figure_3_transmission.pdf}
   \caption{Cumulative lag-0..3 associations from \cref{eq:distributedlag} with
   95\% intervals. Filled markers survive Benjamini--Hochberg control at
-  $q<.05$. Existential framing predicts threat attention in both episodes;
-  infrastructure framing predicts infrastructure attention in
-  neither.\label{fig:transmission}}
+  $q<.05$. Existential framing is associated with threat attention in both
+  episodes; infrastructure framing is associated with infrastructure attention
+  in neither.\label{fig:transmission}}
 \end{figure}
 
-Existential framing predicted existential-threat attention in both episodes
-(2026: 42.4, $q<.001$; 2023: 8.1, $q=.003$), as did biological and chemical
-misuse framing in 2026 (67.6, $q=.006$). Infrastructure framing did \emph{not}
+Existential-frame prevalence was positively associated with subsequent existential-threat attention in both episodes  (2026: 42.4, $q<.001$; 2023: 8.1, $q=.003$), as did biological and chemical misuse framing in 2026 (67.6, $q=.006$). Infrastructure framing did \emph{not}
 predict infrastructure attention in either episode; the point estimates are
 negative and far from significance (2026: $-1.9$, $p=.25$; 2023: $-0.7$,
 $p=.74$). Control framing predicted shutdown and control attention in 2023
@@ -710,19 +813,20 @@ weakest securities in the sample. It is stable under the broad-market
 specification and unchanged in sign after excluding the one security flagged for
 a firm-specific announcement ($+10.2\%$).
 
-\begin{figure}[t]
+\begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.98\linewidth]{ figure_4_market_car.pdf}
-  \caption{Portfolio cumulative abnormal returns with 95\% intervals under the
-  sector-adjusted market model. The 2023 $[-3,+3]$ estimate for AI
+  \includegraphics[width=0.9\linewidth]{figure_4_market_car.pdf}
+  \caption{Portfolio cumulative abnormal returns under the sector-adjusted
+  market model. Bars and bracketed labels give the conventional 95\% interval;
+  $p_{\mathrm{rand}}$ is the randomisation $p$ from placebo windows. The 2023 $[-3,+3]$ estimate for AI
   infrastructure is confounded by earnings releases and should not be
   interpreted as an event response (\cref{sec:robust}).\label{fig:market}}
 \end{figure}
 
-\Cref{fig:divergence} places this beside the attention result. The two channels
-move in different directions with respect to protective capacity: professional
-capital repriced resilience providers substantially, while public attention to
-infrastructure resilience did not measurably change.
+\Cref{fig:divergence} places the market and attention results side by side. The two channels differed in their relative emphasis: infrastructure and resilience produced the smallest Wikipedia-family response, although it exceeded its placebo threshold, whereas the
+cybersecurity and resilience portfolio produced the largest cumulative
+abnormal return. The comparison is directional because the panels
+represent different populations, measures, and units.
 
 \begin{figure}[t]
   \centering

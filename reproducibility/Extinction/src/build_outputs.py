@@ -107,11 +107,14 @@ def figure_attention(att: dict, events_cfg: dict) -> Path:
     the whole categorical palette into all-pairs comparison.
     """
     evs = [e for e in events_cfg["events"] if e["id"] in att]
-    fig, axes = plt.subplots(2, 3, figsize=(9.6, 5.3), sharex=True, sharey=True)
+    fig, axes = plt.subplots(2, 3, figsize=(9.6, 5.6), sharex=True, sharey=True)
 
     for i, fam in enumerate(FAMILY_ORDER):
         ax = axes.flat[i]
         _style(ax)
+        # Six small panels at 0.98\linewidth print small; type is scaled up
+        # so panel titles, axes, and the legend remain readable at page size.
+        ax.tick_params(labelsize=10)
         for j, ev in enumerate(evs):
             d = att[ev["id"]]["daily"]
             if fam not in d["faa"]:
@@ -127,11 +130,11 @@ def figure_attention(att: dict, events_cfg: dict) -> Path:
                     zorder=3 if j == 1 else 2)
         ax.axhline(0, color=INK_2, lw=0.7, zorder=1)
         ax.axvline(0, color=MUTED, lw=0.7, ls=":", zorder=1)
-        ax.set_title(FAMILY_LABEL[fam], fontsize=9, pad=5, loc="left")
+        ax.set_title(FAMILY_LABEL[fam], fontsize=11, pad=5, loc="left")
         if i % 3 == 0:
-            ax.set_ylabel("Standardised\nabnormal attention", fontsize=8)
+            ax.set_ylabel("Standardised\nabnormal attention", fontsize=10)
         if i >= 3:
-            ax.set_xlabel("Days from $t_0$", fontsize=8)
+            ax.set_xlabel("Days from $t_0$", fontsize=10)
 
     # Colour identifies the family (one per panel), so the legend must carry
     # line style only -- a coloured handle would imply the 2026 series is blue
@@ -142,10 +145,10 @@ def figure_attention(att: dict, events_cfg: dict) -> Path:
                Line2D([], [], color=INK_2, lw=1.6, ls="-",
                       label="2026 episode (panel colour)")]
     fig.legend(handles=handles, loc="lower center", ncol=2, frameon=False,
-               bbox_to_anchor=(0.5, -0.01), fontsize=8)
+               bbox_to_anchor=(0.5, -0.01), fontsize=10)
     fig.suptitle("Wikipedia attention by information family around AI extinction warnings",
-                 fontsize=10.5, x=0.012, ha="left", y=1.0, color=INK)
-    fig.tight_layout(rect=(0, 0.045, 1, 0.97))
+                 fontsize=12.5, x=0.012, ha="left", y=1.0, color=INK)
+    fig.tight_layout(rect=(0, 0.05, 1, 0.965))
     return _save(fig, "figure_1_attention")
 
 
@@ -159,9 +162,11 @@ def figure_gap(att: dict) -> Path:
     indistinguishable from background variation.
     """
     events = [e for e in ("statement2023", "warning2026") if e in att]
-    # A shared x-axis across panels: the cross-event magnitude difference is
-    # itself a result, and separate scales would make 2023 and 2026 look alike.
-    fig, axes = plt.subplots(1, len(events), figsize=(9.4, 3.9),
+    # Panels stacked vertically on a shared x-axis: the cross-event magnitude
+    # difference is itself a result, and separate scales would make 2023 and
+    # 2026 look alike. Stacking puts the two effect scales directly above one
+    # another so the reader compares horizontal extents, not panel widths.
+    fig, axes = plt.subplots(len(events), 1, figsize=(6.6, 6.4),
                              sharey=True, sharex=True)
     axes = np.atleast_1d(axes)
 
@@ -205,9 +210,10 @@ def figure_gap(att: dict) -> Path:
         ax.set_yticks(list(ypos.values()))
         ax.set_yticklabels([FAMILY_LABEL[f] for f in FAMILY_ORDER], fontsize=8.4)
         ax.set_title(EVENT_LABEL[eid], fontsize=9.5, loc="left", pad=14)
-        ax.set_xlabel("Cumulative abnormal attention, $[0,+3]$ (SD-days)",
-                      fontsize=8)
         ax.set_ylim(-len(FAMILY_ORDER) + 0.4, 0.9)
+    # Shared x-axis, so the label belongs to the bottom panel only.
+    axes[-1].set_xlabel("Cumulative abnormal attention, $[0,+3]$ (SD-days)",
+                        fontsize=8)
 
     from matplotlib.lines import Line2D
     from matplotlib.patches import Patch
@@ -219,11 +225,9 @@ def figure_gap(att: dict) -> Path:
         Patch(facecolor=BAND, alpha=0.22, edgecolor=INK_2, linewidth=0.6,
               label="Placebo range (95th pct. of |effect|)"),
     ]
-    fig.legend(handles=handles, loc="lower center", ncol=3, frameon=False,
-               bbox_to_anchor=(0.5, -0.04), fontsize=8)
-    fig.suptitle("Attention concentrates on the threat, not on preparedness",
-                 fontsize=10.5, x=0.012, ha="left", y=1.0, color=INK)
-    fig.tight_layout(rect=(0, 0.05, 1, 0.95))
+    fig.legend(handles=handles, loc="lower center", ncol=2, frameon=False,
+               bbox_to_anchor=(0.5, -0.03), fontsize=8)
+    fig.tight_layout(rect=(0, 0.06, 1, 1))
     return _save(fig, "figure_2_gap")
 
 
@@ -234,8 +238,8 @@ def figure_divergence(att: dict, mkt: dict) -> Path | None:
     The two panels are deliberately not on one axis: they are different
     quantities (standardised attention vs. percentage abnormal return). The
     comparison the figure supports is directional, not numerical -- resilience
-    barely registers in public information seeking while resilience providers
-    are repriced sharply.
+    is the smallest family response in public information seeking (though above
+    its placebo threshold) while resilience providers are repriced the most.
     """
     if not mkt or "warning2026" not in att:
         return None
@@ -291,7 +295,7 @@ def figure_divergence(att: dict, mkt: dict) -> Path | None:
     ax1.set_title("Equity repricing", fontsize=9.5, loc="left", pad=14)
     ax1.set_ylim(min(ys2) - 0.6, max(ys2) + 0.75)
 
-    fig.suptitle("Markets repriced resilience; the public did not seek it",
+    fig.suptitle("Markets repriced resilience most; the public sought it least",
                  fontsize=10.5, x=0.012, ha="left", y=1.0, color=INK)
     fig.tight_layout(rect=(0, 0, 1, 0.94))
     return _save(fig, "figure_5_divergence")
@@ -299,7 +303,7 @@ def figure_divergence(att: dict, mkt: dict) -> Path | None:
 
 # ------------------------------------------------------------------ figure 4
 def figure_transmission(att: dict) -> Path | None:
-    """Does a media frame precede attention to the matching topic?
+    """Is a media frame associated with attention to the matching topic?
 
     Cumulative lag-0..3 associations from Eq. 6 with 95% intervals. Filled
     markers survive Benjamini--Hochberg control at q < 0.05.
@@ -312,14 +316,16 @@ def figure_transmission(att: dict) -> Path | None:
     order = ["existential->threat", "bio->threat", "capability->capabilities",
              "economic->capabilities", "skeptic->actors", "governance->safety",
              "infrastructure->infrastructure", "control->control"]
-    nice = {"existential->threat": "Existential framing $\\rightarrow$ threat",
-            "bio->threat": "Bio/chem framing $\\rightarrow$ threat",
-            "capability->capabilities": "Capability framing $\\rightarrow$ capabilities",
-            "economic->capabilities": "Economic framing $\\rightarrow$ capabilities",
-            "skeptic->actors": "Skeptic framing $\\rightarrow$ actors",
-            "governance->safety": "Governance framing $\\rightarrow$ safety",
-            "infrastructure->infrastructure": "Infrastructure framing $\\rightarrow$ infrastructure",
-            "control->control": "Control framing $\\rightarrow$ shutdown/control"}
+    # Short "frame -> family" labels; the column header above the axis says
+    # what the two sides are, so "framing" need not repeat on every row.
+    nice = {"existential->threat": "Existential $\\rightarrow$ threat",
+            "bio->threat": "Bio/chem $\\rightarrow$ threat",
+            "capability->capabilities": "Capability $\\rightarrow$ capabilities",
+            "economic->capabilities": "Economic $\\rightarrow$ capabilities",
+            "skeptic->actors": "Skeptic $\\rightarrow$ actors",
+            "governance->safety": "Governance $\\rightarrow$ safety",
+            "infrastructure->infrastructure": "Infrastructure $\\rightarrow$ infrastructure",
+            "control->control": "Control $\\rightarrow$ shutdown/control"}
 
     fig, axes = plt.subplots(1, len(events), figsize=(9.6, 3.8), sharey=True)
     axes = np.atleast_1d(axes)
@@ -343,6 +349,10 @@ def figure_transmission(att: dict) -> Path | None:
         ax.set_yticklabels([nice[k] for k in order], fontsize=7.8)
         ax.set_title(EVENT_LABEL[eid], fontsize=9.5, loc="left", pad=6)
         ax.set_xlabel("Cumulative lag-0..3 association", fontsize=8)
+    # Header over the shared tick-label column, level with the panel titles.
+    axes[0].text(-0.02, 1.0, "Framing $\\rightarrow$ attention family",
+                 transform=axes[0].transAxes, ha="right", va="bottom",
+                 fontsize=8.4, color=INK_2, style="italic")
 
     from matplotlib.lines import Line2D
     handles = [
@@ -355,10 +365,7 @@ def figure_transmission(att: dict) -> Path | None:
     ]
     fig.legend(handles=handles, loc="lower center", ncol=3, frameon=False,
                bbox_to_anchor=(0.5, -0.05), fontsize=8)
-    fig.suptitle("Existential framing transmits to attention; "
-                 "infrastructure framing never does",
-                 fontsize=10.5, x=0.012, ha="left", y=1.0, color=INK)
-    fig.tight_layout(rect=(0, 0.06, 1, 0.94))
+    fig.tight_layout(rect=(0, 0.06, 1, 1))
     return _save(fig, "figure_3_transmission")
 
 
@@ -445,13 +452,13 @@ def figure_market(mkt: dict) -> Path | None:
         return None
     df = pd.DataFrame(rows)
 
-    labels, ys, xs, los, his, cols, flags = [], [], [], [], [], [], []
+    labels, ys, xs, los, his, cols, flags, notes = [], [], [], [], [], [], [], []
     y = 0.0
     for (eid, wkey), g in df.groupby(["event", "window"], sort=False):
         # Header first, then its members below it.
         labels.append(f"{EVENT_LABEL.get(eid, eid)}  ·  {window_label(eid, wkey)}")
         ys.append(y); xs.append(np.nan); los.append(0); his.append(0)
-        cols.append(SURFACE); flags.append(False)
+        cols.append(SURFACE); flags.append(False); notes.append("")
         y -= 1
         for _, r in g.iterrows():
             labels.append(f"    {PORT_LABEL[r['portfolio']]}")
@@ -463,27 +470,41 @@ def figure_market(mkt: dict) -> Path | None:
             cols.append(SERIES[["ai_infrastructure", "ai_platform",
                                 "cyber_resilience"].index(r["portfolio"])])
             flags.append(bool(r["confounded"]))
+            # The bar already draws the interval; the label reports it, with
+            # the randomisation p, so the figure is quotable without the table.
+            note = f"[{100 * ci[0]:+.2f}, {100 * ci[1]:+.2f}]"
+            if r["p"] is not None and not pd.isna(r["p"]):
+                pv = f"< .001" if r["p"] < 0.001 else f"= {r['p']:.3f}".replace("= 0.", "= .")
+                note += f", $p_{{\\mathrm{{rand}}}}$ {pv}"
+            notes.append(note)
             y -= 1
         y -= 0.6
 
-    h = max(2.6, 0.34 * len(ys) + 1.2)
-    fig, ax = plt.subplots(figsize=(7.2, h))
+    h = max(2.6, 0.38 * len(ys) + 1.3)
+    fig, ax = plt.subplots(figsize=(8.0, h))
     _style(ax)
     ax.axvline(0, color=INK_2, lw=0.8, zorder=1)
     ax.errorbar(xs, ys, xerr=[los, his], fmt="o", ms=6, lw=0, elinewidth=1.4,
                 ecolor=MUTED, zorder=3,
                 markerfacecolor="none", markeredgewidth=0)
-    for x, yy, c, fl in zip(xs, ys, cols, flags):
+    for x, yy, c, fl, note in zip(xs, ys, cols, flags, notes):
         if not np.isnan(x):
             ax.plot([x], [yy], "o", ms=7, color=c, mec=SURFACE, mew=1.4, zorder=4)
-            ax.annotate(f"{x:+.2f}%" + ("\u2020" if fl else ""), (x, yy),
-                        textcoords="offset points", xytext=(0, 8), ha="center",
-                        fontsize=7.2, color=INK_2)
+            ax.annotate(f"{x:+.2f}%" + ("\u2020" if fl else "") + "  " + note,
+                        (x, yy), textcoords="offset points", xytext=(0, 8),
+                        ha="center", fontsize=7.2, color=INK_2, zorder=5,
+                        bbox=dict(boxstyle="round,pad=0.12", facecolor=SURFACE,
+                                  edgecolor="none", alpha=0.85))
+    # Labels are centred on the point, so the right-most estimate needs room.
+    lo, hi = ax.get_xlim()
+    ax.set_xlim(lo, hi + 0.15 * (hi - lo))
+    foot = ("Labels: CAR [95% conventional interval], "
+            "$p_{\\mathrm{rand}}$ = randomisation $p$ from placebo windows")
     if any(flags):
-        ax.text(0.0, -0.13,
-                "\u2020 window contains a firm-specific announcement "
-                "(earnings); see robustness",
-                transform=ax.transAxes, fontsize=7, color=MUTED)
+        foot += ("\n\u2020 window contains a firm-specific announcement "
+                 "(earnings); see robustness")
+    ax.text(0.0, -0.11, foot, transform=ax.transAxes, fontsize=7,
+            color=MUTED, va="top", linespacing=1.5)
     ax.set_yticks(ys)
     ax.set_yticklabels(labels, fontsize=8)
     for t, x in zip(ax.get_yticklabels(), xs):
