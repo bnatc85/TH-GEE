@@ -160,12 +160,29 @@
       "disambiguation": false,
       "as_of_resolved": "Dario Amodei",
       "as_of_baseline_coverage": 0.0,
+      "as_of_baseline_mean_views": 0.0,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Dario Amodei": 0.0,
-        "Dario amode": 0.0,
-        "D. amodei": 0.0,
-        "Cami Clark": 0.0,
-        "Camilla Clark": 0.0
+        "Dario Amodei": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Dario amode": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "D. amodei": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Cami Clark": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Camilla Clark": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        }
       }
     },
     "Demis Hassabis": {
@@ -205,45 +222,153 @@
       "resolution": "as-of-event title",
       "missing": false,
       "disambiguation": false,
-      "as_of_resolved": "Existential risk from advanced artificial intelligence",
+      "as_of_resolved": "Existential risk from artificial general intelligence",
       "as_of_baseline_coverage": 1.0,
+      "as_of_baseline_mean_views": 1093.9,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Existential risk from artificial intelligence": 0.0,
-        "Terminator scenario": 0.179,
-        "Existential risk of AI": 0.125,
-        "Existential risk of artificial intelligence": 0.018,
-        "Existential risk from advanced artificial intelligence": 1.0,
-        "Existential risk from advanced AI": 0.018,
-        "Existential Risk from Artificial General Intelligence": 0.018,
-        "Existential risk from ai": 0.054,
-        "Existential risk of artificial general intelligence": 0.107,
-        "X-risk from AI": 0.018,
-        "AI risk": 0.125,
-        "Orthogonality thesis": 1.0,
-        "Existential risks from artificial general intelligence": 0.607,
-        "Existential risk from agi": 0.018,
-        "Agi risk": 0.054,
-        "AI apocalypse": 0.0,
-        "AI x-risk": 0.0,
-        "X-risk from artificial intelligence": 0.0,
-        "AI-caused human extinction": 0.0,
-        "AI-caused extinction": 0.0,
-        "AGI apocalypse": 0.0,
-        "AGI existential risk": 0.0,
-        "AI existential risk": 0.0,
-        "AGI x-risk": 0.0,
-        "Existential risk from artificial superintelligence": 0.0,
-        "Existential risk from artificial general intelligence": 1.0,
-        "Existential risk from AI": 0.0,
-        "Risks of AI": 0.0,
-        "AIpocalypse": 0.0,
-        "Risks of artificial intelligence": 0.0,
-        "Risks from AI": 0.0,
-        "Risk from AI": 0.0,
-        "Risks from advanced AI": 0.0,
-        "Existential threat from artificial intelligence": 0.0
+        "Existential risk from artificial intelligence": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Terminator scenario": {
+          "coverage": 0.179,
+          "baseline_mean_views": 0.2
+        },
+        "Existential risk of AI": {
+          "coverage": 0.125,
+          "baseline_mean_views": 0.1
+        },
+        "Existential risk of artificial intelligence": {
+          "coverage": 0.018,
+          "baseline_mean_views": 0.0
+        },
+        "Existential risk from advanced artificial intelligence": {
+          "coverage": 1.0,
+          "baseline_mean_views": 7.5
+        },
+        "Existential risk from advanced AI": {
+          "coverage": 0.018,
+          "baseline_mean_views": 0.0
+        },
+        "Existential Risk from Artificial General Intelligence": {
+          "coverage": 0.018,
+          "baseline_mean_views": 0.0
+        },
+        "Existential risk from ai": {
+          "coverage": 0.054,
+          "baseline_mean_views": 0.1
+        },
+        "Existential risk of artificial general intelligence": {
+          "coverage": 0.107,
+          "baseline_mean_views": 0.1
+        },
+        "X-risk from AI": {
+          "coverage": 0.018,
+          "baseline_mean_views": 0.0
+        },
+        "AI risk": {
+          "coverage": 0.125,
+          "baseline_mean_views": 0.1
+        },
+        "Orthogonality thesis": {
+          "coverage": 1.0,
+          "baseline_mean_views": 11.2
+        },
+        "Existential risks from artificial general intelligence": {
+          "coverage": 0.607,
+          "baseline_mean_views": 1.4
+        },
+        "Existential risk from agi": {
+          "coverage": 0.018,
+          "baseline_mean_views": 0.0
+        },
+        "Agi risk": {
+          "coverage": 0.054,
+          "baseline_mean_views": 0.1
+        },
+        "AI apocalypse": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AI x-risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "X-risk from artificial intelligence": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AI-caused human extinction": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AI-caused extinction": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AGI apocalypse": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AGI existential risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AI existential risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AGI x-risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Existential risk from artificial superintelligence": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Existential risk from artificial general intelligence": {
+          "coverage": 1.0,
+          "baseline_mean_views": 1093.9
+        },
+        "Existential risk from AI": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Risks of AI": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AIpocalypse": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Risks of artificial intelligence": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Risks from AI": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Risk from AI": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Risks from advanced AI": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Existential threat from artificial intelligence": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Jacob Coxon": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        }
       },
-      "series_title": "Existential risk from advanced artificial intelligence"
+      "series_title": "Existential risk from artificial general intelligence"
     },
     "Existential risk studies": {
       "requested": "Existential risk studies",
@@ -253,8 +378,13 @@
       "disambiguation": false,
       "as_of_resolved": "Existential risk studies",
       "as_of_baseline_coverage": 0.0,
+      "as_of_baseline_mean_views": 0.0,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Existential risk studies": 0.0
+        "Existential risk studies": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        }
       }
     },
     "Fail-safe": {
@@ -385,9 +515,17 @@
       "disambiguation": false,
       "as_of_resolved": "Pause Giant AI Experiments: An Open Letter",
       "as_of_baseline_coverage": 0.0,
+      "as_of_baseline_mean_views": 0.0,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Pause Giant AI Experiments: An Open Letter": 0.0,
-        "Pause Giant AI Experiments": 0.0
+        "Pause Giant AI Experiments: An Open Letter": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Pause Giant AI Experiments": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        }
       }
     },
     "Photosynthesis": {
@@ -454,11 +592,25 @@
       "disambiguation": false,
       "as_of_resolved": "Statement on AI Extinction Risk",
       "as_of_baseline_coverage": 0.0,
+      "as_of_baseline_mean_views": 0.0,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Statement on AI Extinction Risk": 0.0,
-        "Statement on AI risk": 0.0,
-        "Statement on AI risk of extinction": 0.0,
-        "Statement on AI Risk": 0.0
+        "Statement on AI Extinction Risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Statement on AI risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Statement on AI risk of extinction": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Statement on AI Risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        }
       }
     },
     "Superintelligence": {

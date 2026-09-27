@@ -4,8 +4,24 @@ Pipeline for the manuscript in `main(1).tex`, implementing the repository
 contract in its Appendix C. Every number in `outputs/` is produced by these
 scripts from the frozen configuration in `config/`.
 
-Run date of the results checked in here: **15 September 2026**
-(t₀ + 6 days for the primary event).
+Run date of the results checked in here: **27 September 2026**
+(t₀ + 18 days for the primary event).
+
+This run supersedes the 15 September 2026 run. What changed, and why:
+
+| Channel | Action | Effect |
+|---|---|---|
+| Wikipedia | Re-collected both events | Pageviews now published through **26 Sep 2026** (t₀+17), so the prespecified `[0,+7]` and `[0,+14]` attention windows are observable for the first time. 2023 series are byte-identical; the only change to the 2023 payload is one new redirect alias (`Jacob Coxon`) appearing in the candidate log, which does not change any chosen title. |
+| Markets | Re-collected both events | Last session **25 Sep 2026**, so the prespecified `[-1,+1]`, `[-3,+3]` and `[0,+5]` windows are complete for 2026. Same source (FMP) as the previous run; 2023 CARs reproduce to within 0.01 pp. |
+| News | Re-collected **warning2026 only** | Window extended from 14 Sep to 27 Sep. `statement2023` was deliberately *not* re-queried: its window closed in June 2023, and Google News RSS returns a fresh ranked sample on every request, so re-querying would inject sampling noise into the replication event for no gain. Its derived outputs reproduce exactly (754 stories, 385 outlets, identical frame prevalence), which also confirms the classifier is deterministic on unchanged input. |
+| Attention / markets / outputs | Fully re-run | All `[0,+3]` estimates and the entire robustness battery reproduce **exactly**. |
+
+The one substantive shift is RQ4. Because the 2026 news corpus is a fresh ranked
+draw, shared-day frame shares moved by a mean absolute difference of .02–.04,
+which moved four *secondary* frame→family pairs across the q<.05 threshold. The
+two theoretically matched pairs (existential→threat, infrastructure→infra­structure)
+are unchanged in direction and significance. This instability is now stated in the
+manuscript rather than left implicit.
 
 ## Baseline placement (design point)
 
@@ -121,31 +137,125 @@ never revised after outcome data are inspected.
 
 | Item | Status |
 |---|---|
-| 2026 attention windows `[0,+7]`, `[0,+14]` | Pageviews published only through **14 Sep 2026** (t₀+5). Marked `"available": false` in the results rather than computed on a short window. |
-| 2026 market windows `[-1,+1]`, `[-3,+3]`, `[0,+5]` | Require sessions after **14 Sep 2026**. Only the prespecified episode window `[8–14 Sep]` is complete. |
+| ~~2026 attention windows `[0,+7]`, `[0,+14]`~~ | **Resolved in this run.** Pageviews are published through 26 Sep 2026 (t₀+17); both windows are now computed for both events. |
+| ~~2026 market windows `[-1,+1]`, `[-3,+3]`, `[0,+5]`~~ | **Resolved in this run.** Sessions through 25 Sep 2026 are available; all three windows are complete. |
 | 2023 event-named pages | *Statement on AI Risk*, *Pause Giant AI Experiments*, *Dario Amodei*, *Existential risk studies* had no pre-event baseline in May 2023 — an article created *by* the event cannot have a counterfactual. Dropped for 2023 under the preregistered "insufficient baseline observations" rule and logged in `data/derived/page_resolution_log_statement2023.json`. |
 | Human-coded frame validation | Sample exported; coding not performed. |
 
-Because family composition differs between events for that reason, the RQ5
-cross-event comparison is reported at the one window both events support,
-`[0,+3]`.
+Family composition still differs between events for that reason, so the RQ5
+cross-event comparison remains headlined at `[0,+3]` — but it is no longer
+*restricted* to it. `_rq5_comparison` now carries `by_window` with every
+prespecified window both events support (`[0,+3]`, `[0,+7]`, `[0,+14]`);
+`events` still holds the `[0,+3]` snapshot so existing consumers are unaffected.
 
-## Two things the checks caught
+`[0,+3]` stays primary because negative-control drift accumulates with window
+length: in 2023 it runs −3.15 → −10.8 → −24.7 across the three windows, so the
+drift adjustment does progressively more of the work at longer horizons.
+
+## What the checks caught
 
 **Historical page titles.** Pageviews are recorded against the *requested*
 title, and resolving a preregistered title to its *current* name is wrong for a
 historical event: in May 2023 "Existential risk from artificial intelligence"
-lived at "Existential risk from advanced artificial intelligence" and had zero
-traffic under today's name. `collect_wikipedia.py` resolves each title as of the
-event date, choosing among redirect aliases on **pre-event baseline coverage
-only**, so no post-event outcome informs the choice.
+lived at "Existential risk from artificial general intelligence" and had
+essentially no traffic under today's name. `collect_wikipedia.py` resolves each
+title as of the event date, choosing among redirect aliases on **pre-event
+baseline information only** — coverage as a gate, baseline volume as the
+selector — so no post-event outcome informs the choice.
+
+> ### ✅ RESOLVED: the as-of-event tie-break now selects on baseline volume
+>
+> `baseline_coverage` scores an alias by the *share of baseline days with at
+> least one view*. That measure saturates at 1.0 for any alias with steady
+> traffic, so it could not rank the aliases that mattered most. For the 2023
+> threat page, three aliases tied at coverage 1.0 with very different volumes:
+>
+> | Alias | Baseline coverage | Baseline mean views/day |
+> |---|---|---|
+> | Existential risk from advanced artificial intelligence | 1.00 | 7.5 ← previously chosen |
+> | Orthogonality thesis | 1.00 | 11.2 |
+> | Existential risk from artificial general intelligence | 1.00 | **1093.9** ← now chosen |
+>
+> The old winner was decided by `if c > best_cover` (strictly greater), so the
+> first alias the MediaWiki API returned won every tie — API ordering, not a
+> criterion. The pipeline was modelling a ~7 views/day redirect in place of the
+> article that actually held the topic's traffic in May 2023.
+>
+> **Fix.** `alias_rank(cover, volume)` now ranks candidates as
+> `(clears coverage gate, coverage if not gated, baseline volume)`. Coverage is
+> a *gate* — was this title live through the baseline? — and volume is the
+> *selector* among titles that clear it. Both read only pre-event days, so the
+> preregistered "no post-event outcome informs the choice" constraint still
+> holds. `page_resolution_log_*.json` now records `baseline_mean_views`
+> alongside `coverage` for every candidate, so the choice is auditable.
+>
+> Two pages change title under the new rule:
+>
+> | Event | Requested title | Was | Now |
+> |---|---|---|---|
+> | statement2023 | Existential risk from artificial intelligence | Existential risk from advanced artificial intelligence (7.5/day) | **Existential risk from artificial general intelligence** (1094/day) |
+> | warning2026 | Statement on AI Risk | Statement on AI risk of extinction | **Statement on AI Risk** (39/day) |
+>
+> No page counts change: 48 modelled for 2023 and 52 for 2026, with the same
+> five and one documented drops respectively.
+>
+> **Effect, and it is narrowly contained.** Only the two affected families move;
+> every other family shifts by less than 0.05 SD-days (numerical noise), and the
+> negative-control drift, placebo design, and market channel are untouched.
+>
+> | Quantity | Was | Now |
+> |---|---|---|
+> | 2023 threat `[0,+3]` | 10.35 | **13.95** |
+> | 2023 threat `[0,+7]` | 14.60 | **20.20** |
+> | 2023 threat `[0,+14]` | 16.30 | **22.80** |
+> | 2026 safety `[0,+3]` | 20.18 | **17.89** |
+> | 2026 safety `[0,+7]` | 41.30 | **36.94** |
+> | 2026 safety `[0,+14]` | 61.00 | **53.52** |
+> | 2023 TPG/day `[0,+3]` | 2.07 | **2.97** |
+> | 2026 TPG/day `[0,+3]` | 7.77 | **7.96** |
+> | TPG ratio 2026:2023 | 3.8x | **2.7x** |
+>
+> The direction is the expected one. Modelling the real 2023 article raises the
+> 2023 threat response, and a higher-volume *Statement on AI Risk* series lowers
+> the 2026 safety response; both narrow the cross-event TPG difference. The
+> paper's substantive ordering is unchanged: threat attention still dominates
+> preparedness attention in both episodes, 2026 far more than 2023, and the
+> 2026 threat-to-infrastructure ratio is untouched at 11.3, 12.5 and 10.4 across
+> the three windows. Two knock-on refits: the 2023 placebo band for threat rises
+> from 3.9 to 5.3 (13.95 still clears it), and `existential->threat` in the 2023
+> distributed-lag model rises from 8.1 to 10.9.
+
+**API key never reaches disk.** `_get` embedded the full request URL — including
+`apikey=` — in its `FetchError`, and `collect_markets.main` stores that string in
+`failed`, which is written to `data/raw/markets.json` and the run manifest, both
+committed. A single FMP failure would therefore have published the key. `_get`
+now routes the message through `_redact`. Verified: no key material in `data/`,
+`outputs/` or `src/` after this run.
+
+**Figure 1 compared unequal horizons.** Both events were drawn over a fixed
+`[-21, +21]` day window, but the 2023 window is closed while the 2026 episode
+was published only to t0+17. The 2023 series therefore ran 4 days further than
+the 2026 series in every panel, which reads as "2026 stopped" rather than "2026
+is not published yet". `common_horizon()` now cuts both series to the range both
+events observe, so the panels compare equal spans.
+
+**Figure 4 outgrew the page.** With all four windows available for both events,
+the single-column CAR figure reached 24 rows and an aspect ratio of about 1:1.7,
+taller than a journal page at `0.89\linewidth`. `figure_market` now draws one
+panel per event on a shared x-axis, which halves the height and keeps the
+cross-event magnitude difference readable as horizontal extent.
 
 **Baseline drift in 2023.** The negative-control pages show a cumulative
 abnormal attention of −3.15 at `[0,+3]` and −24.67 at `[0,+14]` (p < 0.01) for
 the 2023 event — they should sit at zero. This is genuine late-May seasonality
 in the control set, not a coding error: raw views fall 0–11% post-event (Everest
 climbing season peaks just before t₀; Photosynthesis and Roman Empire follow the
-school year). The 2026 event shows no such drift (+1.86, p = 0.30). Every family
+school year). The 2026 event shows no significant drift at `[0,+3]` (+1.86, p = 0.30), though
+the point estimate grows with window length (+5.47 at `[0,+7]`, +9.15 at
+`[0,+14]`, neither significant); subtracting it leaves control-adjusted
+infrastructure attention at only 0.6 SD-days over both longer windows, which is
+why the manuscript reads infrastructure attention beyond `[0,+3]` as not
+reliably separable from drift. Every family
 is therefore also reported net of this drift as
 `control_adjusted_families`, and **the RQ5 comparison should use the
 control-adjusted values.** Note that for 2026 the adjustment subtracts an
@@ -196,7 +306,21 @@ also retains `figure_frames()`, a supplementary frame-prevalence-over-time view
 that is not part of the manuscript figure set.
 
 The manuscript (`main(1).tex`) reports only what these outputs support. It
-states research questions rather than directional hypotheses, because several
-prespecified windows could not be evaluated at this run date and the frame
-classifier has not completed human validation. On Overleaf, rename
-`references(1).bib` to `references.bib` to match `\bibliography{references}`.
+states research questions rather than directional hypotheses. Every
+prespecified window is now evaluated, but the frame classifier still has not
+completed human validation, so RQ4 remains provisional.
+
+### Manuscript wiring fixed in this run
+
+* `figure_5_divergence.pdf` was generated by the pipeline and listed here as a
+  manuscript figure, but `main(1).tex` never included it. It is now placed in
+  the RQ5 section and cross-referenced.
+* Figures 3 and 4 were included as raster `.png`; all five now use the vector
+  `.pdf`.
+* `main(1).tex` referenced figures bare (`{figure_1_attention.pdf}`) while the
+  pipeline writes them to `figures/`. A `\graphicspath{{figures/}{./}}` is now
+  in the preamble, so the project builds whether the figures sit beside
+  `main.tex` or in `figures/`.
+
+On Overleaf, rename `references(1).bib` to `references.bib` to match
+`\bibliography{references}`.

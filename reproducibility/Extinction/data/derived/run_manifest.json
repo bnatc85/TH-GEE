@@ -1,8 +1,83 @@
 {
   "steps": [
     {
+      "step": "collect_markets",
+      "run_at_utc": "2026-09-27T22:25:00+00:00",
+      "n_symbols": 16,
+      "failed": {},
+      "sources": {
+        "NVDA": "fmp_adjclose",
+        "AMD": "fmp_adjclose",
+        "AVGO": "fmp_adjclose",
+        "ORCL": "fmp_adjclose",
+        "MSFT": "fmp_adjclose",
+        "GOOGL": "fmp_adjclose",
+        "AMZN": "fmp_adjclose",
+        "META": "fmp_adjclose",
+        "PLTR": "fmp_adjclose",
+        "PANW": "fmp_adjclose",
+        "CRWD": "fmp_adjclose",
+        "FTNT": "fmp_adjclose",
+        "ZS": "fmp_adjclose",
+        "QQQ": "fmp_adjclose",
+        "SPY": "fmp_adjclose",
+        "SOXX": "fmp_adjclose"
+      },
+      "split_like_returns": {
+        "ORCL": [
+          "2025-09-10"
+        ]
+      },
+      "last_available": "2026-09-25",
+      "event_coverage": {
+        "statement2023": {
+          "market_t0": "2023-05-30",
+          "t0_present": true,
+          "last_available": "2026-09-25",
+          "post_window_complete": true
+        },
+        "warning2026": {
+          "market_t0": "2026-09-14",
+          "t0_present": true,
+          "last_available": "2026-09-25",
+          "post_window_complete": true
+        }
+      }
+    },
+    {
+      "step": "analyze_markets",
+      "run_at_utc": "2026-09-27T22:25:24+00:00",
+      "seed": 20260914,
+      "n_randomisation": 5000,
+      "sources": {
+        "NVDA": "fmp_adjclose",
+        "AMD": "fmp_adjclose",
+        "AVGO": "fmp_adjclose",
+        "ORCL": "fmp_adjclose",
+        "MSFT": "fmp_adjclose",
+        "GOOGL": "fmp_adjclose",
+        "AMZN": "fmp_adjclose",
+        "META": "fmp_adjclose",
+        "PLTR": "fmp_adjclose",
+        "PANW": "fmp_adjclose",
+        "CRWD": "fmp_adjclose",
+        "FTNT": "fmp_adjclose",
+        "ZS": "fmp_adjclose",
+        "QQQ": "fmp_adjclose",
+        "SPY": "fmp_adjclose",
+        "SOXX": "fmp_adjclose"
+      },
+      "split_handling": {
+        "ZS": {
+          "large_but_kept_adjusted_source": [
+            "2026-05-27"
+          ]
+        }
+      }
+    },
+    {
       "step": "collect_news",
-      "run_at_utc": "2026-09-15T00:09:24+00:00",
+      "run_at_utc": "2026-09-27T22:35:21+00:00",
       "source": "Google News RSS",
       "events": {
         "statement2023": {
@@ -14,25 +89,29 @@
           "window": [
             "2023-04-04",
             "2023-06-27"
-          ]
+          ],
+          "collected_at_utc": "2026-09-15T00:09:24+00:00",
+          "note": "not re-collected on 2026-09-27; window closed June 2023 and Google News RSS returns a fresh ranked sample per request, so re-querying would add sampling noise to the replication event"
         },
         "warning2026": {
-          "n_raw": 14666,
-          "n_unique_stories": 5658,
+          "n_raw": 16802,
+          "n_unique_stories": 6251,
           "censored_days": {
-            "base": 59,
-            "governance": 1
+            "base": 68,
+            "control": 1,
+            "governance": 5
           },
           "window": [
             "2026-07-15",
-            "2026-09-14"
-          ]
+            "2026-09-27"
+          ],
+          "collected_at_utc": "2026-09-27T22:35:21+00:00"
         }
       }
     },
     {
       "step": "classify_frames",
-      "run_at_utc": "2026-09-15T00:26:52+00:00",
+      "run_at_utc": "2026-09-27T22:50:32+00:00",
       "classifier": "keyword-dictionary (headline only)",
       "frames": [
         "existential",
@@ -74,24 +153,24 @@
         },
         "warning2026": {
           "event_id": "warning2026",
-          "n_records": 5820,
-          "n_unique_stories": 5656,
-          "n_days": 62,
+          "n_records": 6414,
+          "n_unique_stories": 6251,
+          "n_days": 75,
           "dropped_undated": 0,
-          "dropped_outside_window": 2,
+          "dropped_outside_window": 0,
           "corpus_used_for_daily_series": "five-query union (see build docstring)",
-          "n_base_corpus_stories": 158,
+          "n_base_corpus_stories": 289,
           "frame_prevalence_overall": {
-            "existential": 0.05922913719943423,
-            "infrastructure": 0.18263790664780763,
-            "bio": 0.027581329561527583,
-            "economic": 0.015205091937765204,
-            "governance": 0.21676096181046675,
-            "control": 0.07726308345120227,
-            "capability": 0.017857142857142856,
-            "skeptic": 0.04013437057991513
+            "existential": 0.06974884018557032,
+            "infrastructure": 0.168453047512398,
+            "bio": 0.029915213565829466,
+            "economic": 0.013277875539913614,
+            "governance": 0.24476083826587747,
+            "control": 0.10670292753159495,
+            "capability": 0.01583746600543913,
+            "skeptic": 0.04351303791393377
           },
-          "n_outlets": 1722,
+          "n_outlets": 1772,
           "validation": {
             "note": "Requires the human-coded sample: run --export-coding-sample, have two coders label it, then compute Krippendorff's alpha and macro-F1 against these automated labels (paper Sec. 5.1).",
             "krippendorff_alpha": null,
@@ -102,83 +181,8 @@
       }
     },
     {
-      "step": "collect_markets",
-      "run_at_utc": "2026-09-15T00:39:33+00:00",
-      "n_symbols": 16,
-      "failed": {},
-      "sources": {
-        "NVDA": "fmp_adjclose",
-        "AMD": "fmp_adjclose",
-        "AVGO": "fmp_adjclose",
-        "ORCL": "fmp_adjclose",
-        "MSFT": "fmp_adjclose",
-        "GOOGL": "fmp_adjclose",
-        "AMZN": "fmp_adjclose",
-        "META": "fmp_adjclose",
-        "PLTR": "fmp_adjclose",
-        "PANW": "fmp_adjclose",
-        "CRWD": "fmp_adjclose",
-        "FTNT": "fmp_adjclose",
-        "ZS": "fmp_adjclose",
-        "QQQ": "fmp_adjclose",
-        "SPY": "fmp_adjclose",
-        "SOXX": "fmp_adjclose"
-      },
-      "split_like_returns": {
-        "ORCL": [
-          "2025-09-10"
-        ]
-      },
-      "last_available": "2026-09-14",
-      "event_coverage": {
-        "statement2023": {
-          "market_t0": "2023-05-30",
-          "t0_present": true,
-          "last_available": "2026-09-14",
-          "post_window_complete": true
-        },
-        "warning2026": {
-          "market_t0": "2026-09-14",
-          "t0_present": true,
-          "last_available": "2026-09-14",
-          "post_window_complete": false
-        }
-      }
-    },
-    {
-      "step": "analyze_markets",
-      "run_at_utc": "2026-09-15T00:39:51+00:00",
-      "seed": 20260914,
-      "n_randomisation": 5000,
-      "sources": {
-        "NVDA": "fmp_adjclose",
-        "AMD": "fmp_adjclose",
-        "AVGO": "fmp_adjclose",
-        "ORCL": "fmp_adjclose",
-        "MSFT": "fmp_adjclose",
-        "GOOGL": "fmp_adjclose",
-        "AMZN": "fmp_adjclose",
-        "META": "fmp_adjclose",
-        "PLTR": "fmp_adjclose",
-        "PANW": "fmp_adjclose",
-        "CRWD": "fmp_adjclose",
-        "FTNT": "fmp_adjclose",
-        "ZS": "fmp_adjclose",
-        "QQQ": "fmp_adjclose",
-        "SPY": "fmp_adjclose",
-        "SOXX": "fmp_adjclose"
-      },
-      "split_handling": {
-        "ZS": {
-          "large_but_kept_adjusted_source": [
-            "2026-05-27"
-          ]
-        }
-      }
-    },
-    {
       "step": "collect_wikipedia",
-      "run_at_utc": "2026-09-15T12:54:41+00:00",
+      "run_at_utc": "2026-09-27T23:13:25+00:00",
       "events": {
         "statement2023": {
           "pages_collected": 48,
@@ -190,7 +194,7 @@
         "warning2026": {
           "pages_collected": 52,
           "pages_dropped": 1,
-          "published_through": "2026-09-14",
+          "published_through": "2026-09-26",
           "truncated": true,
           "path": "data/raw/wikipedia_warning2026.json"
         }
@@ -198,7 +202,7 @@
     },
     {
       "step": "analyze_attention",
-      "run_at_utc": "2026-09-15T13:07:10+00:00",
+      "run_at_utc": "2026-09-27T23:17:39+00:00",
       "seed": 20260909,
       "bootstrap": 5000,
       "robustness": true,
@@ -209,7 +213,7 @@
     },
     {
       "step": "build_outputs",
-      "run_at_utc": "2026-09-17T12:26:49+00:00",
+      "run_at_utc": "2026-09-27T23:18:05+00:00",
       "files": [
         "figure_1_attention.pdf",
         "figure_2_gap.pdf",

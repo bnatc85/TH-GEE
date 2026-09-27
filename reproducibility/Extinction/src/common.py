@@ -175,6 +175,26 @@ def write_manifest(step: str, **extra) -> Path:
     return path
 
 
+def previous_step_events(step: str) -> dict:
+    """The ``events`` mapping recorded by the last run of ``step``, if any.
+
+    ``write_manifest`` replaces a step outright, so a collector invoked for a
+    single event would otherwise erase the provenance of the events it did not
+    re-collect. Collectors that support ``--event`` merge onto this.
+    """
+    path = DERIVED / "run_manifest.json"
+    if not path.exists():
+        return {}
+    try:
+        manifest = json.loads(path.read_text())
+    except (json.JSONDecodeError, OSError):
+        return {}
+    for rec in manifest.get("steps", []):
+        if rec.get("step") == step:
+            return dict(rec.get("events") or {})
+    return {}
+
+
 def _package_versions() -> dict:
     out = {}
     for mod in ("numpy", "pandas", "statsmodels", "scipy", "matplotlib",

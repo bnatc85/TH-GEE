@@ -9,6 +9,17 @@ Implements paper Sec. 5.2. Three properties matter for the analysis downstream:
    the requested and resolved titles are written to the resolution log, so the
    frozen page list stays auditable.
 
+   When the resolved title has too little baseline traffic to model, the
+   as-of-event search walks its redirect aliases. Candidates are ranked by
+   ``alias_rank``: baseline coverage acts as a gate, and **baseline volume
+   selects among the titles that clear it**. Ranking on coverage alone is not
+   well posed, because coverage saturates at 1.0 for any title with steady
+   traffic -- for the May 2023 threat page three aliases tied at 1.0 with 7.5,
+   11.2 and 1093.9 views/day, and the winner was decided by MediaWiki's result
+   order rather than by any criterion. Both quantities read only pre-event
+   days, so the preregistered constraint that no post-event outcome informs
+   the choice still holds.
+
 2. **Missing is not zero.** The pageviews API omits days with no recorded
    traffic *and* days that have not been published yet. These are distinguished
    using the aggregate-traffic endpoint: the last day present there is the last
@@ -36,7 +47,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import (DERIVED, RAW, FetchError, baseline_gap, baseline_label,
                     daterange, event_window, fetch_json, load_events,
-                    load_pages, save_json, write_manifest, ymd)
+                    load_pages, previous_step_events, save_json,
+                    write_manifest, ymd)
 
 PAGEVIEW_API = ("https://wikimedia.org/api/rest_v1/metrics/pageviews"
                 "/per-article/{project}/{access}/{agent}/{title}/daily/{start}/{end}")
@@ -83,6 +95,38 @@ def baseline_coverage(series: dict, baseline_start: date,
     if not pre:
         return 0.0
     return sum(1 for v in pre if v) / len(pre)
+
+
+def baseline_volume(series: dict, baseline_start: date,
+                    baseline_end: date) -> float:
+    """Mean daily views over the primary baseline.
+
+    Coverage alone cannot rank aliases: it saturates at 1.0 for any title with
+    steady traffic, so several aliases of the same article tie at the top and
+    the winner falls to whatever order the MediaWiki API returned. Volume
+    separates them, and like coverage it reads only pre-event days, so no
+    post-event outcome informs the choice.
+    """
+    pre = [v for k, v in series.items()
+           if baseline_start <= date.fromisoformat(k) <= baseline_end
+           and v is not None]
+    if not pre:
+        return 0.0
+    return sum(pre) / len(pre)
+
+
+def alias_rank(cover: float, volume: float) -> tuple:
+    """Sort key for choosing among as-of-event alias candidates.
+
+    Coverage is a *gate* -- did this title exist and draw traffic through the
+    baseline? -- and volume is the *selector* among titles that clear it. A
+    candidate clearing ``MIN_BASELINE_COVERAGE`` always beats one that does
+    not; among those that clear it, the highest baseline volume wins; among
+    those that do not, the best coverage wins, with volume breaking any
+    remaining tie. Larger is better.
+    """
+    gated = cover >= MIN_BASELINE_COVERAGE
+    return (gated, 0.0 if gated else cover, volume)
 
 
 def resolve_titles(titles: list[str]) -> dict[str, dict]:
@@ -236,7 +280,11 @@ def collect_event(event: dict, pages_cfg: dict, analysis: dict) -> dict:
         # pre-event baseline days so no post-event outcome informs the choice.
         cover = baseline_coverage(fetched, start, baseline_end)
         if cover < MIN_BASELINE_COVERAGE:
-            best, best_cover, tried = target, cover, {target: round(cover, 3)}
+            best_vol = baseline_volume(fetched, start, baseline_end)
+            best, best_cover = target, cover
+            best_key = alias_rank(cover, best_vol)
+            tried = {target: {"coverage": round(cover, 3),
+                              "baseline_mean_views": round(best_vol, 1)}}
             for alias in redirect_aliases(target):
                 time.sleep(POLITE_DELAY)
                 try:
@@ -245,11 +293,18 @@ def collect_event(event: dict, pages_cfg: dict, analysis: dict) -> dict:
                 except FetchError:
                     continue
                 c = baseline_coverage(cand, start, baseline_end)
-                tried[alias] = round(c, 3)
-                if c > best_cover:
-                    best, best_cover, fetched = alias, c, cand
+                v = baseline_volume(cand, start, baseline_end)
+                tried[alias] = {"coverage": round(c, 3),
+                                "baseline_mean_views": round(v, 1)}
+                key = alias_rank(c, v)
+                if key > best_key:
+                    best, best_cover, best_vol, best_key = alias, c, v, key
+                    fetched = cand
             resolution[title].update({
                 "as_of_resolved": best, "as_of_baseline_coverage": round(best_cover, 3),
+                "as_of_baseline_mean_views": round(best_vol, 1),
+                "as_of_selected_by": ("baseline volume among titles clearing the "
+                                      f"{MIN_BASELINE_COVERAGE:.0%} coverage gate"),
                 "as_of_candidates": tried,
             })
             if best_cover < MIN_BASELINE_COVERAGE:
@@ -262,7 +317,8 @@ def collect_event(event: dict, pages_cfg: dict, analysis: dict) -> dict:
             target = best
             resolution[title]["resolution"] = "as-of-event title"
             print(f"  ({i}/{len(all_titles)}) {title} -> {target} "
-                  f"[as-of-event, baseline coverage {best_cover:.2f}]")
+                  f"[as-of-event, baseline coverage {best_cover:.2f}, "
+                  f"{best_vol:.0f} views/day]")
         else:
             print(f"  ({i}/{len(all_titles)}) {title} -> {target} "
                   f"[{resolution[title]['resolution']}]")
@@ -306,7 +362,8 @@ def main() -> None:
     if not targets:
         raise SystemExit(f"no event matching {args.event!r}")
 
-    summary = {}
+    # As in collect_news: a single-event run keeps the other event's record.
+    summary = previous_step_events("collect_wikipedia") if args.event else {}
     for event in targets:
         payload = collect_event(event, pages_cfg, analysis)
         path = save_json(RAW / f"wikipedia_{event['id']}.json", payload)

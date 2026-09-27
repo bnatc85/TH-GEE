@@ -26,6 +26,7 @@ from __future__ import annotations
 import csv
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -58,6 +59,19 @@ NASDAQ = "https://api.nasdaq.com/api/quote/{symbol}/historical"
 YAHOO_BACKOFF = [0, 30, 90, 180, 300]
 
 
+def _redact(text: str) -> str:
+    """Strip the FMP key from anything that may be printed or written to disk.
+
+    The key travels in the query string, and a failed fetch puts the URL into
+    the error message, which ``main`` stores in ``failed`` -- from there it
+    reaches data/raw/markets.json and the run manifest, both of which are
+    committed. The key must never leave the environment (module docstring).
+    """
+    key = os.environ.get("FMP_API_KEY", "").strip()
+    out = re.sub(r"(apikey=)[^&\s]+", r"\1<redacted>", text)
+    return out.replace(key, "<redacted>") if key else out
+
+
 def _get(url: str, backoff: list[int] | None = None) -> dict:
     req = urllib.request.Request(url, headers={
         "User-Agent": BROWSER_UA, "Accept": "application/json"})
@@ -70,7 +84,7 @@ def _get(url: str, backoff: list[int] | None = None) -> dict:
                 return json.loads(resp.read().decode("utf-8"))
         except Exception as exc:                          # noqa: BLE001
             last = exc
-    raise FetchError(f"{url}: {last}")
+    raise FetchError(_redact(f"{url}: {last}"))
 
 
 def fetch_symbol_fmp(ticker: str, end: date) -> dict[str, dict]:

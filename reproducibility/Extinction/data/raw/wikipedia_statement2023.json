@@ -247,12 +247,29 @@
       "disambiguation": false,
       "as_of_resolved": "Dario Amodei",
       "as_of_baseline_coverage": 0.0,
+      "as_of_baseline_mean_views": 0.0,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Dario Amodei": 0.0,
-        "Dario amode": 0.0,
-        "D. amodei": 0.0,
-        "Cami Clark": 0.0,
-        "Camilla Clark": 0.0
+        "Dario Amodei": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Dario amode": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "D. amodei": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Cami Clark": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Camilla Clark": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        }
       }
     },
     "Demis Hassabis": {
@@ -292,45 +309,153 @@
       "resolution": "as-of-event title",
       "missing": false,
       "disambiguation": false,
-      "as_of_resolved": "Existential risk from advanced artificial intelligence",
+      "as_of_resolved": "Existential risk from artificial general intelligence",
       "as_of_baseline_coverage": 1.0,
+      "as_of_baseline_mean_views": 1093.9,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Existential risk from artificial intelligence": 0.0,
-        "Terminator scenario": 0.179,
-        "Existential risk of AI": 0.125,
-        "Existential risk of artificial intelligence": 0.018,
-        "Existential risk from advanced artificial intelligence": 1.0,
-        "Existential risk from advanced AI": 0.018,
-        "Existential Risk from Artificial General Intelligence": 0.018,
-        "Existential risk from ai": 0.054,
-        "Existential risk of artificial general intelligence": 0.107,
-        "X-risk from AI": 0.018,
-        "AI risk": 0.125,
-        "Orthogonality thesis": 1.0,
-        "Existential risks from artificial general intelligence": 0.607,
-        "Existential risk from agi": 0.018,
-        "Agi risk": 0.054,
-        "AI apocalypse": 0.0,
-        "AI x-risk": 0.0,
-        "X-risk from artificial intelligence": 0.0,
-        "AI-caused human extinction": 0.0,
-        "AI-caused extinction": 0.0,
-        "AGI apocalypse": 0.0,
-        "AGI existential risk": 0.0,
-        "AI existential risk": 0.0,
-        "AGI x-risk": 0.0,
-        "Existential risk from artificial superintelligence": 0.0,
-        "Existential risk from artificial general intelligence": 1.0,
-        "Existential risk from AI": 0.0,
-        "Risks of AI": 0.0,
-        "AIpocalypse": 0.0,
-        "Risks of artificial intelligence": 0.0,
-        "Risks from AI": 0.0,
-        "Risk from AI": 0.0,
-        "Risks from advanced AI": 0.0,
-        "Existential threat from artificial intelligence": 0.0
+        "Existential risk from artificial intelligence": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Terminator scenario": {
+          "coverage": 0.179,
+          "baseline_mean_views": 0.2
+        },
+        "Existential risk of AI": {
+          "coverage": 0.125,
+          "baseline_mean_views": 0.1
+        },
+        "Existential risk of artificial intelligence": {
+          "coverage": 0.018,
+          "baseline_mean_views": 0.0
+        },
+        "Existential risk from advanced artificial intelligence": {
+          "coverage": 1.0,
+          "baseline_mean_views": 7.5
+        },
+        "Existential risk from advanced AI": {
+          "coverage": 0.018,
+          "baseline_mean_views": 0.0
+        },
+        "Existential Risk from Artificial General Intelligence": {
+          "coverage": 0.018,
+          "baseline_mean_views": 0.0
+        },
+        "Existential risk from ai": {
+          "coverage": 0.054,
+          "baseline_mean_views": 0.1
+        },
+        "Existential risk of artificial general intelligence": {
+          "coverage": 0.107,
+          "baseline_mean_views": 0.1
+        },
+        "X-risk from AI": {
+          "coverage": 0.018,
+          "baseline_mean_views": 0.0
+        },
+        "AI risk": {
+          "coverage": 0.125,
+          "baseline_mean_views": 0.1
+        },
+        "Orthogonality thesis": {
+          "coverage": 1.0,
+          "baseline_mean_views": 11.2
+        },
+        "Existential risks from artificial general intelligence": {
+          "coverage": 0.607,
+          "baseline_mean_views": 1.4
+        },
+        "Existential risk from agi": {
+          "coverage": 0.018,
+          "baseline_mean_views": 0.0
+        },
+        "Agi risk": {
+          "coverage": 0.054,
+          "baseline_mean_views": 0.1
+        },
+        "AI apocalypse": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AI x-risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "X-risk from artificial intelligence": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AI-caused human extinction": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AI-caused extinction": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AGI apocalypse": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AGI existential risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AI existential risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AGI x-risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Existential risk from artificial superintelligence": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Existential risk from artificial general intelligence": {
+          "coverage": 1.0,
+          "baseline_mean_views": 1093.9
+        },
+        "Existential risk from AI": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Risks of AI": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "AIpocalypse": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Risks of artificial intelligence": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Risks from AI": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Risk from AI": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Risks from advanced AI": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Existential threat from artificial intelligence": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Jacob Coxon": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        }
       },
-      "series_title": "Existential risk from advanced artificial intelligence"
+      "series_title": "Existential risk from artificial general intelligence"
     },
     "Existential risk studies": {
       "requested": "Existential risk studies",
@@ -340,8 +465,13 @@
       "disambiguation": false,
       "as_of_resolved": "Existential risk studies",
       "as_of_baseline_coverage": 0.0,
+      "as_of_baseline_mean_views": 0.0,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Existential risk studies": 0.0
+        "Existential risk studies": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        }
       }
     },
     "Fail-safe": {
@@ -472,9 +602,17 @@
       "disambiguation": false,
       "as_of_resolved": "Pause Giant AI Experiments: An Open Letter",
       "as_of_baseline_coverage": 0.0,
+      "as_of_baseline_mean_views": 0.0,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Pause Giant AI Experiments: An Open Letter": 0.0,
-        "Pause Giant AI Experiments": 0.0
+        "Pause Giant AI Experiments: An Open Letter": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Pause Giant AI Experiments": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        }
       }
     },
     "Photosynthesis": {
@@ -541,11 +679,25 @@
       "disambiguation": false,
       "as_of_resolved": "Statement on AI Extinction Risk",
       "as_of_baseline_coverage": 0.0,
+      "as_of_baseline_mean_views": 0.0,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Statement on AI Extinction Risk": 0.0,
-        "Statement on AI risk": 0.0,
-        "Statement on AI risk of extinction": 0.0,
-        "Statement on AI Risk": 0.0
+        "Statement on AI Extinction Risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Statement on AI risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Statement on AI risk of extinction": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        },
+        "Statement on AI Risk": {
+          "coverage": 0.0,
+          "baseline_mean_views": 0.0
+        }
       }
     },
     "Superintelligence": {
@@ -3112,119 +3264,119 @@
       "2023-06-27": 576
     },
     "Existential risk from artificial intelligence": {
-      "2023-03-07": 6,
-      "2023-03-08": 7,
-      "2023-03-09": 3,
-      "2023-03-10": 4,
-      "2023-03-11": 4,
-      "2023-03-12": 4,
-      "2023-03-13": 6,
-      "2023-03-14": 5,
-      "2023-03-15": 12,
-      "2023-03-16": 11,
-      "2023-03-17": 8,
-      "2023-03-18": 5,
-      "2023-03-19": 4,
-      "2023-03-20": 5,
-      "2023-03-21": 8,
-      "2023-03-22": 5,
-      "2023-03-23": 4,
-      "2023-03-24": 5,
-      "2023-03-25": 10,
-      "2023-03-26": 16,
-      "2023-03-27": 13,
-      "2023-03-28": 13,
-      "2023-03-29": 14,
-      "2023-03-30": 20,
-      "2023-03-31": 13,
-      "2023-04-01": 18,
-      "2023-04-02": 14,
-      "2023-04-03": 14,
-      "2023-04-04": 13,
-      "2023-04-05": 10,
-      "2023-04-06": 7,
-      "2023-04-07": 11,
-      "2023-04-08": 3,
-      "2023-04-09": 9,
-      "2023-04-10": 9,
-      "2023-04-11": 9,
-      "2023-04-12": 8,
-      "2023-04-13": 6,
-      "2023-04-14": 7,
-      "2023-04-15": 8,
-      "2023-04-16": 4,
-      "2023-04-17": 4,
-      "2023-04-18": 13,
-      "2023-04-19": 9,
-      "2023-04-20": 9,
-      "2023-04-21": 7,
-      "2023-04-22": 6,
-      "2023-04-23": 7,
-      "2023-04-24": 8,
-      "2023-04-25": 9,
-      "2023-04-26": 9,
-      "2023-04-27": 9,
-      "2023-04-28": 8,
-      "2023-04-29": 4,
-      "2023-04-30": 5,
-      "2023-05-01": 30,
-      "2023-05-02": 5,
-      "2023-05-03": 5,
-      "2023-05-04": 12,
-      "2023-05-05": 8,
-      "2023-05-06": 2,
-      "2023-05-07": 8,
-      "2023-05-08": 8,
-      "2023-05-09": 3,
-      "2023-05-10": 5,
-      "2023-05-11": 11,
-      "2023-05-12": 6,
-      "2023-05-13": 3,
-      "2023-05-14": 4,
-      "2023-05-15": 4,
-      "2023-05-16": 5,
-      "2023-05-17": 8,
-      "2023-05-18": 7,
-      "2023-05-19": 8,
-      "2023-05-20": 4,
-      "2023-05-21": 8,
-      "2023-05-22": 5,
-      "2023-05-23": 12,
-      "2023-05-24": 8,
-      "2023-05-25": 8,
-      "2023-05-26": 4,
-      "2023-05-27": 5,
-      "2023-05-28": 7,
-      "2023-05-29": 8,
-      "2023-05-30": 10,
-      "2023-05-31": 3,
-      "2023-06-01": 12,
-      "2023-06-02": 9,
-      "2023-06-03": 4,
-      "2023-06-04": 3,
-      "2023-06-05": 2,
-      "2023-06-06": 5,
-      "2023-06-07": 4,
-      "2023-06-08": 4,
-      "2023-06-09": 6,
-      "2023-06-10": 3,
-      "2023-06-11": 7,
-      "2023-06-12": 4,
-      "2023-06-13": 10,
-      "2023-06-14": 5,
-      "2023-06-15": 2,
-      "2023-06-16": 7,
-      "2023-06-17": 3,
-      "2023-06-18": 3,
-      "2023-06-19": 3,
-      "2023-06-20": 5,
-      "2023-06-21": 3,
-      "2023-06-22": 4,
-      "2023-06-23": 4,
-      "2023-06-24": 1,
-      "2023-06-25": 4,
-      "2023-06-26": 5,
-      "2023-06-27": 7
+      "2023-03-07": 484,
+      "2023-03-08": 570,
+      "2023-03-09": 508,
+      "2023-03-10": 454,
+      "2023-03-11": 408,
+      "2023-03-12": 497,
+      "2023-03-13": 523,
+      "2023-03-14": 659,
+      "2023-03-15": 939,
+      "2023-03-16": 755,
+      "2023-03-17": 732,
+      "2023-03-18": 557,
+      "2023-03-19": 588,
+      "2023-03-20": 696,
+      "2023-03-21": 658,
+      "2023-03-22": 649,
+      "2023-03-23": 748,
+      "2023-03-24": 782,
+      "2023-03-25": 702,
+      "2023-03-26": 746,
+      "2023-03-27": 878,
+      "2023-03-28": 812,
+      "2023-03-29": 1921,
+      "2023-03-30": 2795,
+      "2023-03-31": 2122,
+      "2023-04-01": 2081,
+      "2023-04-02": 1749,
+      "2023-04-03": 1775,
+      "2023-04-04": 1788,
+      "2023-04-05": 1414,
+      "2023-04-06": 1309,
+      "2023-04-07": 1082,
+      "2023-04-08": 935,
+      "2023-04-09": 912,
+      "2023-04-10": 1012,
+      "2023-04-11": 1036,
+      "2023-04-12": 1154,
+      "2023-04-13": 1133,
+      "2023-04-14": 953,
+      "2023-04-15": 933,
+      "2023-04-16": 943,
+      "2023-04-17": 1573,
+      "2023-04-18": 1748,
+      "2023-04-19": 1312,
+      "2023-04-20": 1147,
+      "2023-04-21": 975,
+      "2023-04-22": 822,
+      "2023-04-23": 848,
+      "2023-04-24": 1013,
+      "2023-04-25": 822,
+      "2023-04-26": 887,
+      "2023-04-27": 813,
+      "2023-04-28": 734,
+      "2023-04-29": 1966,
+      "2023-04-30": 807,
+      "2023-05-01": 1794,
+      "2023-05-02": 3117,
+      "2023-05-03": 2168,
+      "2023-05-04": 1844,
+      "2023-05-05": 1574,
+      "2023-05-06": 1199,
+      "2023-05-07": 1094,
+      "2023-05-08": 1159,
+      "2023-05-09": 1044,
+      "2023-05-10": 973,
+      "2023-05-11": 916,
+      "2023-05-12": 811,
+      "2023-05-13": 698,
+      "2023-05-14": 732,
+      "2023-05-15": 827,
+      "2023-05-16": 949,
+      "2023-05-17": 991,
+      "2023-05-18": 841,
+      "2023-05-19": 783,
+      "2023-05-20": 676,
+      "2023-05-21": 668,
+      "2023-05-22": 757,
+      "2023-05-23": 788,
+      "2023-05-24": 944,
+      "2023-05-25": 837,
+      "2023-05-26": 916,
+      "2023-05-27": 743,
+      "2023-05-28": 704,
+      "2023-05-29": 643,
+      "2023-05-30": 3170,
+      "2023-05-31": 3570,
+      "2023-06-01": 1649,
+      "2023-06-02": 1313,
+      "2023-06-03": 965,
+      "2023-06-04": 970,
+      "2023-06-05": 1068,
+      "2023-06-06": 1048,
+      "2023-06-07": 900,
+      "2023-06-08": 917,
+      "2023-06-09": 815,
+      "2023-06-10": 710,
+      "2023-06-11": 748,
+      "2023-06-12": 844,
+      "2023-06-13": 708,
+      "2023-06-14": 716,
+      "2023-06-15": 869,
+      "2023-06-16": 658,
+      "2023-06-17": 536,
+      "2023-06-18": 587,
+      "2023-06-19": 617,
+      "2023-06-20": 611,
+      "2023-06-21": 519,
+      "2023-06-22": 463,
+      "2023-06-23": 491,
+      "2023-06-24": 407,
+      "2023-06-25": 450,
+      "2023-06-26": 485,
+      "2023-06-27": 518
     },
     "Fail-safe": {
       "2023-03-07": 284,

@@ -98,6 +98,33 @@ def load(name: str):
     return json.loads(p.read_text()) if p.exists() else None
 
 
+
+def common_horizon(att: dict, event_ids: list[str], lo: int = -21,
+                   hi: int = 21) -> tuple[int, int]:
+    """Day offsets observed for *every* event, clipped to ``[lo, hi]``.
+
+    The events have different publication cutoffs: in September 2026 the
+    pageviews API had published to t0+17, while the closed 2023 window runs the
+    full t0+28. Drawing each series to its own last observed day makes the
+    shorter one look like it stopped rather than that it has not been published,
+    and invites a cross-event comparison over unequal spans. Both series are
+    therefore cut to the horizon both events actually cover.
+    """
+    starts, ends = [], []
+    for eid in event_ids:
+        d = att[eid]["daily"]
+        t0 = pd.Timestamp(att[eid]["t0"])
+        days = (pd.to_datetime(d["dates"]) - t0).days
+        seen = [day for k, series in d["faa"].items()
+                for day, v in zip(days, series) if v is not None]
+        if seen:
+            starts.append(min(seen))
+            ends.append(max(seen))
+    if not starts:
+        return lo, hi
+    return max(lo, max(starts)), min(hi, min(ends))
+
+
 # ------------------------------------------------------------------ figure 1
 def figure_attention(att: dict, events_cfg: dict) -> Path:
     """Family-level standardised abnormal attention, one panel per family.
@@ -107,6 +134,7 @@ def figure_attention(att: dict, events_cfg: dict) -> Path:
     the whole categorical palette into all-pairs comparison.
     """
     evs = [e for e in events_cfg["events"] if e["id"] in att]
+    lo, hi = common_horizon(att, [e["id"] for e in evs])
     fig, axes = plt.subplots(2, 3, figsize=(9.6, 5.6), sharex=True, sharey=True)
 
     for i, fam in enumerate(FAMILY_ORDER):
@@ -122,7 +150,7 @@ def figure_attention(att: dict, events_cfg: dict) -> Path:
             t0 = pd.Timestamp(att[ev["id"]]["t0"])
             days = (pd.to_datetime(d["dates"]) - t0).days
             y = pd.Series(d["faa"][fam], dtype=float)
-            m = (days >= -21) & (days <= 21)
+            m = (days >= lo) & (days <= hi)
             ax.plot(np.asarray(days)[m], y[m], lw=1.6 if j == 0 else 1.4,
                     color=SERIES[i] if j == 1 else MUTED,
                     ls="-" if j == 1 else (0, (3, 1.6)),
@@ -327,10 +355,11 @@ def figure_transmission(att: dict) -> Path | None:
             "infrastructure->infrastructure": "Infrastructure $\\rightarrow$ infrastructure",
             "control->control": "Control $\\rightarrow$ shutdown/control"}
 
-    fig, axes = plt.subplots(1, len(events), figsize=(9.6, 3.8), sharey=True)
+    fig, axes = plt.subplots(1, len(events), figsize=(10.6, 4.3), sharey=True)
     axes = np.atleast_1d(axes)
     for ax, eid in zip(axes, events):
         _style(ax)
+        ax.tick_params(labelsize=9.6, labelcolor=INK, color=INK)
         pairs = att[eid]["distributed_lag"]["pairs"]
         for i, key in enumerate(order):
             v = pairs.get(key)
@@ -346,13 +375,15 @@ def figure_transmission(att: dict) -> Path | None:
                     mec=colour, mew=1.6)
         ax.axvline(0, color=INK_2, lw=0.8)
         ax.set_yticks([-i for i in range(len(order))])
-        ax.set_yticklabels([nice[k] for k in order], fontsize=7.8)
-        ax.set_title(EVENT_LABEL[eid], fontsize=9.5, loc="left", pad=6)
-        ax.set_xlabel("Cumulative lag-0..3 association", fontsize=8)
+        ax.set_yticklabels([nice[k] for k in order], fontsize=9.6, color=INK)
+        ax.set_title(EVENT_LABEL[eid], fontsize=11.5, loc="left", pad=8,
+                     color=INK)
+        ax.set_xlabel("Cumulative lag-0..3 association", fontsize=10,
+                      color=INK)
     # Header over the shared tick-label column, level with the panel titles.
     axes[0].text(-0.02, 1.0, "Framing $\\rightarrow$ attention family",
                  transform=axes[0].transAxes, ha="right", va="bottom",
-                 fontsize=8.4, color=INK_2, style="italic")
+                 fontsize=10, color=INK, style="italic")
 
     from matplotlib.lines import Line2D
     handles = [
@@ -364,7 +395,8 @@ def figure_transmission(att: dict) -> Path | None:
                mec=INK_2, mew=1.6, label="Hollow: not significant at $q<.05$"),
     ]
     fig.legend(handles=handles, loc="lower center", ncol=3, frameon=False,
-               bbox_to_anchor=(0.5, -0.05), fontsize=8)
+               bbox_to_anchor=(0.5, -0.05), fontsize=9.6,
+               labelcolor=INK)
     fig.tight_layout(rect=(0, 0.06, 1, 1))
     return _save(fig, "figure_3_transmission")
 
@@ -430,7 +462,14 @@ def figure_frames(att: dict, pages_cfg: dict, event_id: str) -> Path | None:
 
 # ------------------------------------------------------------------ figure 3
 def figure_market(mkt: dict) -> Path | None:
-    """Portfolio CARs with 95% intervals, one row per available event window."""
+    """Portfolio CARs with 95% intervals, one panel per event.
+
+    One panel per event rather than a single stacked column: once both events
+    carry all four windows the stacked version runs to twenty-four rows and
+    taller than a journal page. Side-by-side panels halve the height, and the
+    shared x-axis keeps the cross-event magnitude difference --- which is the
+    result --- readable as horizontal extent rather than panel width.
+    """
     if not mkt:
         return None
     rows = []
@@ -451,70 +490,90 @@ def figure_market(mkt: dict) -> Path | None:
     if not rows:
         return None
     df = pd.DataFrame(rows)
+    events = [e for e in ("statement2023", "warning2026")
+              if e in set(df["event"])]
 
-    labels, ys, xs, los, his, cols, flags, notes = [], [], [], [], [], [], [], []
-    y = 0.0
-    for (eid, wkey), g in df.groupby(["event", "window"], sort=False):
-        # Header first, then its members below it.
-        labels.append(f"{EVENT_LABEL.get(eid, eid)}  ·  {window_label(eid, wkey)}")
-        ys.append(y); xs.append(np.nan); los.append(0); his.append(0)
-        cols.append(SURFACE); flags.append(False); notes.append("")
-        y -= 1
-        for _, r in g.iterrows():
-            labels.append(f"    {PORT_LABEL[r['portfolio']]}")
-            ys.append(y)
-            xs.append(100 * r["car"])
-            ci = r["ci"] or [r["car"], r["car"]]
-            los.append(100 * (r["car"] - ci[0]))
-            his.append(100 * (ci[1] - r["car"]))
-            cols.append(SERIES[["ai_infrastructure", "ai_platform",
-                                "cyber_resilience"].index(r["portfolio"])])
-            flags.append(bool(r["confounded"]))
-            # The bar already draws the interval; the label reports it, with
-            # the randomisation p, so the figure is quotable without the table.
-            note = f"[{100 * ci[0]:+.2f}, {100 * ci[1]:+.2f}]"
-            if r["p"] is not None and not pd.isna(r["p"]):
-                pv = f"< .001" if r["p"] < 0.001 else f"= {r['p']:.3f}".replace("= 0.", "= .")
-                note += f", $p_{{\\mathrm{{rand}}}}$ {pv}"
-            notes.append(note)
+    def layout(sub: pd.DataFrame):
+        """Row positions, one header per window group followed by its members."""
+        out, y = [], 0.0
+        for wkey, g in sub.groupby("window", sort=False):
+            out.append({"kind": "header", "y": y,
+                        "label": window_label(g["event"].iloc[0], wkey)})
             y -= 1
-        y -= 0.6
+            for _, r in g.iterrows():
+                note = ""
+                ci = r["ci"] or [r["car"], r["car"]]
+                note = f"[{100 * ci[0]:+.2f}, {100 * ci[1]:+.2f}]"
+                if r["p"] is not None and not pd.isna(r["p"]):
+                    pv = ("< .001" if r["p"] < 0.001
+                          else f"= {r['p']:.3f}".replace("= 0.", "= ."))
+                    note += f", $p_{{\\mathrm{{rand}}}}$ {pv}"
+                out.append({"kind": "point", "y": y,
+                            "label": f"    {PORT_LABEL[r['portfolio']]}",
+                            "x": 100 * r["car"],
+                            "lo": 100 * (r["car"] - ci[0]),
+                            "hi": 100 * (ci[1] - r["car"]),
+                            "colour": SERIES[["ai_infrastructure", "ai_platform",
+                                              "cyber_resilience"].index(r["portfolio"])],
+                            "flag": bool(r["confounded"]), "note": note})
+                y -= 1
+            y -= 0.6
+        return out
 
-    h = max(2.6, 0.38 * len(ys) + 1.3)
-    fig, ax = plt.subplots(figsize=(8.0, h))
-    _style(ax)
-    ax.axvline(0, color=INK_2, lw=0.8, zorder=1)
-    ax.errorbar(xs, ys, xerr=[los, his], fmt="o", ms=6, lw=0, elinewidth=1.4,
-                ecolor=MUTED, zorder=3,
-                markerfacecolor="none", markeredgewidth=0)
-    for x, yy, c, fl, note in zip(xs, ys, cols, flags, notes):
-        if not np.isnan(x):
-            ax.plot([x], [yy], "o", ms=7, color=c, mec=SURFACE, mew=1.4, zorder=4)
-            ax.annotate(f"{x:+.2f}%" + ("\u2020" if fl else "") + "  " + note,
-                        (x, yy), textcoords="offset points", xytext=(0, 8),
-                        ha="center", fontsize=7.2, color=INK_2, zorder=5,
+    panels = {eid: layout(df[df["event"] == eid]) for eid in events}
+    n_rows = max(len(v) for v in panels.values())
+    # Rows advance by 1 and each window group adds a 0.6 gap, so the vertical
+    # extent is larger than the row count; clipping to -n_rows would cut the
+    # final group off the bottom of the panel.
+    y_min = min(it["y"] for v in panels.values() for it in v)
+    h = max(3.2, 0.34 * (abs(y_min) + 1) + 1.5)
+    fig, axes = plt.subplots(1, len(events), figsize=(11.0, h), sharex=True)
+    axes = np.atleast_1d(axes)
+
+    any_flag = False
+    for ax, eid in zip(axes, events):
+        _style(ax)
+        ax.axvline(0, color=INK_2, lw=0.8, zorder=1)
+        items = panels[eid]
+        pts = [it for it in items if it["kind"] == "point"]
+        ax.errorbar([it["x"] for it in pts], [it["y"] for it in pts],
+                    xerr=[[it["lo"] for it in pts], [it["hi"] for it in pts]],
+                    fmt="none", elinewidth=1.4, ecolor=MUTED, zorder=3)
+        for it in pts:
+            any_flag = any_flag or it["flag"]
+            ax.plot([it["x"]], [it["y"]], "o", ms=6.5, color=it["colour"],
+                    mec=SURFACE, mew=1.3, zorder=4)
+            ax.annotate(f"{it['x']:+.2f}%" + ("\u2020" if it["flag"] else "")
+                        + "  " + it["note"],
+                        (it["x"], it["y"]), textcoords="offset points",
+                        xytext=(0, 7.5), ha="center", fontsize=6.6,
+                        color=INK_2, zorder=5,
                         bbox=dict(boxstyle="round,pad=0.12", facecolor=SURFACE,
                                   edgecolor="none", alpha=0.85))
-    # Labels are centred on the point, so the right-most estimate needs room.
-    lo, hi = ax.get_xlim()
-    ax.set_xlim(lo, hi + 0.15 * (hi - lo))
+        ax.set_yticks([it["y"] for it in items])
+        ax.set_yticklabels([it["label"] for it in items], fontsize=7.6)
+        for t, it in zip(ax.get_yticklabels(), items):
+            if it["kind"] == "header":
+                t.set_color(INK); t.set_fontweight("bold"); t.set_fontsize(7.9)
+        ax.set_ylim(y_min - 0.6, 0.9)
+        ax.set_title(EVENT_LABEL[eid], fontsize=10, loc="left", pad=8,
+                     color=INK)
+        ax.set_xlabel("Cumulative abnormal return (%),\nsector-adjusted market model",
+                      fontsize=8)
+    # Labels are centred on the point, so the extremes need breathing room.
+    lo, hi = axes[0].get_xlim()
+    axes[0].set_xlim(lo - 0.04 * (hi - lo), hi + 0.10 * (hi - lo))
+
     foot = ("Labels: CAR [95% conventional interval], "
             "$p_{\\mathrm{rand}}$ = randomisation $p$ from placebo windows")
-    if any(flags):
+    if any_flag:
         foot += ("\n\u2020 window contains a firm-specific announcement "
                  "(earnings); see robustness")
-    ax.text(0.0, -0.11, foot, transform=ax.transAxes, fontsize=7,
-            color=MUTED, va="top", linespacing=1.5)
-    ax.set_yticks(ys)
-    ax.set_yticklabels(labels, fontsize=8)
-    for t, x in zip(ax.get_yticklabels(), xs):
-        if np.isnan(x):
-            t.set_color(INK); t.set_fontweight("bold"); t.set_fontsize(8.2)
-    ax.set_xlabel("Cumulative abnormal return (%), sector-adjusted market model",
-                  fontsize=8)
+    fig.text(0.0, -0.005, foot, fontsize=7, color=MUTED, va="top",
+             linespacing=1.5)
     fig.suptitle("Portfolio cumulative abnormal returns", fontsize=10.5,
-                 x=0.012, ha="left", y=0.995, color=INK)
-    fig.tight_layout(rect=(0, 0, 1, 0.96))
+                 x=0.012, ha="left", y=1.0, color=INK)
+    fig.tight_layout(rect=(0, 0.02, 1, 0.97))
     return _save(fig, "figure_4_market_car")
 
 

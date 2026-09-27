@@ -766,22 +766,40 @@ def main() -> None:
               f"failed: {len(res['pages_failed'])}; "
               f"media pairs: {res['distributed_lag'].get('n_pairs', 0)}", flush=True)
 
-    # RQ5: standardised response-orientation vectors compared across events at
-    # the one window both events can support.
-    comparison = {}
-    common = "[0,+3]"
-    for eid, res in primary.items():
-        w = res["windows"].get(common, {})
-        if w.get("available"):
-            comparison[eid] = {
-                "orientation": w["orientation"],
-                "tpg_mean_daily": w["tpg_mean_daily"],
-                "families": {f: s["estimate"] for f, s in w["families"].items()},
-                "control_adjusted": {f: s["estimate"] for f, s
-                                     in w["control_adjusted_families"].items()},
-                "drift": w["drift_estimate"],
-            }
-    primary["_rq5_comparison"] = {"window": common, "events": comparison}
+    # RQ5: standardised response-orientation vectors compared across events.
+    # Reported at every prespecified window both events support. [0,+3] stays
+    # the primary window (it is the one the preregistration names first, and
+    # the only one available while the 2026 episode was still being published),
+    # and is exposed as `events` so downstream consumers keep working; the
+    # longer windows sit alongside it in `by_window`.
+    def _snapshot(w: dict) -> dict:
+        return {
+            "orientation": w["orientation"],
+            "tpg_mean_daily": w["tpg_mean_daily"],
+            "families": {f: s["estimate"] for f, s in w["families"].items()},
+            "control_adjusted": {f: s["estimate"] for f, s
+                                 in w["control_adjusted_families"].items()},
+            "drift": w["drift_estimate"],
+        }
+
+    event_ids = [e["id"] for e in events_cfg["events"]]
+    by_window = {}
+    for wkey in [f"[{w[0]},+{w[1]}]" for w in analysis["effect_windows"]]:
+        snaps = {eid: _snapshot(primary[eid]["windows"][wkey])
+                 for eid in event_ids
+                 if primary[eid]["windows"].get(wkey, {}).get("available")}
+        # A cross-event comparison needs both events; a window only one event
+        # supports is reported per event elsewhere, not here.
+        if len(snaps) == len(event_ids):
+            by_window[wkey] = snaps
+
+    primary_window = "[0,+3]"
+    primary["_rq5_comparison"] = {
+        "window": primary_window,
+        "events": by_window.get(primary_window, {}),
+        "windows_compared": sorted(by_window),
+        "by_window": by_window,
+    }
 
     if args.robustness:
         for event in events_cfg["events"]:

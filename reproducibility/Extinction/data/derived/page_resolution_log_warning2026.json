@@ -397,15 +397,29 @@
       "resolution": "as-of-event title",
       "missing": false,
       "disambiguation": false,
-      "as_of_resolved": "Statement on AI risk of extinction",
+      "as_of_resolved": "Statement on AI Risk",
       "as_of_baseline_coverage": 1.0,
+      "as_of_baseline_mean_views": 38.5,
+      "as_of_selected_by": "baseline volume among titles clearing the 80% coverage gate",
       "as_of_candidates": {
-        "Statement on AI Extinction Risk": 0.089,
-        "Statement on AI risk": 0.071,
-        "Statement on AI risk of extinction": 1.0,
-        "Statement on AI Risk": 1.0
+        "Statement on AI Extinction Risk": {
+          "coverage": 0.089,
+          "baseline_mean_views": 3.7
+        },
+        "Statement on AI risk": {
+          "coverage": 0.071,
+          "baseline_mean_views": 0.1
+        },
+        "Statement on AI risk of extinction": {
+          "coverage": 1.0,
+          "baseline_mean_views": 17.2
+        },
+        "Statement on AI Risk": {
+          "coverage": 1.0,
+          "baseline_mean_views": 38.5
+        }
       },
-      "series_title": "Statement on AI risk of extinction"
+      "series_title": "Statement on AI Risk"
     },
     "Superintelligence": {
       "requested": "Superintelligence",

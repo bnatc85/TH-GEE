@@ -39,13 +39,14 @@ import time
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common import RAW, daterange, event_window, load_events, save_json, write_manifest
+from common import (RAW, daterange, event_window, load_events,
+                    previous_step_events, save_json, write_manifest)
 
 RSS = "https://news.google.com/rss/search"
 BROWSER_UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -222,12 +223,15 @@ def main() -> None:
         raise SystemExit(f"unknown event {args.event!r}")
 
     today = date.fromisoformat(args.today)
-    summary = {}
+    # Collecting one event must not erase the other's provenance from the
+    # manifest, so start from what the previous run recorded.
+    summary = previous_step_events("collect_news") if args.event else {}
     for event in targets:
         print(f"[{event['id']}] collecting news ...", flush=True)
         payload = collect(event, events_cfg["analysis"], today)
         save_json(RAW / f"news_{event['id']}.json", payload)
         summary[event["id"]] = {
+            "collected_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "n_raw": payload["n_raw"],
             "n_unique_stories": payload["n_unique_stories"],
             "censored_days": {k: len(v) for k, v in payload["censored_days"].items()},
