@@ -415,14 +415,33 @@ For equities, the market model is estimated over trading days $[-250,-30]$ relat
 \node[text=white,font=\bfseries\scriptsize] at (9.40,0.18)
   {buffer $[-29,-1]$};
 
-\fill[windowred]
-  (10.55,-0.70) rectangle (11.30,-0.25);
+\node[anchor=east] at (2.75,-0.30) {Episode};
 
-\node[note,anchor=east] at (10.42,-0.48)
-  {8--14 Sep episode};
+\fill[windowred]
+  (10.783,-0.42) rectangle (11.30,-0.18);
+
+\node[note,anchor=west] at (11.42,-0.30)
+  {8--14 Sep, 5 sessions};
+
+\node[anchor=east] at (2.75,-0.94) {Prespecified};
+
+\fill[windowgreen]
+  (11.171,-0.74) rectangle (11.429,-0.50);
+
+\node[note,anchor=west] at (11.55,-0.62) {$[-1,+1]$};
+
+\fill[windowgreen]
+  (10.912,-1.06) rectangle (11.688,-0.82);
+
+\node[note,anchor=west] at (11.81,-0.94) {$[-3,+3]$};
+
+\fill[windowgreen]
+  (11.30,-1.38) rectangle (11.947,-1.14);
+
+\node[note,anchor=west] at (12.07,-1.26) {$[0,+5]$};
 
 \draw[windowred,line width=0.9pt]
-  (11.30,-0.88)--(11.30,0.62);
+  (11.30,-1.50)--(11.30,0.62);
 
 \node[note,text=windowred,anchor=south]
   at (11.30,0.64) {$t_0$};
@@ -431,15 +450,16 @@ For equities, the market model is estimated over trading days $[-250,-30]$ relat
   3/{-250},
   7/{-30},
   7.55/{-29},
-  10.55/{-4},
-  11.3/{0}
+  10.783/{-4},
+  11.3/{0},
+  11.947/{+5}
 }{
-  \draw[axis] (\x,-0.86)--(\x,-0.96);
-  \node[note,anchor=north] at (\x,-0.99) {\lab};
+  \draw[axis] (\x,-1.56)--(\x,-1.66);
+  \node[note,anchor=north] at (\x,-1.69) {\lab};
 }
 \end{tikzpicture}%
 }
-\caption{\textbf{Event dates and observation windows.} Solid bars denote observed periods. At the 27 September 2026 data cutoff the pageviews API had published through 26 September ($t_0+17$), so all three prespecified attention windows are observed; the dashed outline marks the extended windows within that observed range. The 2026 Wikipedia baseline ends on 7 September so that 8 September, when the warning began, is not used to estimate normal attention.}
+\caption{\textbf{Event dates and observation windows.} Solid bars denote observed periods. At the 27 September 2026 data cutoff the pageviews API had published through 26 September ($t_0+17$) and the last trading session was 25 September, so every prespecified window in panels B and C is fully observed; the extended attention windows are drawn solid because they now fall inside the published range. Panel C shows the three prespecified market windows in green alongside the episode window; all four are measured in trading days from the market $t_0$ of 14 September. The 2026 Wikipedia baseline ends on 7 September so that 8 September, when the warning began, is not used to estimate normal attention.}
 \label{fig:observation-windows}
 \end{figure}
 
