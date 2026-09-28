@@ -57,7 +57,7 @@
 \newcommand{\papertitle}{Threat Attention and Limited Preparedness Attention Following AI Extinction Warnings}
 
 \newcommand{\abstracttext}{
-Catastrophic artificial-intelligence (AI) warnings often identify critical infrastructure as a pathway through which severe harm could propagate. Yet drawing attention to a threat is not the same as directing attention toward the capacity to withstand or control it. We examine this distinction across two prominent AI extinction-warning episodes: the May 2023 Statement on AI Risk and a September 2026 warning episode. Using English Wikipedia pageviews, targeted news framing, and prespecified equity portfolios, we measure how attention was distributed between catastrophic consequences and protective capacity.
+Catastrophic artificial-intelligence (AI) warnings often identify critical infrastructure as a pathway through which severe harm could propagate. Yet drawing attention to a threat is not the same as directing attention toward the capacity to withstand or control it. We examine this distinction across two prominent AI extinction-warning episodes: the May 2023 Statement on AI Risk and a September 2026 warning episode. Using Wikipedia pageviews, news framing, and prespecified stock portfolios, we measure how attention was distributed between catastrophic consequences and protective capacity.
 
 We operationalize a \emph{threat--preparedness gap} (TPG) as the difference between abnormal information seeking about existential consequences and attention to safety/governance, infrastructure/resilience, and shutdown/control. The imbalance was substantially larger in 2026. Existential-threat attention reached 41.3 standardized-deviation days (SD-days), compared with 3.7 for infrastructure/resilience and 7.0 for shutdown/control. The mean daily TPG increased from 2.97 in 2023 to 7.96 in 2026, a 2.7-fold difference.
 
@@ -127,7 +127,7 @@ For critical infrastructure protection (CIP), the analytically relevant feature 
 If a warning raises the salience of those pathways, one would expect attention to move toward the systems at risk, and toward mechanisms that could interrupt or absorb a failure: resilience, continuity, incident response, capability control, and emergency shutdown \citep{bengio2026aisafety,orseau2016interruptible}. If, instead, attention stops at the abstract end state, then a warning that names infrastructure as the pathway is not, in practice, producing an infrastructure-oriented response.
 
 The distinction became observable in September 2026. On September 8, Anthropic researcher, Jacob Coxon, announced his resignation and argued that frontier laboratories were moving irresponsibly toward self-improving superintelligence. Mainstream coverage began on September 9 \citep{bellan2026gambling}; other researchers amplified the warning, and U.S. lawmakers publicly called for additional oversight \citep{rozen2026lawmakers}. 
-By September 14, AI-linked stocks were under pressure after prominent executives cited safety risks and called for slower development \citep{reuters2026markets}. Rather than a single instantaneous shock, these events form a short, traceable warning episode with channel-specific amplification dates.
+By September 14, AI-linked stocks were under pressure after prominent executives cited safety risks and called for slower development \citep{reuters2026markets}. That pressure was short-lived: the AI-infrastructure portfolio's abnormal return moves from $-0.8\%$ over the 8--14 September episode to $+1.3\%$ over the prespecified $[0,+5]$ window ending 21 September, while the repricing that does persist is concentrated in cybersecurity and resilience firms (\cref{sec:results-market}). Rather than a single instantaneous shock, these events form a short, traceable warning episode with channel-specific amplification dates.
 
 This paper asks how collective attention changes during such an episode and, in particular, how much attention reaches protective capacity. We examine two aggregate behavioral responses: Wikipedia pageviews for preregistered information families and equity repricing in prespecified stock portfolios. We also analyze news framing to test whether infrastructure-oriented coverage corresponds with subsequent infrastructure-oriented attention.
 
@@ -167,10 +167,10 @@ Pageviews do not reveal why a page was opened, whether it was read carefully, or
 
 Protection depends not only on technical controls but on whether operators, policymakers, firms, and the broader public recognize plausible failure mechanisms and direct attention toward resilience. CIP research emphasizes human judgment in risk assessment \citep{papamichael2024risk} and situation awareness in cyber resilience \citep{bellini2025situation}. Extinction warnings frequently cite infrastructure pathways, yet mainstream attention may remain fixed on the abstract end state.
 
-Thus, we treat infrastructure-oriented information seeking as a substantive outcome and decompose it. Attention to \emph{systems that could be disrupted} (e.g., critical infrastructure, cyber--physical systems), to \emph{protective processes} (e.g., resilience, incident response, continuity, disaster recovery), and to \emph{control interventions} (e.g., kill switch, capability control, fail-safe, shutdown) are conceptually distinct. 
-Searching for a kill switch reflects interest in a concrete interruption mechanism; searching for critical infrastructure reflects attention to the protected system. Neither demonstrates that anyone took protective action.
+We treat infrastructure-oriented information seeking as a substantive outcome and decompose it. Attention to \emph{systems that could be disrupted} (e.g., critical infrastructure, cyber--physical systems), to \emph{protective processes} (e.g., resilience, incident response, continuity, disaster recovery), and to \emph{control interventions} (e.g., kill switch, capability control, fail-safe, shutdown) are conceptually distinct. 
+Searching for a kill switch reflects interest in a concrete interruption mechanism; searching for critical infrastructure reflects attention to the protected system.
 
-The kill-switch concept was politically salient before the September episode. U.S. lawmakers proposed an AI Kill Switch Act in July 2026, and OpenAI discussed automated shutdown capabilities in early September \citep{rozen2026killswitch,reuters2026shutdown}. We model those dates explicitly, report the kill-switch series separately, and test whether the September episode produced attention beyond the pre-existing trend.
+The kill switch concept was politically salient before the September episode. U.S. lawmakers proposed an \textit{AI Kill Switch Act} in July 2026, and OpenAI discussed automated shutdown capabilities in early September \citep{rozen2026killswitch,reuters2026shutdown}. We model those dates explicitly, report the kill switch series separately, and test whether the September episode produced attention beyond the pre-existing trend.
 
 
 \subsection{Media frames as the information environment}
@@ -187,7 +187,7 @@ We test this correspondence by comparing the prevalence of each media frame on d
 
 Event studies estimate whether security returns around a dated event differ from returns predicted by a market model \citep{mackinlay1997event}. Equity markets provide a second aggregate response channel drawn from a population different from Wikipedia readers. If market participants expect an AI-risk episode to affect demand for safeguards, cybersecurity and resilience firms may be repriced differently from firms more directly exposed to AI capability development. Comparing the channels is informative precisely because they measure different behaviors in different populations.
 
-The financial analysis is more cautious than the attention analysis. Anthropic and OpenAI were not publicly traded, other information arrives in the same window, and firm-specific announcements can dominate a short window. We address these directly in \cref{sec:robust}.
+The financial analysis is more cautious than the attention analysis. Anthropic and OpenAI were not publicly traded; other information arrives in the same window, and firm-specific announcements can dominate a short window. We address these directly in \cref{sec:robust}.
 
 
 \section{Research Questions}
@@ -195,7 +195,7 @@ The financial analysis is more cautious than the attention analysis. Anthropic a
 This paper aims to answer the following Research Questions (RQs):
 
 \begin{description}%[style=nextline]
-  \item[RQ1 --- Magnitude.] Is a high-profile AI extinction warning followed by abnormal information seeking? (Measured as standardized abnormal English Wikipedia attention over \( [0,+3] \) days.)
+\item[RQ1 --- Magnitude.] Is a high-profile AI extinction warning followed by abnormal information seeking? 
 \item[RQ2 --- Direction.] How is abnormal attention distributed across the six information families, and does infrastructure/resilience or shutdown/control attention exceed its placebo range?
 \item[RQ3 --- The threat--preparedness gap.] How large is the contrast between threat-oriented and preparedness-oriented attention, and does it differ between the May 2023 statement and the September 2026 episode?
 \item[RQ4 --- Frame--attention correspondence.] Does daily media framing correspond with same-day or subsequent attention to the matching Wikipedia family, particularly for infrastructure, control, and existential threat?
@@ -205,7 +205,7 @@ This paper aims to answer the following Research Questions (RQs):
 
 \section{Research Design}
 
-To orient the reader, Figure \ref{fig:roadmap} summarizes the study design: two warning episodes are analyzed using three data streams, which are then used to estimate abnormal attention, the threat--preparedness gap, frame--attention correspondence, and market repricing. To limit outcome-driven analytical choices, we specified event definitions, Wikipedia page families, portfolio membership, and primary analysis windows before examining the corresponding post-event outcomes.
+To orient the reader, Figure \ref{fig:roadmap} summarizes the study design: we analyze two warning episodes using three data streams, then use them to estimate abnormal attention, the threat--preparedness gap (TPG), frame--attention correspondence, and market repricing. We specified event definitions, Wikipedia page families, portfolio membership, and primary analysis windows before examining the corresponding post-event outcomes.
 
 \begin{figure}[ht!]
 \centering
@@ -224,7 +224,8 @@ To orient the reader, Figure \ref{fig:roadmap} summarizes the study design: two 
 \; $\rightarrow$ \;\\
 \textbf{Inference}
 (compare threat attention, preparedness attention, framing, and market repricing)
-}}
+}
+}
 \caption{Overview of the research design.}
 \label{fig:roadmap}
 \end{figure}
@@ -236,7 +237,7 @@ The primary case is the September 2026 warning episode. The replication case is 
 
 \begin{table}[ht!]
 \centering
-\small
+\footnotesize
 \caption{Prespecified events and channel-specific time zero}
 \label{tab:events}
 \begin{threeparttable}
@@ -260,209 +261,11 @@ Date & Analytical role & Definition \\
 \subsection{Observation windows}
 \label{sec:windows}
 
-The Wikipedia analysis uses a 56-day baseline that covers eight full weeks, allowing the model to account for normal day-of-week differences. For the 2023 statement, the baseline is $[-56,-1]$. For 2026, it is $[-57,-2]$ because the warning began on 8 September, one day before the 9 September attention event; including 8 September would contaminate the baseline and condition the AR(1) forecast on an event-related observation.
+The Wikipedia analysis uses a 56-day baseline that covers eight full weeks, allowing the model to account for normal day-of-week differences. For the 2023 statement, the baseline is $[-56,-1]$. For 2026, it is $[-57,-2]$ because the warning began on 8 September, one day before the 9 September attention event; including 8 September would contaminate the baseline and impact the forecast on an event-related observation.
 
-\Cref{fig:observation-windows} summarizes the event dates and every window used below. \Cref{sec:measures} defines the estimators that use them. The primary outcome is cumulative abnormal attention over $[0,+3]$. The longer prespecified $[0,+7]$ and $[0,+14]$ windows are also fully observed for both episodes as of the 27 September 2026 data cutoff, and we report all three. We retain $[0,+3]$ as the primary window for two reasons. It is the window the preregistration names first, and the negative-control pages show that counterfactual drift accumulates with window length in the 2023 episode (\cref{sec:robust}), so the shorter window is the one least dependent on the drift adjustment.
+\Cref{sec:measures} defines the estimators used for these windows. For the Wikipedia analysis, the primary outcome is cumulative abnormal attention over $[0,+3]$ relative to the attention-event date. We also report the prespecified $[0,+7]$ and $[0,+14]$ windows, both of which are fully observed for the 2023 and 2026 episodes as of the 27 September 2026 data cutoff. We retain $[0,+3]$ as the primary window because it was specified a priori as the principal short-term response window and because the negative-control analysis shows increasing counterfactual drift as the window lengthens in the 2023 episode (\cref{sec:robust}). The shorter window therefore captures the immediate attention response while requiring the least adjustment for accumulated forecast drift.
 
-For equities, the market model is estimated over trading days $[-250,-30]$ relative to the market event date. Ending the estimation period 30 trading days before the event creates a buffer that reduces the likelihood that warning-related information influences the model used to calculate expected returns. Because the September 2026 warning developed through a sequence of announcements and reactions rather than a single disclosure, we additionally report cumulative abnormal returns across all trading sessions falling between September 8 and September 14. This episode-level window captures the market's response to the accumulating information while distinguishing it from the conventional single-day event estimate.
-
-\begin{figure}[t]
-\centering
-\resizebox{\linewidth}{!}{%
-\begin{tikzpicture}[
-  font=\tiny,
-  axis/.style={draw=black, line width=0.8pt},
-  event/.style={
-    circle,
-    fill=red!70,
-    draw=white,
-    line width=0.6pt,
-    minimum size=5pt,
-    inner sep=0pt
-  },
-  note/.style={font=\tiny, align=center}
-]
-
-% Colors
-\definecolor{windowblue}{HTML}{4E79A7}
-\definecolor{windowgreen}{HTML}{59A14F}
-\definecolor{windoworange}{HTML}{F28E2B}
-\definecolor{windowred}{HTML}{E15759}
-\definecolor{windowgray}{HTML}{5C606A}
-
-% ------------------------------------------------------------
-% A. Event dates
-% ------------------------------------------------------------
-\node[anchor=west,font=\bfseries] at (0,6.4)
-  {A. Event dates};
-
-\node[
-  draw=windowblue,
-  rounded corners=1.5pt,
-  text=windowblue,
-  font=\tiny,
-  align=center,
-  anchor=west
-] at (0,5.65)
-  {30 May 2023\\
-   Statement on AI Risk\\
-   (comparison event)};
-
-\draw[axis,-{Latex[length=2mm]}] (3.2,5.35)--(12.2,5.35);
-\draw[line width=3.2pt,windoworange!45]
-  (7.2,5.35)--(11.3,5.35);
-
-\foreach \x/\date/\lab in {
-  4.0/{8 Sep}/{warning start},
-  5.6/{9 Sep}/{attention $t_0$},
-  7.2/{10 Sep}/{amplification},
-  11.3/{14 Sep}/{market $t_0$}
-}{
-  \node[event] at (\x,5.35) {};
-  \node[note,anchor=north] at (\x,5.08) {\date};
-  \node[note,anchor=south] at (\x,5.58) {\lab};
-}
-
-% ------------------------------------------------------------
-% B. Wikipedia windows
-% ------------------------------------------------------------
-\node[anchor=west,font=\bfseries] at (0,4.25)
-  {B. Wikipedia attention
-   (calendar days; $t_0=9$ Sep)};
-
-\node[anchor=east] at (2.75,3.50) {Model range};
-
-\fill[windowblue]
-  (3.0,3.28) rectangle (8.89,3.72);
-
-\node[text=white,font=\bfseries\tiny] at (5.95,3.50)
-  {56-day baseline $[-57,-2]$};
-
-% 8 Sep (day -1): warning begins; excluded from the baseline, scored out of
-% sample.
-\fill[windowgray]
-  (8.89,3.28) rectangle (9.0,3.72);
-\node[note,anchor=south east] at (8.97,3.76)
-  {8 Sep excluded};
-
-\fill[windowblue!18]
-  (9.0,3.28) rectangle (12.0,3.72);
-
-\draw[windowblue]
-  (9.0,3.28) rectangle (12.0,3.72);
-
-\fill[windowgreen]
-  (9.0,3.28) rectangle (10.82,3.72);
-
-\node[note,anchor=west] at (10.95,3.50)
-  {observed to $+17$};
-
-\node[anchor=east] at (2.75,2.75) {Primary};
-
-\fill[windoworange]
-  (9.0,2.55) rectangle (9.32,2.95);
-
-\node[note,anchor=west,font=\tiny\bfseries]
-  at (9.45,2.75) {$[0,+3]$};
-
-\node[anchor=east] at (2.75,2.05) {Extended};
-
-\draw[
-  windoworange,
-  line width=0.8pt
-] (9.0,1.85) rectangle (10.50,2.25);
-
-\node[note,anchor=west] at (10.65,2.05)
-  {$[0,+7]$ \& $[0,+14]$ observed};
-
-\draw[windowred,line width=0.9pt]
-  (9.0,1.72)--(9.0,3.82);
-
-\foreach \x/\lab in {
-  3/{-57},
-  9/{0},
-  9.32/{3},
-  9.75/{7},
-  10.5/{14},
-  10.82/{17},
-  12/{28}
-}{
-  \draw[axis] (\x,1.69)--(\x,1.58);
-  \node[note,anchor=north] at (\x,1.55) {\lab};
-}
-
-% ------------------------------------------------------------
-% C. Equity-market windows
-% ------------------------------------------------------------
-\node[anchor=west,font=\bfseries] at (0,0.90)
-  {C. Equity market
-   (trading days; $t_0=14$ Sep)};
-
-\node[anchor=east] at (2.75,0.18) {Model timeline};
-
-\fill[windowblue]
-  (3.0,-0.05) rectangle (7.0,0.40);
-
-\node[text=white,font=\bfseries\scriptsize] at (5.0,0.18)
-  {estimation $[-250,-30]$};
-
-\draw[axis] (7.10,-0.10)--(7.25,0.02)--(7.40,-0.10);
-\draw[axis] (7.10,0.35)--(7.25,0.47)--(7.40,0.35);
-
-\fill[windowgray]
-  (7.55,-0.05) rectangle (11.30,0.40);
-
-\node[text=white,font=\bfseries\scriptsize] at (9.40,0.18)
-  {buffer $[-29,-1]$};
-
-\node[anchor=east] at (2.75,-0.30) {Episode};
-
-\fill[windowred]
-  (10.783,-0.42) rectangle (11.30,-0.18);
-
-\node[note,anchor=west] at (11.42,-0.30)
-  {8--14 Sep, 5 sessions};
-
-\node[anchor=east] at (2.75,-0.94) {Prespecified};
-
-\fill[windowgreen]
-  (11.171,-0.74) rectangle (11.429,-0.50);
-
-\node[note,anchor=west] at (11.55,-0.62) {$[-1,+1]$};
-
-\fill[windowgreen]
-  (10.912,-1.06) rectangle (11.688,-0.82);
-
-\node[note,anchor=west] at (11.81,-0.94) {$[-3,+3]$};
-
-\fill[windowgreen]
-  (11.30,-1.38) rectangle (11.947,-1.14);
-
-\node[note,anchor=west] at (12.07,-1.26) {$[0,+5]$};
-
-\draw[windowred,line width=0.9pt]
-  (11.30,-1.50)--(11.30,0.62);
-
-\node[note,text=windowred,anchor=south]
-  at (11.30,0.64) {$t_0$};
-
-\foreach \x/\lab in {
-  3/{-250},
-  7/{-30},
-  7.55/{-29},
-  10.783/{-4},
-  11.3/{0},
-  11.947/{+5}
-}{
-  \draw[axis] (\x,-1.56)--(\x,-1.66);
-  \node[note,anchor=north] at (\x,-1.69) {\lab};
-}
-\end{tikzpicture}%
-}
-\caption{\textbf{Event dates and observation windows.} Solid bars denote observed periods. At the 27 September 2026 data cutoff the pageviews API had published through 26 September ($t_0+17$) and the last trading session was 25 September, so every prespecified window in panels B and C is fully observed; the extended attention windows are drawn solid because they now fall inside the published range. Panel C shows the three prespecified market windows in green alongside the episode window; all four are measured in trading days from the market $t_0$ of 14 September. The 2026 Wikipedia baseline ends on 7 September so that 8 September, when the warning began, is not used to estimate normal attention.}
-\label{fig:observation-windows}
-\end{figure}
-
+For the equity analysis, we define timing separately because financial markets respond only on trading days, and the most salient market-related information emerged later in the 2026 episode. We estimate each security's market model over trading days $[-250,-30]$ relative to the 14 September market-event date. Ending the estimation period 30 trading days before the event provides a buffer between the model-estimation period and the warning episode, reducing the likelihood that event-related information affects estimated expected returns. We report conventional cumulative abnormal returns relative to the 14 September market event and, in addition, an episode-level measure covering all trading sessions from 8 through 14 September. The latter captures repricing during the full sequence of warning announcements and reactions, rather than attributing the market response entirely to a single disclosure date.
 
 
 \section{Data}
@@ -770,7 +573,7 @@ Both AI warning episodes were followed by abnormal information seeking, with a s
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.98\linewidth]{figure_1_attention.pdf}
+  \includegraphics[width=0.98\linewidth]{figure_1_attention.png}
   \caption{\textbf{Standardized abnormal Wikipedia attention by information family.} Color identifies the family; the solid line is the September 2026 episode and the dashed gray line the May 2023 statement. Existential-threat attention rises by roughly an order of magnitude more than infrastructure attention and six times more than control attention. For 2026, the day before $t_0$ is scored out of sample, so the announcement-day rise in actor attention is visible. Both series are drawn only to $t_0+17$, the last day the pageviews API had published for the 2026 episode at the data cutoff; the 2023 window extends further but is truncated here so the two episodes are compared over an identical horizon.\label{fig:attention}}
 \end{figure}
 
@@ -849,6 +652,7 @@ The null infrastructure correspondence is not evidence that infrastructure mecha
 
 
 \subsection{Market divergence (RQ5)}
+\label{sec:results-market}
 
 Over the 2026 episode (five trading sessions, 8--14 September), the cybersecurity/resilience portfolio produced a cumulative abnormal return of \(+11.3\%\) under the sector-adjusted market model. Its conventional 95\% interval excluded zero (8.7\% to 13.9\%), whereas the randomization-based result was marginal (\(p=.063\)). The corresponding estimates were \(-0.8\%\) for AI infrastructure and \(+3.5\%\) for AI platforms. The cybersecurity/resilience result was broad-based rather than driven by one security: ZS \(+14.6\%\), PANW \(+11.8\%\), CRWD \(+10.6\%\), and FTNT \(+8.2\%\). It retained the same sign under the broad-market specification and after excluding the security flagged for a firm-specific announcement (\(+10.2\%\)).
 
@@ -869,7 +673,7 @@ The three prespecified post-event windows, which required sessions that had not 
 \label{fig:divergence}
 \end{figure}
 
-\insightbox{Cross-channel divergence.}{Public information seeking concentrated on catastrophic AI risk, while the largest equity-market response occurred among cybersecurity/resilience firms (\(+11.3\%\) cumulative abnormal return).}
+\insightbox{Cross-channel divergence.}{Public information seeking concentrated on catastrophic AI risk, while the largest equity-market response occurred among cybersecurity/resilience firms, which outperformed their modeled benchmark by \(+11.3\%\) to \(+13.6\%\) across the episode window and all three prespecified post-event windows.}
 
 
 \subsection{Robustness and falsification}
